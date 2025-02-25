@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter7 Binomial Distribution | MATH 224 Workbook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter7 Binomial Distribution | MATH 224 Workbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter7 Binomial Distribution | MATH 224 Workbook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+<meta name="author" content="Dr Mostafa" />
+
+
+<meta name="date" content="2025-02-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="normal-distribution-worksheet.html"/>
+<link rel="next" href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH224 Worksheet</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#table-of-content"><i class="fa fa-check"></i><b>1.1</b> Table of Content</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-data.html"><a href="introduction-to-data.html"><i class="fa fa-check"></i><b>2</b> Introduction to Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#quick-review"><i class="fa fa-check"></i><b>2.1</b> Quick Review:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>3</b> Summarizing data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#examining-numerical-data"><i class="fa fa-check"></i><b>3.1</b> Examining Numerical Data</a></li>
+<li class="chapter" data-level="3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#examining-categorical-data"><i class="fa fa-check"></i><b>3.2</b> Examining Categorical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="probability-basics-worksheet.html"><a href="probability-basics-worksheet.html"><i class="fa fa-check"></i><b>4</b> Probability Basics Worksheet</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="probability-basics-worksheet.html"><a href="probability-basics-worksheet.html#quick-review-1"><i class="fa fa-check"></i><b>4.1</b> Quick Review:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html"><i class="fa fa-check"></i><b>5</b> Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#exercises"><i class="fa fa-check"></i><b>5.1</b> Exercises</a></li>
+<li class="chapter" data-level="5.2" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#solution"><i class="fa fa-check"></i><b>5.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="normal-distribution-worksheet.html"><a href="normal-distribution-worksheet.html"><i class="fa fa-check"></i><b>6</b> Normal Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="normal-distribution-worksheet.html"><a href="normal-distribution-worksheet.html#review-on-normal-distribution"><i class="fa fa-check"></i><b>6.1</b> Review on Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="binomial-distribution.html"><a href="binomial-distribution.html"><i class="fa fa-check"></i><b>7</b> Binomial Distribution</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="binomial-distribution.html"><a href="binomial-distribution.html#binomial-distribution-condition"><i class="fa fa-check"></i><b>7.1</b> Binomial Distribution Condition</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><i class="fa fa-check"></i><b>8</b> Inference for Proportion Worksheet (Point Estimates and Sampling Variability)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#central-limit-theorem-for-sampling-distribution-of-sample-proportions"><i class="fa fa-check"></i><b>8.1</b> Central Limit Theorem (for Sampling Distribution of Sample Proportions)</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#inference-for-proportion-worksheet-hypothesis-testing-for-p"><i class="fa fa-check"></i><b>8.1.1</b> Inference for Proportion Worksheet (Hypothesis Testing for <span class="math inline">\(p\)</span>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html"><i class="fa fa-check"></i><b>9</b> Confidence Intervals for Proportion</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#point-estimate"><i class="fa fa-check"></i><b>9.1</b> Point Estimate</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#the-central-limit-theorem-for-proportions"><i class="fa fa-check"></i><b>9.1.1</b> The Central Limit Theorem for proportions</a></li>
+<li class="chapter" data-level="9.1.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval"><i class="fa fa-check"></i><b>9.1.2</b> Confidence Interval</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="inference-for-numerical-data.html"><a href="inference-for-numerical-data.html"><i class="fa fa-check"></i><b>10</b> Inference for Numerical Data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="inference-for-numerical-data.html"><a href="inference-for-numerical-data.html#central-limit-theorem-sampling-distribution-of-sample-mean"><i class="fa fa-check"></i><b>10.1</b> Central Limit Theorem (Sampling distribution of sample mean)</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html"><i class="fa fa-check"></i><b>11</b> Introduction to Linear Regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html#linear-regression"><i class="fa fa-check"></i><b>11.1</b> Linear Regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 224 Workbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="binomial-distribution" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter7</span> Binomial Distribution<a href="binomial-distribution.html#binomial-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="binomial-distribution-condition" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Binomial Distribution Condition<a href="binomial-distribution.html#binomial-distribution-condition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Conditions to be satisfied for a Binomial Variable Distribution with a fixed number of trials <span class="math inline">\(n\)</span>:</p>
+<ul>
+<li>The trials are independent</li>
+<li>Each trial has two possible outcomes classified as success or failure</li>
+<li>The probability of a success <span class="math inline">\(p\)</span> is the same for each trial</li>
+</ul>
+<p><strong>Probability Mean and Standard Deviation</strong></p>
+<p>For a binomial random variable <span class="math inline">\(X\)</span> with <span class="math inline">\(n\)</span> trials and the probability of a single trial being a success <span class="math inline">\(p\)</span>, the probability of observing exactly <span class="math inline">\(k\)</span> successes is</p>
+<p><span class="math display">\[
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k} = \frac{n!}{k!(n-k)!} p^k (1-p)^{n-k} \quad (k = 0, 1, \ldots, n)
+\]</span></p>
+<p>Where: - <span class="math inline">\(n! = 1 \times 2 \times \cdots \times n\)</span> - <span class="math inline">\(0! = 1\)</span> - <span class="math inline">\(\binom{n}{k} = \frac{n!}{k!(n-k)!}\)</span> (read as “n choose k”, also called the combination coefficient)</p>
+<p>Mean: <span class="math inline">\(\mu = np\)</span></p>
+<p>Standard deviation: <span class="math inline">\(\sigma = \sqrt{np(1-p)}\)</span></p>
+<p>Observations that are more than 2 standard deviations away from the mean are considered unusual:</p>
+<p>Unusual if outside of <span class="math inline">\(\mu - 2\sigma\)</span> and <span class="math inline">\(\mu + 2\sigma\)</span></p>
+<p><strong>Shape of Binomial Distribution</strong></p>
+<ul>
+<li>For <span class="math inline">\(p &lt; 0.5\)</span>: skew to the left</li>
+<li>For <span class="math inline">\(p &gt; 0.5\)</span>: skew to the right</li>
+<li>For <span class="math inline">\(p = 0.5\)</span>: symmetric (centered at <span class="math inline">\(\mu\)</span>)</li>
+<li>For large <span class="math inline">\(n\)</span>, if <span class="math inline">\(np \geq 10\)</span> and <span class="math inline">\(n(1-p) \geq 10\)</span>, the graph is approximately bell-shaped.</li>
+</ul>
+<p><img src="images/img41.png" width="550" /></p>
+<p>(Generated using online app <a href="https://istats.shinyapps.io/BinomialDist/" class="uri">https://istats.shinyapps.io/BinomialDist/</a>)</p>
+<p><strong>Using R</strong></p>
+<ul>
+<li><p>For <span class="math inline">\(P(X = k)\)</span>: <code>dbinom(k, n, p)</code></p></li>
+<li><p>For <span class="math inline">\(P(X \leq k) = P(X &lt; k+1) = P(X = 0) + P(X = 1) + \cdots + P(X = k)\)</span>: <code>pbinom(k, n, p, lower.tail = TRUE)</code> (the <code>lower.tail = TRUE</code> can be omitted)</p></li>
+<li><p>For <span class="math inline">\(P(X &gt; k) = P(X \geq k+1) = 1 - P(X \leq k) = P(X = k+1) + \cdots + P(X = n)\)</span>: <code>pbinom(k, n, p, lower.tail = FALSE)</code></p></li>
+<li><p>For <span class="math inline">\(n!\)</span>: <code>factorial(n)</code></p></li>
+<li><p>For <span class="math inline">\(\binom{n}{k}\)</span>: <code>choose(n, k)</code></p></li>
+</ul>
+<p><strong>Using Calculator</strong></p>
+<ol style="list-style-type: decimal">
+<li>For <span class="math inline">\(P(X = x)\)</span>:
+<ul>
+<li><code>2ND</code> → <code>VARS</code> (<code>DISTR</code>) → use arrow to select <code>binompdf</code> (enter <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span>, <span class="math inline">\(x\)</span>) then <code>enter</code></li>
+</ul></li>
+<li>For <span class="math inline">\(P(X \leq x)\)</span>:
+<ul>
+<li><code>2ND</code> → <code>VARS</code> (<code>DISTR</code>) → use arrow to select <code>binomcdf</code> (enter <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span>, <span class="math inline">\(x\)</span>) then <code>enter</code></li>
+</ul></li>
+<li>For <span class="math inline">\(n!\)</span>:
+<ul>
+<li>Example: <span class="math inline">\(7!\)</span></li>
+<li>Enter 7 then press <code>Math</code> key; use (right) arrow key to select <code>PROB</code> then use (down) arrow key to select <code>!</code> (press enter it then shows <code>7!</code>); press the <code>enter</code> key again (to get answer 5040)</li>
+</ul></li>
+<li>For <span class="math inline">\(\binom{n}{k}\)</span>:
+<ul>
+<li>Example: <span class="math inline">\(\binom{9}{2}\)</span></li>
+<li>Enter 9 then <code>MATH</code> → arrow to <code>PROB</code> → choose <code>nCr</code> then enter 2 then <code>enter</code> to get the result (answer is 36)</li>
+</ul></li>
+</ol>
+<p><strong>Exercise 1</strong>. How many ways can we choose 2 students from a group of 6?</p>
+<p><strong>Exercise 2</strong> (Combination Formula)</p>
+<p>Survey four randomly selected students and record the outcomes as “I” (in state) or “O” (out state). Fill the table below.</p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th># of “I”</th>
+<th>Outcomes (list all)</th>
+<th># of outcomes</th>
+<th><span class="math inline">\(\binom{4}{k} = \frac{4!}{k!(4-k)!}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(k = 0\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k = 1\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(k = 2\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k = 3\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(k = 4\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exercise 3</strong> Find the probability of success of the Bernoulli trial with <span class="math inline">\(n\)</span> trials, success probability <span class="math inline">\(p\)</span>, and the success <span class="math inline">\(k\)</span>:</p>
+<ul>
+<li><span class="math inline">\(n = 3\)</span>, <span class="math inline">\(k = 2\)</span>, <span class="math inline">\(p = 0.35\)</span></li>
+<li><span class="math inline">\(n = 5\)</span>, <span class="math inline">\(k = 3\)</span>, <span class="math inline">\(p = 0.2\)</span></li>
+</ul>
+<p><strong>Exercise 4</strong></p>
+<p>For a binomial distribution with <span class="math inline">\(n = 4\)</span>, <span class="math inline">\(p = 0.7\)</span>. (As in exercise 1, assume that 70% are in-state students.)</p>
+<p>(a). Write the formula for computing the probability of getting exactly <span class="math inline">\(k\)</span> successes.</p>
+<p>(b). Fill the following distribution table. (Round to 4 decimals) (you may use R calculator)</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(X\)</span></th>
+<th><span class="math inline">\(P(X = k)\)</span></th>
+<th><span class="math inline">\(P(X \leq k)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td>1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>(c). What is the expected value?<br />
+(d). What is the standard deviation?</p>
+<p><strong>Exercise 5</strong></p>
+<p>About 75% of dog owners buy holiday presents for their dogs. Suppose twenty dog owners are randomly selected, find the probability of:</p>
+<p>(a). Exactly three buy their dog holiday presents</p>
+<p>(b). Exactly seventeen do not buy their dog holiday presents</p>
+<p>(c). Three or more buy their dog holiday presents</p>
+<p>(d). At most four buy their dog holiday presents</p>
+<p>(e). Minimum of 11 and maximum of 17 dog owners buy their dog holiday presents</p>
+<p>(f). Find the expected number of dog owners in this sample, who buy their dog holiday presents.</p>
+<p>(g). Is it unusual if 16 out of 20 randomly selected dog owners buy their dog holiday presents? Why?</p>
+<p>(h). Is it unusual if 10 out of 20 randomly selected dog owners buy their dog holiday presents? Why?</p>
+<p><span class="math inline">\(\underline{\textbf{Review on Binomial Distribution}}\)</span></p>
+<p><strong>Conditions</strong>to be satisfied for a Binomial Variable Distribution:</p>
+<p><span class="math inline">\(\bullet \ \ \text{The number of trials,is a fixed positive integer}\)</span></p>
+<p><span class="math inline">\(\bullet \ \ \text{The trials are independent}\)</span></p>
+<p><span class="math inline">\(\bullet \ \ \text{Each trail has two possible outcomes, classified as success or failure}\)</span></p>
+<p><span class="math inline">\(\bullet \ \ \text{The probability of a success, p, is the same for each trial}\)</span></p>
+<p id="a">
+<p>Binomial Distribution</p>
+</p>
+<p>For a binomial random variable with trials and the probability of a single trial being a success the probability of observing exactly successes is</p>
+<p id="binom">
+<p><span class="math inline">\(P(X =k) = \binom nkp^k(1-p)^{n-k}=\frac{n!}{k! (n-k)!}p^k(1-p)^{n-k} \text{  k= 0,1, ..., n}\)</span></p>
+</p>
+<p id="a">
+<p>Accumulative Probability</p>
+</p>
+<p>(at most k success) <span class="math inline">\(P(X\le k)=P(X &lt;k+1)=\sum_{i=0}^{k}P(X=i)\)</span></p>
+<p>(at least k success) <span class="math inline">\(P(X\ge k)=P(X&gt;k-1)=1-P(X\le k-1)=\sum_{i=k}^n P(X=i)\)</span></p>
+<p id="a">
+<p><span class="math inline">\(\underline{\textbf{Factorial and Combination Coefficient}}\)</span></p>
+</p>
+<p>n! = <span class="math inline">\(1 \times 2 \times ... \times n\)</span> 0! = 1</p>
+<p><span class="math inline">\(\binom nk = \frac{n!}{k!(n-k)!}\)</span> (<span class="math inline">\(\binom nk\)</span> is read as “n choose k”)</p>
+<p><strong>Solution</strong></p>
+<p><strong>Exercise 1. How many ways can we choose 2 students from a group of 6?</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="binomial-distribution.html#cb2-1" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">6</span>,<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 15</code></pre>
+<p><strong>Exercise 4.</strong> For a binomial distribution with n=4,p=0.2.</p>
+<p><strong>a) Write the formula for computing the probability of getting exactly k successes.</strong></p>
+<p><span class="math inline">\(P(X =k) = \binom nkp^k(1-p)^{n-k}=\frac{n!}{k! (n-k)!}p^k(1-p)^{n-k} \text{  k= 0,1, ..., n}\)</span></p>
+<p>In R you use dbinom(k,n,p)</p>
+<p><strong>b) Fill the following distribution table. (Round to 4 decimals) (you may use R calculator)</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="binomial-distribution.html#cb4-1" tabindex="-1"></a><span class="do">## For P(X=x)</span></span>
+<span id="cb4-2"><a href="binomial-distribution.html#cb4-2" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="dv">4</span>, <span class="fl">0.2</span>)</span></code></pre></div>
+<pre><code>## [1] 0.4096 0.4096 0.1536 0.0256 0.0016</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="binomial-distribution.html#cb6-1" tabindex="-1"></a><span class="do">## P(X &lt;= x)</span></span>
+<span id="cb6-2"><a href="binomial-distribution.html#cb6-2" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="dv">4</span>, <span class="fl">0.2</span>)</span></code></pre></div>
+<pre><code>## [1] 0.4096 0.8192 0.9728 0.9984 1.0000</code></pre>
+<p><strong>c) What is the expected value?</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="binomial-distribution.html#cb8-1" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">4</span>;p<span class="ot">=</span><span class="fl">0.2</span></span>
+<span id="cb8-2"><a href="binomial-distribution.html#cb8-2" tabindex="-1"></a>Expected_mean <span class="ot">&lt;-</span>n<span class="sc">*</span>p ; Expected_mean</span></code></pre></div>
+<pre><code>## [1] 0.8</code></pre>
+<p><strong>d) What is the standard deviation?</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="binomial-distribution.html#cb10-1" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">4</span></span>
+<span id="cb10-2"><a href="binomial-distribution.html#cb10-2" tabindex="-1"></a>p<span class="ot">=</span><span class="fl">0.2</span></span>
+<span id="cb10-3"><a href="binomial-distribution.html#cb10-3" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(n<span class="sc">*</span>p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)); sd</span></code></pre></div>
+<pre><code>## [1] 0.8</code></pre>
+<p><strong>Exercise 5. About 75% of dog owners buy holiday presents for their dogs. Suppose twenty dog owners are randomly selected, find the probability of a) Exactly three buy their dog holiday presents</strong></p>
+<p><span class="math display">\[P(X=3)\]</span></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="binomial-distribution.html#cb12-1" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">3</span>,<span class="dv">20</span>,<span class="fl">0.75</span>)</span></code></pre></div>
+<pre><code>## [1] 2.799425e-08</code></pre>
+<p><strong>b) Exactly seventeen do not buy their dog holiday presents</strong></p>
+<p><span class="math display">\[P(X=17)\]</span></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="binomial-distribution.html#cb14-1" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">17</span>,<span class="dv">20</span>,<span class="fl">0.25</span>)</span></code></pre></div>
+<pre><code>## [1] 2.799425e-08</code></pre>
+<p><strong>c) Three or more buy their dog holiday presents</strong></p>
+<p><span class="math display">\[P(X\ge 3)=1-P(X \le 3)\]</span></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="binomial-distribution.html#cb16-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">3</span>,<span class="dv">20</span>,<span class="fl">0.75</span>)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="binomial-distribution.html#cb18-1" tabindex="-1"></a><span class="do">## or</span></span>
+<span id="cb18-2"><a href="binomial-distribution.html#cb18-2" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">3</span>,<span class="dv">20</span>,<span class="fl">0.75</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p><strong>d) At most four buy their dog holiday presents</strong></p>
+<p><span class="math display">\[P(X\ge 4)=P(X = 0)+...+P(X=4)\]</span></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="binomial-distribution.html#cb20-1" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">4</span>,<span class="dv">20</span>,<span class="fl">0.75</span>)</span></code></pre></div>
+<pre><code>## [1] 3.865316e-07</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="binomial-distribution.html#cb22-1" tabindex="-1"></a><span class="do">## or</span></span>
+<span id="cb22-2"><a href="binomial-distribution.html#cb22-2" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="binomial-distribution.html#cb22-3" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),<span class="dv">20</span>,<span class="fl">0.75</span>))</span></code></pre></div>
+<pre><code>## [1] 3.865316e-07</code></pre>
+<p><strong>e) Minimum of 11 and maximum of 17 dog owners buy their dog holiday presents</strong></p>
+<p><span class="math display">\[P(11 \le X \le 17)\]</span></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="binomial-distribution.html#cb24-1" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">17</span>,<span class="dv">20</span>,<span class="fl">0.75</span>)<span class="sc">-</span><span class="fu">pbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.75</span>)</span></code></pre></div>
+<pre><code>## [1] 0.8948752</code></pre>
+<p><strong>f) Find the expected number of dog owners in this sample, who buy their dog holiday presents</strong></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="binomial-distribution.html#cb26-1" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">20</span>; p<span class="ot">=</span><span class="fl">0.75</span></span>
+<span id="cb26-2"><a href="binomial-distribution.html#cb26-2" tabindex="-1"></a>E_x <span class="ot">=</span> n<span class="sc">*</span>p ; </span>
+<span id="cb26-3"><a href="binomial-distribution.html#cb26-3" tabindex="-1"></a>E_x</span></code></pre></div>
+<pre><code>## [1] 15</code></pre>
+<p><strong>g) Is it unusual if 16 out of 20 randomly selected dog owners buy their dog holiday presents? Why?</strong></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="binomial-distribution.html#cb28-1" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">16</span>,<span class="dv">20</span>,<span class="fl">0.75</span>)</span></code></pre></div>
+<pre><code>## [1] 0.1896855</code></pre>
+<p id="binom">
+<p><strong>Comment</strong></p>
+<p>
+<p>Whether it’s unusual depends on your chosen significance level. If you consider a low probability (e.g., p&lt;0.05) as unusual, then it might be considered unusual.</p>
+<p><strong>Is it unusual if 10 out of 20 randomly selected dog owners buy their dog holiday presents? Why?</strong></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="binomial-distribution.html#cb30-1" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.75</span>)</span></code></pre></div>
+<pre><code>## [1] 0.009922275</code></pre>
+<p id="binom">
+<p><strong>Comment</strong></p>
+<p>
+<p>Whether it’s unusual depends on your chosen significance level. If you consider a low probability as unusual, then it might be considered unusual.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="normal-distribution-worksheet.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-QA.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

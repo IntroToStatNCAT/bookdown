@@ -1,0 +1,215 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Introduction to Data
+
+## Quick Review:
+
+1.  Compute different proportions in different groups
+
+-   For example, treatment group(s) and control group(s), (these are also called as conditional probabilities in later discussions)
+
+2.  Data basics
+
+-   Types of variables—Numerical (quantitative), Categorical (qualitative);
+-   Explanatory and response variables;
+-   Associated (dependent) variables, positive/negative association
+
+3.  Sampling:
+
+```{=html}
+<!-- -->
+```
+1)  Identify the research question (then determine the population)
+
+2)  Collect data that are reliable and help achieve the research goal (take good samples)
+
+-   Population and sample
+    -   A population is the entire group that you want to draw conclusions about.
+    -   A sample is the specific group that you will collect data from
+-   Parameter and Statistic
+    -   A descriptive measure (for example, average, median, standard deviation and percentages) for an entire population is a ''**parameter.**''
+    -   A descriptive measure for a sample is referred to as a ''**sample statistic**''
+-   Observational studies and Experiments
+    -   Observational studies: research processes where researchers collect data in a way that does not directly interfere with how the data arise (examine something without manipulating it)
+    -   Experiment: Researchers randomly assign subjects to various treatments in order to establish causal connections between the explanatory and response variables
+-   Four commonly used random sampling techniques:
+    -   
+
+        1.  Simple random sampling
+
+    -   
+
+        2.  Stratified sample
+
+    -   
+
+        3.  Cluster sampling
+
+    -   
+
+        4.  Multistage sampling
+
+4.  Principles of experimental design: 4 principles
+
+-   Controlling (assign treatment and control groups, enforce specific treatment in treatment group)
+-   Randomization (randomly assign treatment group and control group);
+-   Replication (large sample, or replicate an entire study to verify earlier findings)
+-   Blocking
+
+**Exercise 1.** (page 11 #1.2) Researchers studying the effect of antibiotic treatment for acute sinusitis compared to symptomatic treatments randomly assigned 166 adults diagnosed with acute sinusitis to one of two groups: treatment or control. Study participants received either a 10-day course of amoxicillin (an antibiotic) or a placebo similar in appearance and taste. The placebo consisted of symptomatic treatments such as acetaminophen nasal decongestants, etc. At the end of the 10-day period, patients were asked if they experienced improvement in symptoms. The distribution of responses is summarized below (with some cells missing numbers):
+
+*(for b), c), Round answers to within one hundredth of a percent)*
+
+|               | Self-reported improved in symptoms |         |        |           |
+|------------|------------------------|------------|------------|------------|
+|               |                                    | **Yes** | **No** | **Total** |
+| **Treatment** |                                    | 66      |        | 85        |
+| **Control**   |                                    | 65      |        |           |
+| **Total**     |                                    |         |        | 166       |
+
+(a). Fill the blank cells in the above table.
+
+(b). What percent of patients in the treatment group experienced improvement in symptoms?
+
+(c). What percent experienced improvement in symptoms in the control group?
+
+(d). In which group did a higher percentage of patients experience improvement in symptoms?
+
+(e). Your findings so far might suggest a real difference in effectiveness of antibiotic and placebo treatments for improving symptoms of sinusitis. However, this is not the only possible conclusion that can be drawn based on your findings so far. What is one other possible explanation for the observed difference between the percentages of patients in the antibiotic and placebo treatment groups that experience improvement in symptoms of sinusitis?
+
+**(Answers for reference:**
+
+**(a).**
+
+|               | Self-reported improved in symptoms |         |        |           |
+|------------|------------------------|------------|------------|------------|
+|               |                                    | **Yes** | **No** | **Total** |
+| **Treatment** |                                    | 66      | 19     | 85        |
+| **Control**   |                                    | 65      | 16     | 81        |
+| **Total**     |                                    | 131     | 35     | 166       |
+
+**(e).** Be careful: Do not generalize the results of this study. It is impossible to tell merely by comparing the sample proportions **because the difference could be the result of random error in our sample.**
+
+**Exercise 2.** The following figure displays data from a lending company.
+
+| loan.amount | interest.rate | term | grade | state | total.income | homeownership |
+|-------------|---------------|------|-------|-------|--------------|---------------|
+| 7500        | 7.34          | 36   | A     | MD    | 70000        | rent          |
+| 25000       | 9.43          | 60   | B     | OH    | 254000       | mortgage      |
+| 14500       | 6.08          | 36   | A     | MO    | 80000        | mortgage      |
+| ...         | ...           | ...  | ...   | ...   | ...          | ...           |
+| 3000        | 7.96          | 36   | A     | CA    | 34000        | rent          |
+
+**Variable descriptions**
+
+loan amount: Amount of the loan received, in US dollars.
+
+interest rate: Interest rate on the loan, in an annual percentage.
+
+term: The length of the loan, which is always set as a whole number of months.
+
+grade: Loan grade, which takes a values A through G and represents the quality of the loan and its likelihood of being repaid.
+
+state: US state where the borrower resides.
+
+total income: Borrower’s total income, including any second income, in US dollars.
+
+homeownership: Indicates whether the person owns, owns but has a mortgage, or rents.
+
+(a). How many cases in the data?
+
+(b). Identify the types of variables.
+
+**Exercise 3.** (page 19 #1.4) The Buteyko method is a shallow breathing technique developed by Konstantin Buteyko, a Russian doctor, in 1952. Anecdotal evidence (evidence based only on personal observation) suggests that the Buteyko method can reduce asthma symptoms and improve quality of life. In a scientific study to determine the effectiveness of this method, researchers recruited 600 asthma patients aged 18-69 who relied on medication for asthma treatment. These patients were randomly split into two research groups: one practiced the Buteyko method and the other did not. Patients were scored on quality of life, activity, asthma symptoms, and medication reduction on a scale from 0 to 10. On average, the participants in the Buteyko group experienced a significant reduction in asthma symptoms and an improvement in quality of life.
+
+(a). Identify the main research question of the study.
+
+(b). Who are the subjects in this study and how many are included?
+
+(c). What are the variables in the study? Identify each variable as numerical or categorical. If numerical, state whether the variable is discrete or continuous.
+
+(Reference answer:
+
+(a). The effect of Buteyko method on reducing asthma symptoms and improving quality of life.
+
+(b). Asthma patients aged 18-69 who relied on medication for asthma treatment; 600.
+
+(c). The variables and types are: quality of life (categorical), activity (categorical), asthma symptoms (categorical), and medication reduction on a scale from 0 to 10 (numerical discrete).)
+
+**Exercise 4.** (page 29 #1.13) Exercise 1.3 introduces a study where researchers collected data to examine the relationship between air pollutants and preterm births in Southern California. During the study, air pollution levels were measured by air quality monitoring stations; lengths of gestation data were collected on 143,196 births between the years 1989 and 1993; and air pollution exposure during gestation was calculated for each birth.
+
+(a). Identify the population of interest and the sample in this study.
+
+(b). Comment on whether or not the results of the study can be generalized to the population and if the findings of the study can be used to establish causal relationships.
+
+(Reference answer:
+
+(a) Population: all births in Southern California. Sample: collected length of gestation data of 143,196 births between the years 1989 and 1993.
+
+(b) If the collected lengths of gestation data of births in this time span and geography can be considered representative of all births, then the results are generalizable to the population of Southern California. However, since the study is observational, the findings cannot be used to establish causal relationships.)
+
+**Exercise 5.** A fitness center is interested in the average amount of time a client exercises in the center each week. Match the vocabulary words (a-f) with its corresponding examples (1-6). (Note: 1-1 match)
+
+Examples:
+
+1.  All 45 exercise times that were recorded from the participants in the study.
+
+2.  The 45 clients from the fitness center who participated in the study.
+
+3.  All clients at the fitness center.
+
+4.  The average amount of time that all clients from the fitness center exercise.
+
+5.  The amount of time that any given client from the fitness center exercises.
+
+6.  The average amount of exercise time for the 45 clients from the fitness center who participated in the study.
+
+Vocabulary words:
+
+a.  Data
+
+b.  Population
+
+c.  Variable
+
+d.  Sample
+
+e.  Parameter
+
+f.  Statistic
+
+**Exercise 6.** (Observational Study or Experiment)
+
+a.  You would like to investigate whether listening to music while taking exams affects performance. A group of students are told to listen to music while taking a test and their results are compared to a group not listening to music. Is this an experiment or an observational study?
+
+b.  The starting salaries of recent graduates from Ivy League private and public universities are recorded. Is this an experiment or an observational study?
+
+**Exercise 7.** (page 37 #1.41) In a public health study on the effects of consumption of fruits and vegetables on psychological well-being in young adults, participants were randomly assigned to three groups: (1) diet as usual, (2) an ecological momentary intervention involving text message reminders to increase their fruits and vegetable consumption plus a voucher to purchase them, or (3) a fruit and vegetable intervention in which participants were given two additional daily servings of fresh fruits and vegetables to consume on top of their normal diet. Participants were asked to take a nightly survey on their smartphones. Participants were student volunteers at the University of Otago, New Zealand. At the end of the 14-day study, only participants in the third group showed improvements to their psychological well-being across the 14-days relative to the other groups.
+
+(a). What type of study is this?
+
+(b). Identify the explanatory and response variables.
+
+(c). Comment on whether the results of the study can be generalized to the population.
+
+(d). Comment on whether the results of the study can be used to establish causal relationships.
+
+(e). A newspaper article reporting on the study states, “The results of this study provide proof that giving young adults fresh fruits and vegetables to eat can have psychological benefits even over a brief period of time.” How would you suggest revising this statement so that it can be supported by the study?
+
+(Reference answer:
+
+(a). Experiment
+
+(b). Explanatory: treatment group (categorical with 3 levels). Response variable: Psychological well-being.
+
+(c). No, because the participants were volunteers.
+
+(d). Yes, because it was an experiment.
+
+(e). The statement should say “evidence” instead of “proof”.)
+
+

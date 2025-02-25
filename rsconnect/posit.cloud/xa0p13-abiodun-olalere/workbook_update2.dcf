@@ -1,0 +1,12 @@
+name: workbook_update2
+title: Workbook Update
+username: xa0p13-abiodun-olalere
+account: xa0p13-abiodun-olalere
+server: posit.cloud
+hostUrl: https://api.posit.cloud/v1
+appId: 8441668
+bundleId: 8871855
+url: https://posit.cloud/content/8441668
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

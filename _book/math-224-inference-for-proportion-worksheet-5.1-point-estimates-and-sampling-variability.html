@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 11 MATH 224: Inference for Proportion Worksheet (5.1 Point Estimates and Sampling Variability) | MATH 224 Workbook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 11 MATH 224: Inference for Proportion Worksheet (5.1 Point Estimates and Sampling Variability) | MATH 224 Workbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 11 MATH 224: Inference for Proportion Worksheet (5.1 Point Estimates and Sampling Variability) | MATH 224 Workbook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Dr Mostafa" />
+
+
+<meta name="date" content="2024-06-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="math-224-discrete-random-variables.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH224 Worksheet</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#table-of-content"><i class="fa fa-check"></i><b>1.1</b> Table of Content</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html"><i class="fa fa-check"></i><b>2</b> MATH 224: Introduction to Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#quick-review"><i class="fa fa-check"></i><b>2.1</b> Quick Review:</a></li>
+<li class="chapter" data-level="2.2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#data-basics"><i class="fa fa-check"></i><b>2.2</b> Data basics</a></li>
+<li class="chapter" data-level="2.3" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#sampling"><i class="fa fa-check"></i><b>2.3</b> Sampling:</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#population-and-sample"><i class="fa fa-check"></i><b>2.3.1</b> Population and sample</a></li>
+<li class="chapter" data-level="2.3.2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#parameter-and-statistic"><i class="fa fa-check"></i><b>2.3.2</b> Parameter and Statistic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#observational-studies-and-experiments"><i class="fa fa-check"></i><b>2.4</b> Observational studies and Experiments</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#four-commonly-used-random-sampling-techniques"><i class="fa fa-check"></i><b>2.4.1</b> Four commonly used random sampling techniques:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#principles-of-experimental-design-4-principles"><i class="fa fa-check"></i><b>2.4.2</b> Principles of experimental design: 4 principles</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercises"><i class="fa fa-check"></i><b>2.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-1.-page-11-1.2"><i class="fa fa-check"></i><b>2.5.1</b> Exercise 1. (page 11 #1.2)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-2."><i class="fa fa-check"></i><b>2.5.2</b> Exercise 2.</a></li>
+<li class="chapter" data-level="2.5.3" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-3.-page-19-1.4"><i class="fa fa-check"></i><b>2.5.3</b> Exercise 3. (page 19 #1.4)</a></li>
+<li class="chapter" data-level="2.5.4" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-4.-page-29-1.13"><i class="fa fa-check"></i><b>2.5.4</b> Exercise 4. (page 29 #1.13)</a></li>
+<li class="chapter" data-level="2.5.5" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-5."><i class="fa fa-check"></i><b>2.5.5</b> Exercise 5.</a></li>
+<li class="chapter" data-level="2.5.6" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-6.-observational-study-or-experiment"><i class="fa fa-check"></i><b>2.5.6</b> Exercise 6. (Observational Study or Experiment)</a></li>
+<li class="chapter" data-level="2.5.7" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-7.-page-37-1.41"><i class="fa fa-check"></i><b>2.5.7</b> Exercise 7. (page 37 #1.41)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html"><i class="fa fa-check"></i><b>3</b> MATH 224: Binomial Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html#exercises-1"><i class="fa fa-check"></i><b>3.1</b> Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html#solution"><i class="fa fa-check"></i><b>3.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html"><i class="fa fa-check"></i><b>4</b> MATH 224: Examining Numerical Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#quick-review-1"><i class="fa fa-check"></i><b>4.1</b> Quick Review:</a></li>
+<li class="chapter" data-level="4.2" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#r-functions-codes"><i class="fa fa-check"></i><b>4.2</b> R functions codes</a></li>
+<li class="chapter" data-level="4.3" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercises-2"><i class="fa fa-check"></i><b>4.3</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercise-1"><i class="fa fa-check"></i><b>4.3.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="4.3.2" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercise-2"><i class="fa fa-check"></i><b>4.3.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="4.3.3" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercise-3"><i class="fa fa-check"></i><b>4.3.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.3.4" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercise-4"><i class="fa fa-check"></i><b>4.3.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="4.3.5" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercise-5"><i class="fa fa-check"></i><b>4.3.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="4.3.6" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercise-6"><i class="fa fa-check"></i><b>4.3.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="4.3.7" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercise-7"><i class="fa fa-check"></i><b>4.3.7</b> Exercise 7</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#math-224-examining-categorical-data"><i class="fa fa-check"></i><b>4.4</b> MATH 224: Examining Categorical Data</a></li>
+<li class="chapter" data-level="4.5" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#quick-review-2"><i class="fa fa-check"></i><b>4.5</b> Quick Review:</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#r-codes-table-and-bar-plot"><i class="fa fa-check"></i><b>4.5.1</b> R codes (table and bar plot)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercises-3"><i class="fa fa-check"></i><b>4.6</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercise-1-1"><i class="fa fa-check"></i><b>4.6.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="4.6.2" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercise-2-1"><i class="fa fa-check"></i><b>4.6.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="4.6.3" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#exercise-3-1"><i class="fa fa-check"></i><b>4.6.3</b> Exercise 3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html"><i class="fa fa-check"></i><b>5</b> MATH 224: Probability Basics</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#quick-review-3"><i class="fa fa-check"></i><b>5.1</b> Quick Review:</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#probability-rules"><i class="fa fa-check"></i><b>5.1.1</b> Probability Rules</a></li>
+<li class="chapter" data-level="5.1.2" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#exercises-4"><i class="fa fa-check"></i><b>5.1.2</b> Exercises</a></li>
+<li class="chapter" data-level="5.1.3" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#conditional-probability-independence-and-bayes-theorem"><i class="fa fa-check"></i><b>5.1.3</b> Conditional Probability, Independence, and Bayes’ Theorem</a></li>
+<li class="chapter" data-level="5.1.4" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#quick-review-4"><i class="fa fa-check"></i><b>5.1.4</b> Quick Review:</a></li>
+<li class="chapter" data-level="5.1.5" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#exercises-5"><i class="fa fa-check"></i><b>5.1.5</b> Exercises</a></li>
+<li class="chapter" data-level="5.1.6" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#conditional-probability"><i class="fa fa-check"></i><b>5.1.6</b> Conditional Probability</a></li>
+<li class="chapter" data-level="5.1.7" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#multiplication-rule"><i class="fa fa-check"></i><b>5.1.7</b> Multiplication Rule</a></li>
+<li class="chapter" data-level="5.1.8" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#the-rule-of-total-probability-and-bayes-theorem"><i class="fa fa-check"></i><b>5.1.8</b> The Rule of Total Probability and Bayes’ Theorem</a></li>
+<li class="chapter" data-level="5.1.9" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#expected-value-mu"><i class="fa fa-check"></i><b>5.1.9</b> Expected Value <span class="math inline">\(\mu\)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html"><i class="fa fa-check"></i><b>6</b> MATH 224: Binomial Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#binomial-distribution-condition"><i class="fa fa-check"></i><b>6.1</b> Binomial Distribution Condition</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#probability-mean-and-standard-deviation"><i class="fa fa-check"></i><b>6.1.1</b> Probability Mean and Standard Deviation</a></li>
+<li class="chapter" data-level="6.1.2" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#shape-of-binomial-distribution"><i class="fa fa-check"></i><b>6.1.2</b> Shape of Binomial Distribution</a></li>
+<li class="chapter" data-level="6.1.3" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#using-r"><i class="fa fa-check"></i><b>6.1.3</b> Using R</a></li>
+<li class="chapter" data-level="6.1.4" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#using-calculator"><i class="fa fa-check"></i><b>6.1.4</b> Using Calculator</a></li>
+<li class="chapter" data-level="6.1.5" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#normal-distribution-worksheet"><i class="fa fa-check"></i><b>6.1.5</b> Normal Distribution Worksheet</a></li>
+<li class="chapter" data-level="6.1.6" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#review-on-normal-distribution"><i class="fa fa-check"></i><b>6.1.6</b> Review on Normal Distribution**</a></li>
+<li class="chapter" data-level="6.1.7" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#using-r-to-compute-cumulative-probability-for-x-sim-nμ-σ"><i class="fa fa-check"></i><b>6.1.7</b> Using R to Compute Cumulative Probability for <span class="math inline">\(X \sim N(μ, σ)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#empirical-rule-68-95-99.7-rule"><i class="fa fa-check"></i><b>6.2</b> Empirical Rule (68-95-99.7 Rule)</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html"><i class="fa fa-check"></i><b>7</b> MATH 224: Probability Basics Worksheet</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html#exercises-6"><i class="fa fa-check"></i><b>7.1</b> Exercises</a></li>
+<li class="chapter" data-level="7.2" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html#solution-1"><i class="fa fa-check"></i><b>7.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="math-224-binomial-distribution-worksheet-2.html"><a href="math-224-binomial-distribution-worksheet-2.html"><i class="fa fa-check"></i><b>8</b> MATH 224: Binomial Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="math-224-binomial-distribution-worksheet-2.html"><a href="math-224-binomial-distribution-worksheet-2.html#exercises-7"><i class="fa fa-check"></i><b>8.1</b> Exercises</a></li>
+<li class="chapter" data-level="8.2" data-path="math-224-binomial-distribution-worksheet-2.html"><a href="math-224-binomial-distribution-worksheet-2.html#solution-2"><i class="fa fa-check"></i><b>8.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html"><i class="fa fa-check"></i><b>9</b> Confidence Intervals for Proportion</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#introduction"><i class="fa fa-check"></i><b>9.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#point-estimate"><i class="fa fa-check"></i><b>9.1.1</b> Point Estimate</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#the-central-limit-theorem-for-proportions"><i class="fa fa-check"></i><b>9.2</b> The Central Limit Theorem for proportions</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval"><i class="fa fa-check"></i><b>9.2.1</b> Confidence Interval</a></li>
+<li class="chapter" data-level="9.2.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval-on-proportion-p"><i class="fa fa-check"></i><b>9.2.2</b> Confidence Interval on Proportion, p</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#sample-size-needed-for-estimating-the-population-proportion"><i class="fa fa-check"></i><b>9.3</b> Sample Size Needed for Estimating the Population Proportion</a></li>
+<li class="chapter" data-level="9.4" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#exercises-8"><i class="fa fa-check"></i><b>9.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html"><i class="fa fa-check"></i><b>10</b> MATH 224: Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html#exercises-9"><i class="fa fa-check"></i><b>10.1</b> Exercises</a></li>
+<li class="chapter" data-level="10.2" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html#solution-3"><i class="fa fa-check"></i><b>10.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html"><a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html"><i class="fa fa-check"></i><b>11</b> MATH 224: Inference for Proportion Worksheet (5.1 Point Estimates and Sampling Variability)</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html"><a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#basic-terms"><i class="fa fa-check"></i><b>11.1</b> Basic Terms</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html"><a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#central-limit-theorem-for-sampling-distribution-of-sample-proportions"><i class="fa fa-check"></i><b>11.1.1</b> Central Limit Theorem (for Sampling Distribution of Sample Proportions)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html"><a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#exercises-10"><i class="fa fa-check"></i><b>11.2</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html"><a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#exercise-1-2"><i class="fa fa-check"></i><b>11.2.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="11.2.2" data-path="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html"><a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#exercise-2-2"><i class="fa fa-check"></i><b>11.2.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="11.2.3" data-path="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html"><a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#exercise-3-2"><i class="fa fa-check"></i><b>11.2.3</b> Exercise 3</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 224 Workbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> MATH 224: Inference for Proportion Worksheet (5.1 Point Estimates and Sampling Variability)<a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="basic-terms" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Basic Terms<a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#basic-terms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Sample proportion <span class="math inline">\(\hat{p} = \frac{x}{n}\)</span><br />
+</li>
+<li>Sample proportion <span class="math inline">\(\hat{p}\)</span> is the unbiased point estimator for the population proportion <span class="math inline">\(p\)</span></li>
+<li>A value of <span class="math inline">\(\hat{p}\)</span> is a point estimate</li>
+<li>Error = <span class="math inline">\(\hat{p} - p\)</span></li>
+</ul>
+<div id="central-limit-theorem-for-sampling-distribution-of-sample-proportions" class="section level3 hasAnchor" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> Central Limit Theorem (for Sampling Distribution of Sample Proportions)<a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#central-limit-theorem-for-sampling-distribution-of-sample-proportions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When observations are independent (take random samples of fixed size <span class="math inline">\(n\)</span> without replacement); the sample size <span class="math inline">\(n\)</span> is large enough i.e. <span class="math inline">\(np \geq 10\)</span> and <span class="math inline">\(n(1-p) \geq 10\)</span>; and sample size <span class="math inline">\(n &lt; 10\%\)</span> of the population size then the sample proportion <span class="math inline">\(\hat{p}\)</span> is approximately normal with mean $ = p$ and standard deviation $ = $: <span class="math inline">\(\hat{p} \sim N(p, \sqrt{\frac{p(1-p)}{n}})\)</span></p>
+<p>That is <span class="math inline">\(z = \frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}} \sim N(0, 1)\)</span>.</p>
+<p><strong>Notes:</strong>
+- The requirement that the sample size <span class="math inline">\(n &lt; 10\%\)</span> of population size is to have the standard deviation <span class="math inline">\(\sqrt{\frac{p(1-p)}{n}}\)</span>.
+- If the sample size <span class="math inline">\(n &lt; 10\%\)</span> of population size then the <span class="math inline">\(\sqrt{\frac{p(1-p)}{n}}\)</span> is overly estimated SD and the SD will typically adjust by a factor <span class="math inline">\(\sqrt{\frac{N-n}{N-1}} \times \sqrt{\frac{p(1-p)}{n}}\)</span>.</p>
+<p>When using <span class="math inline">\(\hat{p}\)</span> to estimate <span class="math inline">\(p\)</span> the Standard Error of <span class="math inline">\(\hat{p}\)</span> is the standard deviation of its sampling distribution: <span class="math inline">\(S.E._{\hat{p}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span></p>
+<p>When <span class="math inline">\(p\)</span> is unknown <span class="math inline">\(\hat{p}\)</span> is used to replace <span class="math inline">\(p\)</span> then check <span class="math inline">\(np \geq 10\)</span> and <span class="math inline">\(n(1-p) \geq 10\)</span> (success and failure condition) estimated <span class="math inline">\(S.E. \approx \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span></p>
+</div>
+</div>
+<div id="exercises-10" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Exercises<a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#exercises-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercise-1-2" class="section level3 hasAnchor" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> Exercise 1<a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#exercise-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In a random sample with size <span class="math inline">\(n=9000\)</span> the count of “yes” is <span class="math inline">\(x=250\)</span>.
+1. Compute the sample proportion <span class="math inline">\(\hat{p} = \frac{x}{n}\)</span>.
+2. Compute the estimated standard error of the sample proportion <span class="math inline">\(S.E. \approx \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span>.</p>
+</div>
+<div id="exercise-2-2" class="section level3 hasAnchor" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> Exercise 2<a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#exercise-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In a random sample of 765 adults in the U.S., 322 say they could not cover $600 unexpected expense without borrowing money or going to debt.
+1. What population is under consideration in the data set?
+2. What parameter is being estimated?
+3. Compute a point estimate for the parameter using the given information above?
+4. What is the estimated standard error?</p>
+</div>
+<div id="exercise-3-2" class="section level3 hasAnchor" number="11.2.3">
+<h3><span class="header-section-number">11.2.3</span> Exercise 3<a href="math-224-inference-for-proportion-worksheet-5.1-point-estimates-and-sampling-variability.html#exercise-3-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Of all freshmen at a large college 19% made the dean’s list.
+1. What is the value of the interested parameter? State the sampling distribution of sample proportion for sample size 90.
+2. If a random sample of 90 freshmen selected 14 made the dean’s list. Compute the sample proportion and the Z-score.
+3. If a random sample of 90 freshmen selected 20 made the dean’s list. Compute the sample proportion and the Z-score.
+4. What is the probability that at most 14 of selected 90 freshmen made the dean’s list?
+5. What is the probability that between 14 to 20 students of selected 90 freshmen made the dean’s list?</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="math-224-discrete-random-variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-QA.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

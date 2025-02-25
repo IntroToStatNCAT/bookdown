@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 MATH 224: Chapter 1 Introduction to Data | MATH 224 Workbook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 MATH 224: Chapter 1 Introduction to Data | MATH 224 Workbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 MATH 224: Chapter 1 Introduction to Data | MATH 224 Workbook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Dr Mostafa" />
+
+
+<meta name="date" content="2024-06-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="math-224-binomial-distribution-worksheet.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH224 Worksheet</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#table-of-content"><i class="fa fa-check"></i><b>1.1</b> Table of Content</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html"><i class="fa fa-check"></i><b>2</b> MATH 224: Chapter 1 Introduction to Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#quick-review"><i class="fa fa-check"></i><b>2.1</b> Quick Review:</a></li>
+<li class="chapter" data-level="2.2" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#data-basics"><i class="fa fa-check"></i><b>2.2</b> Data basics</a></li>
+<li class="chapter" data-level="2.3" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#sampling"><i class="fa fa-check"></i><b>2.3</b> Sampling:</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#population-and-sample"><i class="fa fa-check"></i><b>2.3.1</b> Population and sample</a></li>
+<li class="chapter" data-level="2.3.2" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#parameter-and-statistic"><i class="fa fa-check"></i><b>2.3.2</b> Parameter and Statistic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#observational-studies-and-experiments"><i class="fa fa-check"></i><b>2.4</b> Observational studies and Experiments</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#four-commonly-used-random-sampling-techniques"><i class="fa fa-check"></i><b>2.4.1</b> Four commonly used random sampling techniques:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#principles-of-experimental-design-4-principles"><i class="fa fa-check"></i><b>2.4.2</b> Principles of experimental design: 4 principles</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#exercises"><i class="fa fa-check"></i><b>2.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#exercise-1.-page-11-1.2"><i class="fa fa-check"></i><b>2.5.1</b> Exercise 1. (page 11 #1.2)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#exercise-2."><i class="fa fa-check"></i><b>2.5.2</b> Exercise 2.</a></li>
+<li class="chapter" data-level="2.5.3" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#exercise-3.-page-19-1.4"><i class="fa fa-check"></i><b>2.5.3</b> Exercise 3. (page 19 #1.4)</a></li>
+<li class="chapter" data-level="2.5.4" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#exercise-4.-page-29-1.13"><i class="fa fa-check"></i><b>2.5.4</b> Exercise 4. (page 29 #1.13)</a></li>
+<li class="chapter" data-level="2.5.5" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#exercise-5."><i class="fa fa-check"></i><b>2.5.5</b> Exercise 5.</a></li>
+<li class="chapter" data-level="2.5.6" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#exercise-6.-observational-study-or-experiment"><i class="fa fa-check"></i><b>2.5.6</b> Exercise 6. (Observational Study or Experiment)</a></li>
+<li class="chapter" data-level="2.5.7" data-path="math-224-chapter-1-introduction-to-data.html"><a href="math-224-chapter-1-introduction-to-data.html#exercise-7.-page-37-1.41"><i class="fa fa-check"></i><b>2.5.7</b> Exercise 7. (page 37 #1.41)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html"><i class="fa fa-check"></i><b>3</b> MATH 224: Binomial Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html#exercises-1"><i class="fa fa-check"></i><b>3.1</b> Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html#solution"><i class="fa fa-check"></i><b>3.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html"><i class="fa fa-check"></i><b>4</b> MATH 224: Probability Basics Worksheet</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html#exercises-2"><i class="fa fa-check"></i><b>4.1</b> Exercises</a></li>
+<li class="chapter" data-level="4.2" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html#solution-1"><i class="fa fa-check"></i><b>4.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html"><i class="fa fa-check"></i><b>5</b> MATH 224: Binomial Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#exercises-3"><i class="fa fa-check"></i><b>5.1</b> Exercises</a></li>
+<li class="chapter" data-level="5.2" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#solution-2"><i class="fa fa-check"></i><b>5.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html"><i class="fa fa-check"></i><b>6</b> Confidence Intervals for Proportion</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#point-estimate"><i class="fa fa-check"></i><b>6.1.1</b> Point Estimate</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#the-central-limit-theorem-for-proportions"><i class="fa fa-check"></i><b>6.2</b> The Central Limit Theorem for proportions</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval"><i class="fa fa-check"></i><b>6.2.1</b> Confidence Interval</a></li>
+<li class="chapter" data-level="6.2.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval-on-proportion-p"><i class="fa fa-check"></i><b>6.2.2</b> Confidence Interval on Proportion, p</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#sample-size-needed-for-estimating-the-population-proportion"><i class="fa fa-check"></i><b>6.3</b> Sample Size Needed for Estimating the Population Proportion</a></li>
+<li class="chapter" data-level="6.4" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#exercises-4"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html"><i class="fa fa-check"></i><b>7</b> MATH 224: Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html#exercises-5"><i class="fa fa-check"></i><b>7.1</b> Exercises</a></li>
+<li class="chapter" data-level="7.2" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html#solution-3"><i class="fa fa-check"></i><b>7.2</b> Solution</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 224 Workbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="math-224-chapter-1-introduction-to-data" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> MATH 224: Chapter 1 Introduction to Data<a href="math-224-chapter-1-introduction-to-data.html#math-224-chapter-1-introduction-to-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="quick-review" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Quick Review:<a href="math-224-chapter-1-introduction-to-data.html#quick-review" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Compute different proportions in different groups
+<ul>
+<li>For example treatment group(s) and control group(s) (these are also called as conditional probabilities in later discussions)</li>
+</ul></li>
+</ul>
+</div>
+<div id="data-basics" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Data basics<a href="math-224-chapter-1-introduction-to-data.html#data-basics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Types of variables—Numerical (quantitative) Categorical (qualitative)</li>
+<li>Explanatory and response variables</li>
+<li>Associated (dependent) variables positive/negative association</li>
+</ul>
+</div>
+<div id="sampling" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Sampling:<a href="math-224-chapter-1-introduction-to-data.html#sampling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Identify the research question (then determine the population)</li>
+<li>Collect data that are reliable and help achieve the research goal (take good samples)</li>
+</ul>
+<div id="population-and-sample" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Population and sample<a href="math-224-chapter-1-introduction-to-data.html#population-and-sample" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>A population is the entire group that you want to draw conclusions about.</li>
+<li>A sample is the specific group that you will collect data from</li>
+</ul>
+</div>
+<div id="parameter-and-statistic" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Parameter and Statistic<a href="math-224-chapter-1-introduction-to-data.html#parameter-and-statistic" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>A descriptive measure (for example average median standard deviation and percentages) for an entire population is a ‘’parameter.’’</li>
+<li>A descriptive measure for a sample is referred to as a ‘’sample statistic’’</li>
+</ul>
+</div>
+</div>
+<div id="observational-studies-and-experiments" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Observational studies and Experiments<a href="math-224-chapter-1-introduction-to-data.html#observational-studies-and-experiments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Observational studies: research processes where researchers collect data in a way that does not directly interfere with how the data arise (examine something without manipulating it)</li>
+<li>Experiment: Researchers randomly assign subjects to various treatments in order to establish causal connections between the explanatory and response variables</li>
+</ul>
+<div id="four-commonly-used-random-sampling-techniques" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Four commonly used random sampling techniques:<a href="math-224-chapter-1-introduction-to-data.html#four-commonly-used-random-sampling-techniques" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Simple random sampling</li>
+<li>Stratified sample</li>
+<li>Cluster sampling</li>
+<li>Multistage sampling</li>
+</ol>
+</div>
+<div id="principles-of-experimental-design-4-principles" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Principles of experimental design: 4 principles<a href="math-224-chapter-1-introduction-to-data.html#principles-of-experimental-design-4-principles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Controlling (assign treatment and control groups enforce specific treatment in treatment group)</li>
+<li>Randomization (randomly assign treatment group and control group)</li>
+<li>Replication (large sample or replicate an entire study to verify earlier findings)</li>
+<li>Blocking</li>
+</ul>
+</div>
+</div>
+<div id="exercises" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Exercises<a href="math-224-chapter-1-introduction-to-data.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercise-1.-page-11-1.2" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Exercise 1. (page 11 #1.2)<a href="math-224-chapter-1-introduction-to-data.html#exercise-1.-page-11-1.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Researchers studying the effect of antibiotic treatment for acute sinusitis compared to symptomatic treatments randomly assigned 166 adults diagnosed with acute sinusitis to one of two groups: treatment or control. Study participants received either a 10-day course of amoxicillin (an antibiotic) or a placebo similar in appearance and taste. The placebo consisted of symptomatic treatments such as acetaminophen nasal decongestants etc. At the end of the 10-day period patients were asked if they experienced improvement in symptoms. The distribution of responses is summarized below (with some cells missing numbers):</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Yes</th>
+<th>No</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Treatment</td>
+<td>66</td>
+<td></td>
+<td>85</td>
+</tr>
+<tr class="even">
+<td>Control</td>
+<td>65</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td></td>
+<td></td>
+<td>166</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li>Fill the blank cells in the above table.</li>
+<li>What percent of patients in the treatment group experienced improvement in symptoms?</li>
+<li>What percent experienced improvement in symptoms in the control group?</li>
+<li>In which group did a higher percentage of patients experience improvement in symptoms?</li>
+<li>Your findings so far might suggest a real difference in effectiveness of antibiotic and placebo treatments for improving symptoms of sinusitis. However, this is not the only possible conclusion that can be drawn based on your findings so far. What is one other possible explanation for the observed difference between the percentages of patients in the antibiotic and placebo treatment groups that experience improvement in symptoms of sinusitis?</li>
+</ol>
+<p>(Answers for reference:
+(a)</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Yes</th>
+<th>No</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Treatment</td>
+<td>66</td>
+<td>19</td>
+<td>85</td>
+</tr>
+<tr class="even">
+<td>Control</td>
+<td>65</td>
+<td>16</td>
+<td>81</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>131</td>
+<td>35</td>
+<td>166</td>
+</tr>
+</tbody>
+</table>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Be careful: Do not generalize the results of this study. It is impossible to tell merely by comparing the sample proportions because the difference could be the result of random error in our sample.)</li>
+</ol>
+</div>
+<div id="exercise-2." class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Exercise 2.<a href="math-224-chapter-1-introduction-to-data.html#exercise-2." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following figure displays data from a lending company. Variable descriptions:
+- loan amount: Amount of the loan received in US dollars.
+- interest rate: Interest rate on the loan in an annual percentage.
+- term: The length of the loan which is always set as a whole number of months.
+- grade: Loan grade which takes a value from A through G and represents the quality of the loan and its likelihood of being repaid.
+- state: US state where the borrower resides.
+- total income: Borrower’s total income including any second income in US dollars.
+- homeownership: Indicates whether the person owns, owns but has a mortgage, or rents.</p>
+<ol style="list-style-type: decimal">
+<li>How many cases in the data?</li>
+<li>Identify the types of variables.</li>
+</ol>
+</div>
+<div id="exercise-3.-page-19-1.4" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Exercise 3. (page 19 #1.4)<a href="math-224-chapter-1-introduction-to-data.html#exercise-3.-page-19-1.4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Buteyko method is a shallow breathing technique developed by Konstantin Buteyko, a Russian doctor, in 1952. Anecdotal evidence (evidence based only on personal observation) suggests that the Buteyko method can reduce asthma symptoms and improve quality of life. In a scientific study to determine the effectiveness of this method, researchers recruited 600 asthma patients aged 18-69 who relied on medication for asthma treatment. These patients were randomly split into two research groups: one practiced the Buteyko method and the other did not. Patients were scored on quality of life, activity, asthma symptoms, and medication reduction on a scale from 0 to 10. On average, the participants in the Buteyko group experienced a significant reduction in asthma symptoms and an improvement in quality of life.</p>
+<ol style="list-style-type: decimal">
+<li>Identify the main research question of the study.</li>
+<li>Who are the subjects in this study and how many are included?</li>
+<li>What are the variables in the study? Identify each variable as numerical or categorical. If numerical, state whether the variable is discrete or continuous.</li>
+</ol>
+<p>(Reference answer:
+- The effect of Buteyko method on reducing asthma symptoms and improving quality of life.
+- Asthma patients aged 18-69 who relied on medication for asthma treatment; 600.
+- The variables and types are: quality of life (categorical), activity (categorical), asthma symptoms (categorical), and medication reduction on a scale from 0 to 10 (numerical discrete).)</p>
+</div>
+<div id="exercise-4.-page-29-1.13" class="section level3 hasAnchor" number="2.5.4">
+<h3><span class="header-section-number">2.5.4</span> Exercise 4. (page 29 #1.13)<a href="math-224-chapter-1-introduction-to-data.html#exercise-4.-page-29-1.13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Exercise 1.3 introduces a study where researchers collected data to examine the relationship between air pollutants and preterm births in Southern California. During the study, air pollution levels were measured by air quality monitoring stations; lengths of gestation data were collected on 143,196 births between the years 1989 and 1993; and air pollution exposure during gestation was calculated for each birth.</p>
+<ol style="list-style-type: decimal">
+<li>Identify the population of interest and the sample in this study.</li>
+<li>Comment on whether or not the results of the study can be generalized to the population and if the findings of the study can be used to establish causal relationships.</li>
+</ol>
+<p>(Reference answer:
+- Population: all births in Southern California. Sample: collected length of gestation data of 143,196 births between the years 1989 and 1993.
+- If the collected lengths of gestation data of births in this time span and geography can be considered representative of all births, then the results are generalizable to the population of Southern California. However, since the study is observational, the findings cannot be used to establish causal relationships.)</p>
+</div>
+<div id="exercise-5." class="section level3 hasAnchor" number="2.5.5">
+<h3><span class="header-section-number">2.5.5</span> Exercise 5.<a href="math-224-chapter-1-introduction-to-data.html#exercise-5." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A fitness center is interested in the average amount of time a client exercises in the center each week. Match the vocabulary words (a-f) with its corresponding examples (1-6). (Note: 1-1 match)</p>
+<p>Examples:
+1. All 45 exercise times that were recorded from the participants in the study.
+2. The 45 clients from the fitness center who participated in the study.
+3. All clients at the fitness center.
+4. The average amount of time that all clients from the fitness center exercise.
+5. The amount of time that any given client from the fitness center exercises.
+6. The average amount of exercise time for the 45 clients from the fitness center who participated in the study.</p>
+<p>Vocabulary words:
+- Data
+- Population
+- Variable
+- Sample
+- Parameter
+- Statistic</p>
+</div>
+<div id="exercise-6.-observational-study-or-experiment" class="section level3 hasAnchor" number="2.5.6">
+<h3><span class="header-section-number">2.5.6</span> Exercise 6. (Observational Study or Experiment)<a href="math-224-chapter-1-introduction-to-data.html#exercise-6.-observational-study-or-experiment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>You would like to investigate whether listening to music while taking exams affects performance. A group of students are told to listen to music while taking a test and their results are compared to a group not listening to music. Is this an experiment or an observational study?</li>
+<li>The starting salaries of recent graduates from Ivy League private and public universities are recorded. Is this an experiment or an observational study?</li>
+</ol>
+</div>
+<div id="exercise-7.-page-37-1.41" class="section level3 hasAnchor" number="2.5.7">
+<h3><span class="header-section-number">2.5.7</span> Exercise 7. (page 37 #1.41)<a href="math-224-chapter-1-introduction-to-data.html#exercise-7.-page-37-1.41" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In a public health study on the effects of consumption of fruits and vegetables on psychological well-being in young adults, participants were randomly assigned to three groups: (1) diet as usual, (2) an ecological momentary intervention involving text message reminders to increase their fruits and vegetable consumption plus a voucher to purchase them, or (3) a fruit and vegetable intervention in which participants were given two additional daily servings of fresh fruits and vegetables to consume on top of their normal diet. Participants were asked to take a nightly survey on their smartphones. Participants were student volunteers at the University of Otago, New Zealand. At the end of the 14-day study, only participants in the third group showed improvements to their psychological well-being across the 14-days relative to the other groups.</p>
+<ol style="list-style-type: decimal">
+<li>What type of study is this?</li>
+<li>Identify the explanatory and response variables.</li>
+<li>Comment on whether the results of the study can be generalized to the population.</li>
+<li>Comment on whether the results of the study can be used to establish causal relationships.</li>
+<li>A newspaper article reporting on the study states, “The results of this study provide proof that giving young adults fresh fruits and vegetables to eat can have psychological benefits even over a brief period of time.” How would you suggest revising this statement so that it can be supported by the study?</li>
+</ol>
+<p>(Reference answer:
+- (a) Experiment
+- (b) Explanatory: treatment group (categorical with 3 levels). Response variable: Psychological well-being.
+- (c) No, because the participants were volunteers.
+- (d) Yes, because it was an experiment.
+- (e) The statement should say “evidence” instead of “proof”.)</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="math-224-binomial-distribution-worksheet.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/001-QA.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

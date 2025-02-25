@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 MATH 224: Chapter 2 (part 1) Examining Numerical Data | MATH 224 Workbook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 MATH 224: Chapter 2 (part 1) Examining Numerical Data | MATH 224 Workbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 MATH 224: Chapter 2 (part 1) Examining Numerical Data | MATH 224 Workbook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Dr Mostafa" />
+
+
+<meta name="date" content="2024-06-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="math-224-binomial-distribution-worksheet.html"/>
+<link rel="next" href="math-224-probability-basics-worksheet.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH224 Worksheet</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#table-of-content"><i class="fa fa-check"></i><b>1.1</b> Table of Content</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html"><i class="fa fa-check"></i><b>2</b> MATH 224: Introduction to Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#quick-review"><i class="fa fa-check"></i><b>2.1</b> Quick Review:</a></li>
+<li class="chapter" data-level="2.2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#data-basics"><i class="fa fa-check"></i><b>2.2</b> Data basics</a></li>
+<li class="chapter" data-level="2.3" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#sampling"><i class="fa fa-check"></i><b>2.3</b> Sampling:</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#population-and-sample"><i class="fa fa-check"></i><b>2.3.1</b> Population and sample</a></li>
+<li class="chapter" data-level="2.3.2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#parameter-and-statistic"><i class="fa fa-check"></i><b>2.3.2</b> Parameter and Statistic</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#observational-studies-and-experiments"><i class="fa fa-check"></i><b>2.4</b> Observational studies and Experiments</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#four-commonly-used-random-sampling-techniques"><i class="fa fa-check"></i><b>2.4.1</b> Four commonly used random sampling techniques:</a></li>
+<li class="chapter" data-level="2.4.2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#principles-of-experimental-design-4-principles"><i class="fa fa-check"></i><b>2.4.2</b> Principles of experimental design: 4 principles</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercises"><i class="fa fa-check"></i><b>2.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-1.-page-11-1.2"><i class="fa fa-check"></i><b>2.5.1</b> Exercise 1. (page 11 #1.2)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-2."><i class="fa fa-check"></i><b>2.5.2</b> Exercise 2.</a></li>
+<li class="chapter" data-level="2.5.3" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-3.-page-19-1.4"><i class="fa fa-check"></i><b>2.5.3</b> Exercise 3. (page 19 #1.4)</a></li>
+<li class="chapter" data-level="2.5.4" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-4.-page-29-1.13"><i class="fa fa-check"></i><b>2.5.4</b> Exercise 4. (page 29 #1.13)</a></li>
+<li class="chapter" data-level="2.5.5" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-5."><i class="fa fa-check"></i><b>2.5.5</b> Exercise 5.</a></li>
+<li class="chapter" data-level="2.5.6" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-6.-observational-study-or-experiment"><i class="fa fa-check"></i><b>2.5.6</b> Exercise 6. (Observational Study or Experiment)</a></li>
+<li class="chapter" data-level="2.5.7" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#exercise-7.-page-37-1.41"><i class="fa fa-check"></i><b>2.5.7</b> Exercise 7. (page 37 #1.41)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html"><i class="fa fa-check"></i><b>3</b> MATH 224: Binomial Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html#exercises-1"><i class="fa fa-check"></i><b>3.1</b> Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html#solution"><i class="fa fa-check"></i><b>3.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html"><i class="fa fa-check"></i><b>4</b> MATH 224: Chapter 2 (part 1) Examining Numerical Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html#quick-review-1"><i class="fa fa-check"></i><b>4.1</b> Quick Review:</a></li>
+<li class="chapter" data-level="4.2" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html#r-functions-codes"><i class="fa fa-check"></i><b>4.2</b> R functions codes</a></li>
+<li class="chapter" data-level="4.3" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercises-2"><i class="fa fa-check"></i><b>4.3</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-1"><i class="fa fa-check"></i><b>4.3.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="4.3.2" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-2"><i class="fa fa-check"></i><b>4.3.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="4.3.3" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-3"><i class="fa fa-check"></i><b>4.3.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.3.4" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-4"><i class="fa fa-check"></i><b>4.3.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="4.3.5" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-5"><i class="fa fa-check"></i><b>4.3.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="4.3.6" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-6"><i class="fa fa-check"></i><b>4.3.6</b> Exercise 6</a></li>
+<li class="chapter" data-level="4.3.7" data-path="math-224-chapter-2-part-1-examining-numerical-data.html"><a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-7"><i class="fa fa-check"></i><b>4.3.7</b> Exercise 7</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html"><i class="fa fa-check"></i><b>5</b> MATH 224: Probability Basics Worksheet</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html#exercises-3"><i class="fa fa-check"></i><b>5.1</b> Exercises</a></li>
+<li class="chapter" data-level="5.2" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html#solution-1"><i class="fa fa-check"></i><b>5.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html"><i class="fa fa-check"></i><b>6</b> MATH 224: Binomial Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#exercises-4"><i class="fa fa-check"></i><b>6.1</b> Exercises</a></li>
+<li class="chapter" data-level="6.2" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#solution-2"><i class="fa fa-check"></i><b>6.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html"><i class="fa fa-check"></i><b>7</b> Confidence Intervals for Proportion</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#introduction"><i class="fa fa-check"></i><b>7.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#point-estimate"><i class="fa fa-check"></i><b>7.1.1</b> Point Estimate</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#the-central-limit-theorem-for-proportions"><i class="fa fa-check"></i><b>7.2</b> The Central Limit Theorem for proportions</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval"><i class="fa fa-check"></i><b>7.2.1</b> Confidence Interval</a></li>
+<li class="chapter" data-level="7.2.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval-on-proportion-p"><i class="fa fa-check"></i><b>7.2.2</b> Confidence Interval on Proportion, p</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#sample-size-needed-for-estimating-the-population-proportion"><i class="fa fa-check"></i><b>7.3</b> Sample Size Needed for Estimating the Population Proportion</a></li>
+<li class="chapter" data-level="7.4" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#exercises-5"><i class="fa fa-check"></i><b>7.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html"><i class="fa fa-check"></i><b>8</b> MATH 224: Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html#exercises-6"><i class="fa fa-check"></i><b>8.1</b> Exercises</a></li>
+<li class="chapter" data-level="8.2" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html#solution-3"><i class="fa fa-check"></i><b>8.2</b> Solution</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 224 Workbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="math-224-chapter-2-part-1-examining-numerical-data" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> MATH 224: Chapter 2 (part 1) Examining Numerical Data<a href="math-224-chapter-2-part-1-examining-numerical-data.html#math-224-chapter-2-part-1-examining-numerical-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="quick-review-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Quick Review:<a href="math-224-chapter-2-part-1-examining-numerical-data.html#quick-review-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>Graphical Presentations</strong>
+<ul>
+<li>Scatter graph—present related two numerical data see if there is any association outliers</li>
+<li>Dot plot –see overall pattern outliers</li>
+<li>Histogram – see the shape of data distribution: modals skewness</li>
+</ul></li>
+<li><strong>Numerical summaries</strong>
+<ul>
+<li>Mean Median – both measures are for the center of numerical data</li>
+<li>Mean <span class="math inline">\(\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i\)</span></li>
+<li>Median is the middle value of the arranged data</li>
+<li>Standard Deviation —measures the spread or variation</li>
+<li>Quartiles interquartile range</li>
+<li>Five number summary: Min Q1 Q2 Q3 Max</li>
+<li>Use the mean and the standard deviation for symmetrical data or large data</li>
+<li>Use the median and interquartile range for skewed data</li>
+</ul></li>
+</ul>
+</div>
+<div id="r-functions-codes" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> R functions codes<a href="math-224-chapter-2-part-1-examining-numerical-data.html#r-functions-codes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><code>c(???)</code> – concatenate function put multiple values in a vector</li>
+<li><code>mean(c(???))</code> – mean</li>
+<li><code>var(c(???))</code> – variance</li>
+<li><code>sd(c(???))</code> – standard deviation</li>
+<li><code>median(c(???))</code> – median</li>
+<li><code>quantile(c(???), quantile.type=2)</code> # change type to 6 if n=5</li>
+<li><code>IQR(c(???), quantile.type=2)</code> # change type to 6 if n=5</li>
+<li><code>summary(c(???), quantile.type=2)</code> # change type to 6 if n=5</li>
+</ul>
+</div>
+<div id="exercises-2" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Exercises<a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercise-1" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Exercise 1<a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use the following dot plot of an interest rate of some loan data to answer questions.</p>
+<ol style="list-style-type: decimal">
+<li>How many loans?</li>
+<li>What is the lowest interest rate? What is the highest interest rate? Find the range.</li>
+<li>Find the mean (average).</li>
+<li>Find the median.</li>
+</ol>
+<p>Help: Using R
+- <code>x &lt;- c(5, 5, 5, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 910, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 12, 13, 13, 13, 14, 15, 16, 17, 17, 17, 18, 118, 19, 20, 21, 25, 26)</code>
+- <code>length(x)</code>
+- <code>mean(x)</code>
+- <code>median(x)</code></p>
+<p>(Answer: (a) 50 (b) 5; 26; 21 (c) 13.48 (d) 10)</p>
+</div>
+<div id="exercise-2" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Exercise 2<a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we have a distribution where all observations are greater than 0 that is all <span class="math inline">\(x_i &gt; 0\)</span>, the statistic <span class="math inline">\(\frac{mean}{median}\)</span> can be used as a measure of skewness. What is the expected shape of the distribution under the following conditions? Sketch the shape to illustrate.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\frac{mean}{median} = 1\)</span></li>
+<li><span class="math inline">\(\frac{mean}{median} &lt; 1\)</span></li>
+<li><span class="math inline">\(\frac{mean}{median} &gt; 1\)</span></li>
+</ol>
+</div>
+<div id="exercise-3" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Exercise 3<a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For given two data sets: Data (1): 0 2 4 6 8 10 Data (2) 20 22 24 26 28 30<br />
+1. Sketch the dot plots.
+2. Compare their means. What general observation can you draw?
+3. Compare their standard deviations. What general observation can you draw?
+4. What about their IQRs?</p>
+</div>
+<div id="exercise-4" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Exercise 4<a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Find the quartiles and interquartile range (IQR) for each data set.
+- 2 5 10 12 16
+- 2 5 10 11 12 16</p>
+</div>
+<div id="exercise-5" class="section level3 hasAnchor" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> Exercise 5<a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The histogram below shows the ages (in years) available for sale in a car dealership on some day.</p>
+<ol style="list-style-type: decimal">
+<li>How many cars are in the first class (between 2 and 4)? In the third class (between 6 and 8)?</li>
+<li>Describe the shape of the histogram – how many modals? Symmetric or skewed (left or right)?</li>
+<li>Which measure is more appropriate to use to measure the center? Mean or median?</li>
+<li>Which measure is more appropriate to use to measure the spread? Standard deviation or IQR?</li>
+</ol>
+</div>
+<div id="exercise-6" class="section level3 hasAnchor" number="4.3.6">
+<h3><span class="header-section-number">4.3.6</span> Exercise 6<a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Identify the histogram for the frequency distribution below.</p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li></li>
+<li></li>
+</ol>
+</div>
+<div id="exercise-7" class="section level3 hasAnchor" number="4.3.7">
+<h3><span class="header-section-number">4.3.7</span> Exercise 7<a href="math-224-chapter-2-part-1-examining-numerical-data.html#exercise-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Based on the boxplot below:</p>
+<ol style="list-style-type: decimal">
+<li>Write the five number summary.</li>
+<li>What percent of data is below 17?</li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="math-224-binomial-distribution-worksheet.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="math-224-probability-basics-worksheet.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/002-QA1.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

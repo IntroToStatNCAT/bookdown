@@ -1,0 +1,228 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Confidence Intervals for Proportion
+
+-   **Point estimate**
+
+    -   statistics vs. parameter
+    -   point estimate for population proportion is $\hat{p}=\frac{x}{n}$
+    -   may also represent a probability of a binomial distribution, such as p=0.5 for a fair coin.
+
+-   **Confidence interval** for an unknown parameter
+
+-   **Margin of error**
+
+-   Interpretation of what is meant by being "95%" confident (think simulations)
+
+-   Formula for confidence interval for population proportion, p.
+
+-   Know z - multipliers for 90%, 95%, and 99% confidence intervals.
+
+-   Requirements:
+
+    -   Random sample (independent)
+
+    -   AND large sample size (at least 10 successes $\&$ 10 Failures) np\>10 and n(1-p) \> 10
+
+    -   Calculating sample size to obtained desired margin of error E.
+
+        -   Using educated guess for population proportion.
+        -   Using p=0.5 for conservative (large) sample size.
+
+    -   Round up to nearest integer.
+
+**Introduction**
+
+Suppose we want to estimate the proportion of adult Americans who believe that immigration is a good thing for the U.S. It is unreasonable to expect that we could survey every adult American. Instead, we use a sample of adult Americans to arrive at an estimate of the proportion. We call this estimate a point estimate.
+
+## Point Estimate
+
+**Definition:**
+
+A point estimate is the value of a statistic (based on a sample) that estimates the value of a population parameter.
+
+**The sample proportion** $\hat{p}$
+
+We now study categorical data and draw inference on the proportion, or percentage, of the population with a specific characteristic.\
+If we call a given categorical characteristic in the population "success" then the sample proportion of successes, p, is:
+
+$$\hat{p}= \frac{x}{n} $$
+
+Where x is the number of individuals in the sample with a specified characteristic and n is the sample size.
+
+**Example 1:** The Gallup Organization conducted a poll in which a simple random sample of 1,520 adults, living in all 50 U.S. states and the District of Columbia were asked the following question. "Thinking now about immigrants -- that is, people who come from other countries to live here in the United States, in your view, do you think legal immigration is a good thing or a bad thing for this country today?" If 1135 responded “Yes”.
+
+Obtain a point estimate for the proportion of Americans 18 and older who believe that immigration is good for the US.
+
+**Solution:**
+
+$$\hat{p}= \frac{1135}{1520} = 0.747$$
+
+We estimate for the proportion of Americans 18 and older who believe that immigration is good for the US is 74.7%\
+**Note:** We agree to round proportions to three decimal places.
+
+**Sampling distribution of sample proportions** $\hat{p}$
+
+### The Central Limit Theorem for proportions
+
+The Central Limit Theorem for proportions states that if n is large enough, then:
+
+$\hat{p}\sim N \left( p, \sqrt{\frac{p(1-p)}{n}} \right)$
+
+Therefore, a different random sample of adult Americans might result in a different point estimate of the population proportion, such as $\hat{p}= 0.71, \hat{p}= 0.78, \ldots$.
+
+If the method used to select the sample of Americans was done appropriately, both point estimates would be good guesses of the population proportion. Due to variability in the sample proportion, we need to report a range (or *interval*) of values, including a measure of the likelihood that the interval includes the unknown population proportion.
+
+### Confidence Interval
+
+A confidence interval for an unknown parameter consists of an interval of numbers based on a point estimate.
+
+The level of confidence represents the expected proportion of intervals that will contain the parameter if a large number of different samples is obtained.
+
+The level of confidence is denoted $(1 - \alpha) \times 100\%$. For example, a 95% level of confidence $(\alpha = 0.05)$ implies that if 100 different confidence intervals are constructed, each based on a different sample from the same population, we will expect 95 of the intervals to contain the parameter and 5 not to include the parameter.
+
+Confidence interval estimates for the population proportion are of the form:
+
+**Point estimate** $\pm$ **margin of error.**
+
+The margin of error of a confidence interval estimate of a parameter is a measure of how accurate the point estimate is. The margin of error depends on three factors:
+
+-   **Level of confidence:** As the level of confidence increases, the margin of error also increases.
+-   **Sample size:** As the size of the random sample increases, the margin of error decreases.
+-   **Standard deviation of the population:** The more spread there is in the population, the wider our interval will be for a given level of confidence.
+
+**Confidence Interval on Proportion, p**
+
+Suppose that a simple random sample of size $n$ is taken from a population.\
+A $(1 - \alpha) \times 100\%$ confidence interval for p is given by the following quantities:
+
+$\hat{p}\pm z^* \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+
+Where p = Theoretical or "True" population proportion
+
+| Confidence Level | $1 - \alpha \times 100\%$ | $\alpha$ | $Z^* = Z_{\alpha/2}$ |
+|------------------|---------------------------|----------|----------------------|
+| 0.90             | 0.10                      | 1.645    |                      |
+| 0.95             | 0.05                      | 1.96     |                      |
+| 0.98             | 0.02                      | 2.33     |                      |
+| 0.99             | 0.01                      | 2.58     |                      |
+
+The Z-table is used to find the critical values, $Z^*$, for confidence intervals on the true proportion p. This abbreviated table gives the most common z-scores for the centered values of confidence for the normal curve.
+
+Example 2:
+
+In July of 2008, a University Poll asked 1783 registered voters nationwide whether they favored or opposed the death penalty for persons convicted of murder 1123 were in favor.
+
+Obtain a 90% confidence interval for the proportion of registered voters nationwide who are in favor of the death penalty for persons convicted of murder.
+
+**Solution:**\
+$\hat{p} = \frac{1123}{1783} = 0.63$
+
+Where:
+
+n = 1783
+
+$$
+np \ \& \ n(1-p) > 10
+$$
+
+Lower bound: $0.63 - 1.645 \times \sqrt{\frac{0.63(1-0.63)}{1783}} \approx 0.61$\
+Upper bound: $0.63 + 1.645 \times \sqrt{\frac{0.63(1-0.63)}{1783}} \approx 0.65$
+
+We are 90% confident that the proportion of registered voters who are in favor of the death penalty for those convicted of murder is between 0.61 and 0.65.
+
+**Estimating the margin of error on p for a given confidence level**
+
+Consider the scenarios for the product of proportion and complements for the margin of error. What happens as the proportion changes?
+
+$$
+(1 - \alpha)\% CI \text{ on } p = \hat{p} \pm Z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+$$
+
+Where:
+
+-   $\hat{p}$ = Point estimate
+-   $Z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$ = Margin of Error = $Z_{critical} \times Standard Error$
+
+Determine the Sample Size Necessary for Estimating a Population Proportion within a Specified Margin of Error
+
+Two possible solutions:
+
+1.  Use an estimate of p based on a pilot study
+2.  Use the value of p which gives the largest possible value of $n$ for a given confidence level $\&$ margin of error.
+
+**Sample Size Needed for Estimating the Population Proportion**
+
+The sample size required to obtain a $(1 - \alpha)$ - 100% confidence interval for $p$ with a margin of error E is given by:
+
+$$
+n = \frac{p(1-p) \left( \frac{Z_{\frac{\alpha}{2}}}{E} \right)^2}{rounded \text{ up to the next integer}}, \text{ where } p \text{ is a prior estimate of } p.
+$$
+
+| $n$  | Approximate Margin of Error |
+|------|-----------------------------|
+| 500  | 0.045 (or 4.5%)             |
+| 800  | 0.035 (or 3.5%)             |
+| 1000 | 0.032 (or 3.2%)             |
+| 1500 | 0.026 (or 2.6%)             |
+
+If a prior estimate on the proportion is unavailable, using $\hat{p} = 0.5$ will give the following estimate for the sample size:
+
+$$
+n = 0.25 \times \left( \frac{Z_{\frac{\alpha}{2}}}{E} \right)^2
+$$
+
+Gallup and other polling agencies report at the 95% confidence level and assume p = 0.5 in calculating the margin of error:
+
+**Example 3**
+
+The statistic presented below appeared in the weekly magazine TIME, August 23, 1993, under the article *Danger in the Safety Zone*. Consider the tiny print “From telephone poll of 500 adult Americans taken for TIME/CNN. Margin of error is $\pm 0.45$”.
+
+Do you favor the death penalty?
+
+| YES | NO  |
+|-----|-----|
+| 77% | 17% |
+
+From a telephone poll of 500 adult Americans taken for TIME/CNN on Aug. 12 by Yankelovich Partners, Inc. Margin of error is $\pm 0.45$
+
+Explain how the margin of error can be calculated.
+
+Solution: Margin of Error in the article (under 95% confidence) is about:
+
+$$
+1.96 \sqrt{\frac{0.5 \times 0.5}{500}} \approx \frac{1}{\sqrt{500}} = 0.04472 \approx 4.5\%
+$$
+
+**Example 2 Illustrating the Meaning of Level of Confidence Using Simulation :**
+
+Let's illustrate what "95% confidence" means in a 95% confidence interval in another way. We will simulate obtaining 200 different random samples of size n=50, m=50 i.e., n equals 50 from a population with p=0.7, p equals 0.7. Figure 4 shows the confidence intervals in groups of 100. A green interval is a 95% confidence interval that includes the population proportion, 0.7. A red interval is a confidence interval that does not include the population proportion. (For now, ignore the blue intervals.) Notice that the red intervals that do not capture the population proportion 0.7 have centers that are far away (more than 1.96 standard errors) from 0.7. Of the 200 confidence intervals obtained, 10 (the red intervals) do not include the population proportion. For example, the first interval to miss has a sample proportion that is too small to result in an interval that captures 0.7.
+
+(Note: The actual image illustrating the confidence intervals would be embedded here using $\text{![ ]()}$ if the image file was provided.)
+
+**Appeal: Simulating Confidence Intervals (rossmanchance.com)**
+
+A 95% level of confidence means that 95% of all possible samples result in confidence intervals that include the parameter (and 5% of all possible samples result in confidence intervals that do not include the parameter).
+
+**Caution!**
+
+A 95% confidence interval does *not* mean that there is a 95% probability that the interval contains the parameter (such as p). Remember, probability describes the likelihood of *undetermined* events. Therefore, it does not make sense to talk about the probability that the interval contains the parameter since the parameter is a *fixed* value. Thinking of this way: If a coin and obtain a head. If I ask you to determine the probability that the flip resulted in a head, it would not be 0.5, because the outcome has already been determined. Instead, the probability is 0 or 1. Confidence intervals work the same way. Because p or $\mu$ is already determined, we do not say that there is a 95% probability that the interval contains $\mu$.
+
+**Exercises**
+
+1.  As a potential worldwide pandemic, avian influenza H5N1 (commonly called the bird flu) poses a serious health risk. As of January 24, 2012, there have been 583 human cases of this virus in the world. Of these cases, 344 have resulted in death. Consider the outcomes of these cases as a random sample of all possible outcomes.
+
+    a.  Find a point estimate for the proportion of people who would die if infected with the bird flu.
+    b.  Construct a 90% confidence interval for the proportion of cases that would be expected to result in death if a pandemic occurred.
+    c.  Interpret the confidence interval.
+
+2.  A sociologist wanted to determine the percentage of residents of America that only speak English at home. What size sample should be obtained if she wishes her estimate to be within 3 percentage points with 90% confidence assuming she uses the estimate obtained from the Census 2000 Supplementary Survey of 82.4%?
+
+3.  Nitrates are groundwater contaminants derived from fertilizer, septic tank seepage, and other sewage. Nitrate poisoning is particularly hazardous to infants under the age of 6 months. The Maximum Contaminant Level (MCL) is the highest level of a contaminant that government allows in drinking water. For nitrates, the MCL is 10 mg/L. The health department wants to know the proportion of wells in Madison County that have nitrate levels above the MCL. A worker has been assigned to take a simple random sample of wells in the county, measure the nitrate levels, and assess compliance. What size sample should the health department obtain if the estimate is desired to be within 2 percent with 95% confidence if:
+
+    a.  there is no prior information available?
+    b.  a study conducted two years ago showed that approximately 7% of the wells in Madison County had nitrate levels exceeding the MCL.

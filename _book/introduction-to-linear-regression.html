@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter11 Introduction to Linear Regression | MATH 224 Workbook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter11 Introduction to Linear Regression | MATH 224 Workbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter11 Introduction to Linear Regression | MATH 224 Workbook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+<meta name="author" content="Dr Mostafa" />
+
+
+<meta name="date" content="2025-02-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="inference-for-numerical-data.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH224 Worksheet</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#table-of-content"><i class="fa fa-check"></i><b>1.1</b> Table of Content</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-data.html"><a href="introduction-to-data.html"><i class="fa fa-check"></i><b>2</b> Introduction to Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#quick-review"><i class="fa fa-check"></i><b>2.1</b> Quick Review:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>3</b> Summarizing data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#examining-numerical-data"><i class="fa fa-check"></i><b>3.1</b> Examining Numerical Data</a></li>
+<li class="chapter" data-level="3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#examining-categorical-data"><i class="fa fa-check"></i><b>3.2</b> Examining Categorical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="probability-basics-worksheet.html"><a href="probability-basics-worksheet.html"><i class="fa fa-check"></i><b>4</b> Probability Basics Worksheet</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="probability-basics-worksheet.html"><a href="probability-basics-worksheet.html#quick-review-1"><i class="fa fa-check"></i><b>4.1</b> Quick Review:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html"><i class="fa fa-check"></i><b>5</b> Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#exercises"><i class="fa fa-check"></i><b>5.1</b> Exercises</a></li>
+<li class="chapter" data-level="5.2" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#solution"><i class="fa fa-check"></i><b>5.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="normal-distribution-worksheet.html"><a href="normal-distribution-worksheet.html"><i class="fa fa-check"></i><b>6</b> Normal Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="normal-distribution-worksheet.html"><a href="normal-distribution-worksheet.html#review-on-normal-distribution"><i class="fa fa-check"></i><b>6.1</b> Review on Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="binomial-distribution.html"><a href="binomial-distribution.html"><i class="fa fa-check"></i><b>7</b> Binomial Distribution</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="binomial-distribution.html"><a href="binomial-distribution.html#binomial-distribution-condition"><i class="fa fa-check"></i><b>7.1</b> Binomial Distribution Condition</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><i class="fa fa-check"></i><b>8</b> Inference for Proportion Worksheet (Point Estimates and Sampling Variability)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#central-limit-theorem-for-sampling-distribution-of-sample-proportions"><i class="fa fa-check"></i><b>8.1</b> Central Limit Theorem (for Sampling Distribution of Sample Proportions)</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#inference-for-proportion-worksheet-hypothesis-testing-for-p"><i class="fa fa-check"></i><b>8.1.1</b> Inference for Proportion Worksheet (Hypothesis Testing for <span class="math inline">\(p\)</span>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html"><i class="fa fa-check"></i><b>9</b> Confidence Intervals for Proportion</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#point-estimate"><i class="fa fa-check"></i><b>9.1</b> Point Estimate</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#the-central-limit-theorem-for-proportions"><i class="fa fa-check"></i><b>9.1.1</b> The Central Limit Theorem for proportions</a></li>
+<li class="chapter" data-level="9.1.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval"><i class="fa fa-check"></i><b>9.1.2</b> Confidence Interval</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="inference-for-numerical-data.html"><a href="inference-for-numerical-data.html"><i class="fa fa-check"></i><b>10</b> Inference for Numerical Data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="inference-for-numerical-data.html"><a href="inference-for-numerical-data.html#central-limit-theorem-sampling-distribution-of-sample-mean"><i class="fa fa-check"></i><b>10.1</b> Central Limit Theorem (Sampling distribution of sample mean)</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html"><i class="fa fa-check"></i><b>11</b> Introduction to Linear Regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html#linear-regression"><i class="fa fa-check"></i><b>11.1</b> Linear Regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 224 Workbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-linear-regression" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter11</span> Introduction to Linear Regression<a href="introduction-to-linear-regression.html#introduction-to-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="linear-regression" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Linear Regression<a href="introduction-to-linear-regression.html#linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Regression analysis concerns the study of relationships between quantitative variables: identifying, estimating, and validating the relationship.</p></li>
+<li><p>(Simple) linear regression is to study if the relationship between two numerical variables is linear, and the strength of the linear association.</p></li>
+<li><p>We begin with the scatter plot of two numerical variables, to observe if there is a linear association.</p></li>
+<li><p>If there seems to be a linear relationship, we use the linear model <span class="math inline">\(y = \beta_0 + \beta_1x\)</span> to best fit the data.</p></li>
+<li><p>Using a sample data set <span class="math inline">\((x_i, y_i)\)</span> for <span class="math inline">\(i = 1, \ldots, n\)</span> and least squares error, we derive an estimated model <span class="math inline">\(\hat{y} = b_0 + b_1x\)</span>.</p></li>
+</ul>
+<p><strong>Prediction (Predicted value)</strong></p>
+<p>If the least square regression model is given by <span class="math inline">\(\hat{y} = b_0 + b_1x\)</span>, then for a given <span class="math inline">\(x\)</span>, the predicted value is <span class="math inline">\(\hat{y} = b_0 + b_1x\)</span> – plug in the value of <span class="math inline">\(x\)</span>.</p>
+<p><strong>Interpreting the slope and the y-intercept of a regression line</strong></p>
+<ul>
+<li><p>The slope <span class="math inline">\(b_1\)</span> is the amount by which the predicted value <span class="math inline">\(y\)</span> changes when <span class="math inline">\(x\)</span> is increased by one unit.</p></li>
+<li><p>The y-intercept <span class="math inline">\(b_0\)</span> is the predicted value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x = 0\)</span>.</p></li>
+</ul>
+<p><strong>Residual</strong></p>
+<p>For a data set <span class="math inline">\((x_i, y_i)\)</span> for <span class="math inline">\(i = 1, \ldots, n\)</span>, the error of using the model is: <span class="math inline">\(e_i = y_i - \hat{y}_i = y_i - (b_0 + b_1x_i)\)</span></p>
+<p><strong>The Correlation Coefficient</strong></p>
+<ul>
+<li>The mathematical formula is:</li>
+</ul>
+<p><span class="math inline">\(R = \frac{1}{n-1}\sum_{i=1}^n \frac{(x_i - \bar{x})(y_i - \bar{y})}{s_x s_y}\)</span></p>
+<ul>
+<li><p>The value of <span class="math inline">\(R\)</span>: <span class="math inline">\(-1 \leq R \leq 1\)</span></p></li>
+<li><p>The closer <span class="math inline">\(|R|\)</span> is to 1, the stronger the linear association.</p></li>
+</ul>
+<p><strong>The Coefficient of Determination:</strong> <span class="math inline">\(R^2\)</span></p>
+<ul>
+<li><p>The coefficient of determination <span class="math inline">\(R^2\)</span> is a measure used in statistical analysis to assess how well a model explains and predicts future outcomes.</p></li>
+<li><p><span class="math inline">\(R^2\)</span> is the proportion (fraction) of the variation in the response variable that is predictable (can be explained) from the explanatory variable.</p></li>
+</ul>
+<p><strong>Conditions to have the least squares regression</strong></p>
+<p>Visually inspect the scatter plot:</p>
+<ul>
+<li>The relationship between the explanatory and the response variable should be linear.</li>
+<li>The histogram of residuals distribution should be normal (symmetric, bell-shaped).</li>
+<li>The variability of points should be roughly constant.</li>
+<li>No extreme outliers.</li>
+</ul>
+<p><strong>Computing the coefficients in</strong> <span class="math inline">\(\hat{y} = b_0 + b_1x\)</span></p>
+<p><span class="math inline">\(b_1 = \frac{s_y}{s_x} R\)</span></p>
+<p><span class="math inline">\(b_0 = \bar{y} - b_1 \bar{x}\)</span></p>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(R\)</span> and <span class="math inline">\(b_1\)</span> have the same sign.</p></li>
+<li><p>Equivalently, <span class="math inline">\(R = \frac{s_x}{s_y} b_1\)</span></p></li>
+</ol>
+<p><strong>Exercise 1</strong></p>
+<p>Describe the linear relationship from the scatter plot.</p>
+<p><img src="images/img55.png" width="200" /></p>
+<p>Select the correct choice.</p>
+<p><em>(a)</em> Strong positive relationship</p>
+<p><em>(b)</em> Strong negative relationship</p>
+<p><em>(c)</em> Weak positive relationship</p>
+<p><em>(d)</em> Weak negative relationship</p>
+<p><strong>Exercise 2</strong></p>
+<p>The mean travel time from one stop to the next on the Coast Starlight is 129 minutes, with a standard deviation of 113 minutes. The mean distance from one stop to the next is 108 miles with a standard deviation of 99 miles. The correlation between travel time and distance is 0.636.</p>
+<p><em>(a)</em> Write the equation of the regression line for predicting travel time (based on the distance).</p>
+<p><em>(b)</em> Interpret the slope and the intercept in this context.</p>
+<p><em>(c)</em> Calculate and interpret <span class="math inline">\(R^2\)</span>.</p>
+<p><em>(d)</em> The distance between Santa Barbara and LA is 103 miles. Use this model to estimate the time it takes to travel between these two cities.</p>
+<p><em>(e)</em> It actually takes the Coast Starlight about 168 minutes to travel between Santa Barbara and LA. Calculate the residual. Is the model over or underestimating the time?</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="inference-for-numerical-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-QA.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter"
+
+rmd_files: [
+  "index.Rmd",
+  "001-QA.Rmd",
+  "01-QA.Rmd",
+  "002-QA.Rmd",
+  "02-QA.Rmd",
+  "003-QA.Rmd",
+  "03-QA.Rmd",
+  "004-QA.Rmd",
+  "04-QA.Rmd",
+  "005-QA.Rmd",
+  "05-QA.Rmd"
+]
+

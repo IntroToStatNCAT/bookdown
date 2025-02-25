@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 11 MATH 224: Inference for Proportion Worksheet (Point Estimates and Sampling Variability) | MATH 224 Workbook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 11 MATH 224: Inference for Proportion Worksheet (Point Estimates and Sampling Variability) | MATH 224 Workbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 11 MATH 224: Inference for Proportion Worksheet (Point Estimates and Sampling Variability) | MATH 224 Workbook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+<meta name="author" content="Dr Mostafa" />
+
+
+<meta name="date" content="2024-07-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="math-224-discrete-random-variables.html"/>
+<link rel="next" href="math-224-inference-for-numerical-data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH224 Worksheet</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#table-of-content"><i class="fa fa-check"></i><b>1.1</b> Table of Content</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html"><i class="fa fa-check"></i><b>2</b> MATH 224: Introduction to Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="math-224-introduction-to-data.html"><a href="math-224-introduction-to-data.html#quick-review"><i class="fa fa-check"></i><b>2.1</b> Quick Review:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html"><i class="fa fa-check"></i><b>3</b> MATH 224: Binomial Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html#exercises"><i class="fa fa-check"></i><b>3.1</b> Exercises</a></li>
+<li class="chapter" data-level="3.2" data-path="math-224-binomial-distribution-worksheet.html"><a href="math-224-binomial-distribution-worksheet.html#solution"><i class="fa fa-check"></i><b>3.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html"><i class="fa fa-check"></i><b>4</b> MATH 224: Examining Numerical Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#quick-review-1"><i class="fa fa-check"></i><b>4.1</b> Quick Review:</a></li>
+<li class="chapter" data-level="4.2" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#examining-categorical-data"><i class="fa fa-check"></i><b>4.2</b> Examining Categorical Data</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="math-224-examining-numerical-data.html"><a href="math-224-examining-numerical-data.html#quick-review-2"><i class="fa fa-check"></i><b>4.2.1</b> Quick Review:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html"><i class="fa fa-check"></i><b>5</b> MATH 224: Probability Basics</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#quick-review-3"><i class="fa fa-check"></i><b>5.1</b> Quick Review:</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#probability-rules"><i class="fa fa-check"></i><b>5.1.1</b> Probability Rules</a></li>
+<li class="chapter" data-level="5.1.2" data-path="math-224-probability-basics.html"><a href="math-224-probability-basics.html#conditional-probability-independence-and-bayes-theorem"><i class="fa fa-check"></i><b>5.1.2</b> Conditional Probability, Independence, and Bayes’ Theorem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html"><i class="fa fa-check"></i><b>6</b> MATH 224: Binomial Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#binomial-distribution-condition"><i class="fa fa-check"></i><b>6.1</b> Binomial Distribution Condition</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="math-224-binomial-distribution-worksheet-1.html"><a href="math-224-binomial-distribution-worksheet-1.html#normal-distribution-worksheet"><i class="fa fa-check"></i><b>6.1.1</b> Normal Distribution Worksheet</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html"><i class="fa fa-check"></i><b>7</b> MATH 224: Probability Basics Worksheet</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html#exercises-1"><i class="fa fa-check"></i><b>7.1</b> Exercises</a></li>
+<li class="chapter" data-level="7.2" data-path="math-224-probability-basics-worksheet.html"><a href="math-224-probability-basics-worksheet.html#solution-1"><i class="fa fa-check"></i><b>7.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="math-224-binomial-distribution-worksheet-2.html"><a href="math-224-binomial-distribution-worksheet-2.html"><i class="fa fa-check"></i><b>8</b> MATH 224: Binomial Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="math-224-binomial-distribution-worksheet-2.html"><a href="math-224-binomial-distribution-worksheet-2.html#exercises-2"><i class="fa fa-check"></i><b>8.1</b> Exercises</a></li>
+<li class="chapter" data-level="8.2" data-path="math-224-binomial-distribution-worksheet-2.html"><a href="math-224-binomial-distribution-worksheet-2.html#solution-2"><i class="fa fa-check"></i><b>8.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html"><i class="fa fa-check"></i><b>9</b> Confidence Intervals for Proportion</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#point-estimate"><i class="fa fa-check"></i><b>9.1</b> Point Estimate</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#the-central-limit-theorem-for-proportions"><i class="fa fa-check"></i><b>9.1.1</b> The Central Limit Theorem for proportions</a></li>
+<li class="chapter" data-level="9.1.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval"><i class="fa fa-check"></i><b>9.1.2</b> Confidence Interval</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html"><i class="fa fa-check"></i><b>10</b> MATH 224: Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html#exercises-3"><i class="fa fa-check"></i><b>10.1</b> Exercises</a></li>
+<li class="chapter" data-level="10.2" data-path="math-224-discrete-random-variables.html"><a href="math-224-discrete-random-variables.html#solution-3"><i class="fa fa-check"></i><b>10.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><i class="fa fa-check"></i><b>11</b> MATH 224: Inference for Proportion Worksheet (Point Estimates and Sampling Variability)</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#central-limit-theorem-for-sampling-distribution-of-sample-proportions"><i class="fa fa-check"></i><b>11.1</b> Central Limit Theorem (for Sampling Distribution of Sample Proportions)</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#inference-for-proportion-worksheet-hypothesis-testing-for-p"><i class="fa fa-check"></i><b>11.1.1</b> Inference for Proportion Worksheet (Hypothesis Testing for <span class="math inline">\(p\)</span>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="math-224-inference-for-numerical-data.html"><a href="math-224-inference-for-numerical-data.html"><i class="fa fa-check"></i><b>12</b> MATH 224: Inference for Numerical Data</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="math-224-inference-for-numerical-data.html"><a href="math-224-inference-for-numerical-data.html#central-limit-theorem-sampling-distribution-of-sample-mean"><i class="fa fa-check"></i><b>12.1</b> Central Limit Theorem (Sampling distribution of sample mean)</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="math-224-introduction-to-linear-regression.html"><a href="math-224-introduction-to-linear-regression.html"><i class="fa fa-check"></i><b>13</b> MATH 224: Introduction to Linear Regression</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="math-224-introduction-to-linear-regression.html"><a href="math-224-introduction-to-linear-regression.html#linear-regression"><i class="fa fa-check"></i><b>13.1</b> Linear Regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 224 Workbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> MATH 224: Inference for Proportion Worksheet (Point Estimates and Sampling Variability)<a href="math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Basic Terms</strong></p>
+<ul>
+<li>Sample proportion <span class="math inline">\(\hat{p} = \frac{x}{n}\)</span><br />
+</li>
+<li>Sample proportion <span class="math inline">\(\hat{p}\)</span> is the unbiased point estimator for the population proportion <span class="math inline">\(p\)</span></li>
+<li>A value of <span class="math inline">\(\hat{p}\)</span> is a point estimate</li>
+<li>Error = <span class="math inline">\(\hat{p} - p\)</span></li>
+</ul>
+<div id="central-limit-theorem-for-sampling-distribution-of-sample-proportions" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Central Limit Theorem (for Sampling Distribution of Sample Proportions)<a href="math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#central-limit-theorem-for-sampling-distribution-of-sample-proportions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When observations are independent (take random samples of fixed size <span class="math inline">\(n\)</span> without replacement); the sample size <span class="math inline">\(n\)</span> is large enough, i.e. <span class="math inline">\(np \geq 10\)</span> and <span class="math inline">\(n(1-p) \geq 10\)</span>; and sample size <span class="math inline">\(n &lt; 10\%\)</span> of the population size then the sample proportion <span class="math inline">\(\hat{p}\)</span> is approximately normal with mean = <span class="math inline">\(p\)</span> and standard deviation = <span class="math inline">\(\sqrt{\frac{p(1-p)}{n}}\)</span>: <span class="math inline">\(\hat{p} \sim N(p, \sqrt{\frac{p(1-p)}{n}})\)</span></p>
+<p>That is, <span class="math inline">\(z = \frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}} \sim N(0, 1)\)</span>.</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><p>The requirement that the sample size <span class="math inline">\(n &lt; 10\%\)</span> of population size is to have the standard deviation <span class="math inline">\(\sqrt{\frac{p(1-p)}{n}}\)</span>.</p></li>
+<li><p>If the sample size <span class="math inline">\(n &lt; 10\%\)</span> of population size, then the <span class="math inline">\(\sqrt{\frac{p(1-p)}{n}}\)</span> is overly estimated SD, and the SD will typically adjust by a factor <span class="math inline">\(\sqrt{\frac{N-n}{N-1}}\)</span>,i.e. <span class="math inline">\(\sqrt{\frac{N-n}{N-1}} \times \sqrt{\frac{p(1-p)}{n}}\)</span>.</p></li>
+<li><p>When using <span class="math inline">\(\hat{p}\)</span> to estimate <span class="math inline">\(p\)</span>, the Standard Error of <span class="math inline">\(\hat{p}\)</span> is the standard deviation of its sampling distribution: <span class="math inline">\(S.E._{\hat{p}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span></p></li>
+<li><p>When <span class="math inline">\(p\)</span> is unknown, <span class="math inline">\(\hat{p}\)</span> is used to replace <span class="math inline">\(p\)</span> then check <span class="math inline">\(n\hat{p} \geq 10\)</span> and <span class="math inline">\(n(1-\hat{p}) \geq 10\)</span> (success and failure condition) estimated <span class="math inline">\(S.E. \approx \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span></p></li>
+</ul>
+<p><strong>Exercise 1</strong></p>
+<p>In a random sample with size <span class="math inline">\(n=9000\)</span>, the count of “yes” is <span class="math inline">\(x=250\)</span>.</p>
+<p><em>(a)</em> Compute the sample proportion <span class="math inline">\(\hat{p} = \frac{x}{n}\)</span>.</p>
+<p><em>(b)</em> Compute the estimated standard error of the sample proportion <span class="math inline">\(S.E. \approx \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span>.</p>
+<p><strong>Exercise 2</strong></p>
+<p>In a random sample of 765 adults in the U.S., 322 say they could not cover $600 unexpected expense without borrowing money or going to debt.</p>
+<p><em>(a)</em> What population is under consideration in the data set?</p>
+<p><em>(b)</em> What parameter is being estimated?</p>
+<p><em>(c)</em> Compute a point estimate for the parameter using the given information above?</p>
+<p><em>(d)</em> What is the estimated standard error?</p>
+<p><strong>Exercise 3</strong></p>
+<p>Of all freshmen at a large college, 19% made the dean’s list.</p>
+<p><em>(a)</em> What is the value of the interested parameter? State the sampling distribution of sample proportion for sample size 90.</p>
+<p><em>(b)</em> If a random sample of 90 freshmen selected 14 made the dean’s list. Compute the sample proportion and the Z-score.</p>
+<p><em>(c)</em> If a random sample of 90 freshmen selected 20 made the dean’s list. Compute the sample proportion and the Z-score.</p>
+<p><em>(d)</em> What is the probability that at most 14 of selected 90 freshmen made the dean’s list?</p>
+<p><em>(e)</em> What is the probability that between 14 to 20 students of selected 90 freshmen made the dean’s list?</p>
+<p><strong>Inference for Proportion Worksheet (Confidence Interval)</strong></p>
+<p><strong>Review</strong></p>
+<p>About critical value <span class="math inline">\(z^*\)</span> or <span class="math inline">\(z_{\alpha/2}\)</span>: For <span class="math inline">\(N(0,1)\)</span>, <span class="math inline">\(z_{\alpha/2}\)</span> is the cut-off point with upper tail of probability <span class="math inline">\(\alpha/2\)</span></p>
+<p><img src="images/img48.png" height="100px" width="300px"/></img></p>
+<p><strong>How to find</strong> <span class="math inline">\(z_{\alpha/2}\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li><p>For <span class="math inline">\(100(1-\alpha)\%\)</span> confidence level, find <span class="math inline">\(\alpha\)</span> then <span class="math inline">\(\alpha/2\)</span></p></li>
+<li><p>Use R: <span class="math inline">\(qnorm\left(\frac{\alpha}{2}, \text{lower.tail} = \text{FALSE}\right)\)</span> or <span class="math inline">\(qnorm\left(1 - \frac{\alpha}{2}\right)\)</span></p></li>
+</ol>
+<p><strong>Common</strong> <span class="math inline">\(z_{\alpha/2}\)</span> values:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Confidence level</th>
+<th><span class="math inline">\(\alpha\)</span></th>
+<th><span class="math inline">\(z_{\alpha/2}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>90%</td>
+<td>0.10</td>
+<td><span class="math inline">\(z_{0.05} = 1.644854 \approx 1.645\)</span></td>
+</tr>
+<tr class="even">
+<td>95%</td>
+<td>0.05</td>
+<td><span class="math inline">\(z_{0.025} = 1.959964 \approx 1.96\)</span></td>
+</tr>
+<tr class="odd">
+<td>98%</td>
+<td>0.02</td>
+<td><span class="math inline">\(z_{0.01} = 2.326348 \approx 2.326\)</span></td>
+</tr>
+<tr class="even">
+<td>99%</td>
+<td>0.01</td>
+<td><span class="math inline">\(z_{0.005} = 2.575829 \approx 2.576\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Construct</strong> <span class="math inline">\(100(1-\alpha)\%\)</span> confidence interval: Use <span class="math inline">\(\hat{p}\)</span>, <span class="math inline">\(n\)</span>, and <span class="math inline">\(z_{\alpha/2}\)</span></p>
+<p><span class="math inline">\(\hat{p} \pm z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span> (or <span class="math inline">\((\hat{p} - z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}})\)</span>)</p>
+<p><img src="images/img50.png" height="150px" width="350px"/></img></p>
+<p><strong>Margin of Error (M.E.)</strong></p>
+<p><span class="math inline">\(M.E. = z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span></p>
+<p>So, C.I.: point estimate <span class="math inline">\(\pm M.E.\)</span></p>
+<p>Note: the point estimate is the middle point; the <span class="math inline">\(M.E.\)</span> = half of the length of C.I.)</p>
+<p><strong>Interpretation of C.I.:</strong></p>
+<p>With the confidence level of <span class="math inline">\(100(1-\alpha)\%\)</span> and a sample proportion <span class="math inline">\(\hat{p}\)</span> with sample size <span class="math inline">\(n\)</span>, we are <span class="math inline">\(100(1-\alpha)\%\)</span> confident that the population proportion <span class="math inline">\(p\)</span> is in the confidence interval <span class="math inline">\((\hat{p} - z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}})\)</span></p>
+<p><strong>Minimum sample size to guarantee the specified</strong> <span class="math inline">\(M.E. \leq a\)</span></p>
+<p>For known <span class="math inline">\(p\)</span>: <span class="math inline">\(n = \text{ceiling} \left[ \frac{p(1-p) \times z_{\alpha/2}^2}{a^2} \right]\)</span></p>
+<p>For unknown <span class="math inline">\(p\)</span>: <span class="math inline">\(n = \text{ceiling} \left[ \frac{1}{4} \times \frac{z_{\alpha/2}^2}{a^2} \right]\)</span></p>
+<p><strong>Exercise 1</strong></p>
+<p><em>(a)</em> Construct a 95% confidence interval using a sample proportion <span class="math inline">\(\hat{p} = 0.3\)</span> and sample size <span class="math inline">\(n=1000\)</span>.</p>
+<p><em>(b)</em> Construct a 90% confidence interval using a sample proportion <span class="math inline">\(\hat{p} = 0.3\)</span> and sample size <span class="math inline">\(n=1000\)</span>.</p>
+<p><em>(c)</em> Construct a 95% confidence interval using a sample proportion <span class="math inline">\(\hat{p} = 0.3\)</span> and sample size <span class="math inline">\(n=100\)</span>.</p>
+<p><strong>Exercise 2</strong>. Circle the proper choices.</p>
+<p><em>(a)</em> The confidence interval is ___________(wider/narrower) if the sample size is increasing.</p>
+<p><em>(b)</em> The confidence interval is ___________(wider/narrower) if the confidence level is increasing.</p>
+<p><strong>Exercise 3</strong></p>
+<p><em>(a)</em> Construct a 98% confidence interval using a sample proportion 45% and standard error 1.2%. (Assume that the CLT can be applied)</p>
+<p><em>(b)</em> Compute the margin of error using the same information of (a).</p>
+<p><strong>Exercise 4</strong></p>
+<p>A website is trying to increase registration of first-time visitors using a new site design. Of 752 randomly sampled visitors over a month who saw the new design, 64 registered.</p>
+<p><em>(a)</em> Compute the sample proportion.</p>
+<p><em>(b)</em> Compute the standard error.</p>
+<p><em>(c)</em> Construct and interpret a 90% confidence interval for the fraction of first-time visitors of the site who would register under the new design.</p>
+<p><strong>Exercise 5</strong>. For a confidence interval of proportion <span class="math inline">\((0.291, 0.309)\)</span> find the following:</p>
+<p><em>(a)</em> The sample proportion that was used to create this C.I.</p>
+<p><em>(b)</em> The M.E. (Margin of Error)</p>
+<p><strong>Exercise 6</strong></p>
+<p>A public health survey is going to estimate the proportion of a population <span class="math inline">\(p\)</span> having defective vision. How many persons should be examined if the public health commissioner wishes to be 95% certain that the margin of error is below 0.04 when:</p>
+<p><em>(a)</em> <span class="math inline">\(p\)</span> is known to be about 0.45.</p>
+<p><em>(b)</em> There is no knowledge about the value of <span class="math inline">\(p\)</span>?</p>
+<p><strong>Note</strong>. Similar result for mean:</p>
+<ul>
+<li><p>CLT: In random sampling from a population with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>, when the sample size <span class="math inline">\(n\)</span> is large (<span class="math inline">\(n \geq 30\)</span>), the distribution of sample mean <span class="math inline">\(\bar{X}\)</span> is approximately normal: <span class="math inline">\(\bar{X} \sim N(\mu, \frac{\sigma}{\sqrt{n}})\)</span>.</p></li>
+<li><p>Use <span class="math inline">\(\bar{x}\)</span> as point estimate for <span class="math inline">\(\mu\)</span>.</p></li>
+<li><p><span class="math inline">\(S.E. = \frac{\sigma}{\sqrt{n}} \approx \frac{s}{\sqrt{n}}\)</span></p></li>
+<li><p><span class="math inline">\(100(1-\alpha)\%\)</span> confidence interval for mean: <span class="math inline">\(\bar{x} \pm z_{\alpha/2} \times \sqrt{\frac{s}{n}}\)</span> or <span class="math inline">\((\bar{x} - z_{\alpha/2} \times \sqrt{\frac{s}{n}}, \bar{x} + z_{\alpha/2} \times \sqrt{\frac{s}{n}})\)</span></p></li>
+<li><p><span class="math inline">\(M.E. = z_{\alpha/2} \times S.E. = z_{\alpha/2} \times \sqrt{\frac{s}{n}}\)</span></p></li>
+</ul>
+<p><strong>Exercise 7</strong></p>
+<p>The GSS (General Social Survey) asked the question: “For how many days during the past 30 days was your mental health not good (stress, depression, with emotions)?” Based on responses from 1151 US residents, a 95% confidence interval (3.40, 4.24) (days) was reported in 2014.</p>
+<p><em>(a)</em> Determine the sample mean (days).</p>
+<p><em>(b)</em> Determine the margin of error (M.E.).</p>
+<p><em>(c)</em> What is the value of <span class="math inline">\(z_{\alpha/2}\)</span> for 95% confidence level?</p>
+<p><em>(d)</em> Write a sentence to interpret this confidence interval.</p>
+<div id="inference-for-proportion-worksheet-hypothesis-testing-for-p" class="section level3 hasAnchor" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> Inference for Proportion Worksheet (Hypothesis Testing for <span class="math inline">\(p\)</span>)<a href="math-224-inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#inference-for-proportion-worksheet-hypothesis-testing-for-p" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Learning Objectives:</strong></p>
+<p>Be able to</p>
+<ul>
+<li>State appropriate hypotheses about a population parameter</li>
+<li>Compute a p-value using a sample and interpret the p-value</li>
+<li>Make an appropriate conclusion based on a p-value and a specified significance level</li>
+</ul>
+<p><strong>Hypothesis Testing Steps</strong></p>
+<ol style="list-style-type: decimal">
+<li>Formulate the null hypothesis and the alternative hypothesis</li>
+<li>Use sample to compute p-value (or compute the test statistic and use the rejection region based on given significance level)</li>
+<li>Make decision for specified significance level</li>
+</ol>
+<p><strong>Formulation of Hypothesis</strong></p>
+<p><strong>The null hypothesis:</strong> <span class="math inline">\(H_0: p = p_0\)</span></p>
+<p><strong>The alternative hypothesis is one of the three:</strong></p>
+<ul>
+<li><span class="math inline">\(H_a: p &gt; p_0\)</span> (right-sided) (or right-tailed)</li>
+<li><span class="math inline">\(H_a: p &lt; p_0\)</span> (left-sided) (or left-tailed)</li>
+<li><span class="math inline">\(H_a: p \neq p_0\)</span> (two-sided) (or two-tailed)</li>
+</ul>
+<p><strong>What is p-value</strong></p>
+<p>A p-value is the calculated probability of observing data at least as favorable to the alternative hypothesis, assuming that the null hypothesis is true (in this section, we use the observed <span class="math inline">\(\hat{p}\)</span>, and under assumption the sample proportion <span class="math inline">\(\sim N(p_0, \sqrt{\frac{p_0(1-p_0)}{n}})\)</span>)</p>
+<p><strong>How to compute p-value</strong></p>
+<p>Use a sample of sample size <span class="math inline">\(n\)</span> with sample proportion <span class="math inline">\(\hat{p}=p_1\)</span>, under the assumption that:</p>
+<p><span class="math inline">\(\hat{p}\)</span> <span class="math inline">\(\sim N(p_0, \sqrt{\frac{p_0(1-p_0)}{n}})\)</span>).</p>
+<p>Let <span class="math inline">\(z_1 = \frac{p_1 - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}\)</span> (this is called the <span class="math inline">\(z\)</span>-test statistic)</p>
+<ul>
+<li>For left-sided test, p-value is <span class="math inline">\(P(\hat{p} &lt; p_1)\)</span>, or <span class="math inline">\(P(Z &lt; z_1)\)</span>,</li>
+</ul>
+<p>use pnorm <span class="math inline">\(({p_1, p_0,}{\sqrt{\frac{p_0(1-p_0)}{n}}})\)</span> or pnorm <span class="math inline">\((z_1)\)</span></p>
+<ul>
+<li>For right-sided test, p-value is <span class="math inline">\(P(\hat{p} &gt; p_1)\)</span>, or <span class="math inline">\(P(Z &gt; z_1)\)</span>, use pnorm<span class="math inline">\(({p_1,p_0,}{\sqrt{\frac{p_0(1-p_0)}{n}}}, lower.tail = FALSE)\)</span> or</li>
+</ul>
+<p>pnorm <span class="math inline">\((z_1, lower.tail = FALSE)\)</span></p>
+<ul>
+<li>For two-sided test, p-value is <span class="math inline">\(P(|Z| &gt; |z_1|)\)</span>, use 2*pnorm <span class="math inline">\((-|z_1|)\)</span> or</li>
+</ul>
+<p>2*pnorm <span class="math inline">\((|z_1|, lower.tail = FALSE)\)</span></p>
+<p><strong>Make decision by comparing p-value with significance level</strong> <span class="math inline">\(\alpha\)</span></p>
+<ul>
+<li><p>If p-value <span class="math inline">\(\leq \alpha\)</span>, then we have enough evidence to reject <span class="math inline">\(H_0\)</span> and substantiate <span class="math inline">\(H_a\)</span>;</p></li>
+<li><p>If p-value <span class="math inline">\(&gt; \alpha\)</span>, then we do not have enough evidence to reject <span class="math inline">\(H_0\)</span></p></li>
+<li><p>The default value of significance level is <span class="math inline">\(\alpha = 0.05\)</span></p></li>
+</ul>
+<p><strong>Using confidence interval for two-sided test</strong></p>
+<p>For <span class="math inline">\(H_0: p = p_0\)</span>, <span class="math inline">\(H_a: p \neq p_0\)</span> (two-sided) and significance level <span class="math inline">\(\alpha\)</span>, construct a <span class="math inline">\(100(1-\alpha)\%\)</span> confidence interval: <span class="math inline">\(\hat{p} \pm z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span></p>
+<p>Make decision:</p>
+<ul>
+<li>If <span class="math inline">\(p_0\)</span> is not in the C.I. then we reject <span class="math inline">\(H_0\)</span> in favor of <span class="math inline">\(H_a\)</span>;</li>
+<li>If <span class="math inline">\(p_0\)</span> is in the C.I. then we fail to reject <span class="math inline">\(H_0\)</span>.</li>
+</ul>
+<p><strong>Type I and Type II errors</strong></p>
+<p><img src="images/img51.png" height="150px" width="500px"/></img></p>
+<p><strong>Exercise 1</strong></p>
+<p>Formulate the null and alternative hypotheses in the following situations:</p>
+<p><em>(a)</em> A company claims that the proportion of its customers that have complaints against the company is now less than 0.13.</p>
+<p><em>(b)</em> An inspector wants to establish that 2×4 lumber at a mill does not meet a specification that requires at most 5% break under a standard load.</p>
+<p><em>(c)</em> A university official believes that the proportion of students who currently hold part-time jobs has changed from the value 0.26 that prevailed four years ago.</p>
+<p><strong>Exercise 2</strong></p>
+<p>A census recorded five years ago that 20% of the families in a large community lived below the poverty level. To determine if this percentage has changed, a random sample of 400 families is studied and 70 are found to be living below the poverty level. Does this finding indicate that the current percentage of families earning income below the poverty level has changed from what it was five years ago? (Use significance level <span class="math inline">\(\alpha=0.05\)</span>)</p>
+<p>Follow the steps to conduct the hypotheses testing:</p>
+<p><em>(a)</em> Formulate the hypotheses</p>
+<p><em>(b)</em> Compute the sample proportion</p>
+<p><em>(c)</em> Compute the test statistic</p>
+<p><em>(d)</em> Compute the p-value</p>
+<p><em>(e)</em> Draw conclusion using the significance level <span class="math inline">\(\alpha=0.05\)</span>.</p>
+<p><strong>Exercise 3</strong></p>
+<p>Conduct hypotheses testing.</p>
+<p>Follow the example (Please redo the example by yourself)</p>
+<p><strong>Example</strong></p>
+<p>Claim: <span class="math inline">\(p&lt;0.32\)</span>, <span class="math inline">\(n=120\)</span>, <span class="math inline">\(p=0.233\)</span>, <span class="math inline">\(\alpha=0.05\)</span></p>
+<p><strong>Solution</strong></p>
+<p><em>(a)</em> Formulate the hypotheses: <span class="math inline">\(H_0: p=0.32\)</span>, <span class="math inline">\(H_a: p&lt;0.32\)</span></p>
+<p><em>(b)</em> Compute the <span class="math inline">\(z\)</span>-test statistic: <span class="math inline">\(z = \frac{0.233-0.32}{\sqrt{\frac{0.32 \times 0.68}{120}}} = -2.043057\)</span> (R-code: <code>(0.233-0.32)/sqrt(0.32*0.68/120)</code>)</p>
+<p><em>(c)</em> Compute the p-value: p-value <span class="math inline">\(= P(Z &lt; -2.043057) = 0.020534\)</span> (R-code: <code>pnorm(-2.043057)</code>)</p>
+<p><em>(d)</em> Draw conclusion: since the p-value is less than <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(0.0205 &lt; 0.05\)</span>, we reject the null hypothesis and support the alternative hypothesis: We have strong evidence to support the claim that the proportion is less than 0.32 (<span class="math inline">\(p&lt;0.32\)</span>).</p>
+<p>Do the following hypotheses testing for given claims, sample size, sample proportion, and significance level:</p>
+<ol style="list-style-type: decimal">
+<li><p>Claim: <span class="math inline">\(p&lt;0.56\)</span>, <span class="math inline">\(n=86\)</span>, <span class="math inline">\(\hat{p}=0.387\)</span>, <span class="math inline">\(\alpha=0.10\)</span></p></li>
+<li><p>Claim: <span class="math inline">\(p&gt;0.75\)</span>, <span class="math inline">\(n=228\)</span>, <span class="math inline">\(\hat{p}=0.818\)</span>, <span class="math inline">\(\alpha=0.02\)</span></p></li>
+<li><p>Claim: <span class="math inline">\(p \neq 0.60\)</span>, <span class="math inline">\(n=77\)</span>, <span class="math inline">\(\hat{p}=0.709\)</span>, <span class="math inline">\(\alpha=0.02\)</span></p></li>
+<li><p>Claim: <span class="math inline">\(p \neq 0.60\)</span>, <span class="math inline">\(n=77\)</span>, <span class="math inline">\(\hat{p}=0.565\)</span>, <span class="math inline">\(\alpha=0.02\)</span></p></li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="math-224-discrete-random-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="math-224-inference-for-numerical-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-QA.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

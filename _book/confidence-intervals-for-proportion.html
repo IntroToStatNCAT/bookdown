@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter9 Confidence Intervals for Proportion | MATH 224 Workbook</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter9 Confidence Intervals for Proportion | MATH 224 Workbook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter9 Confidence Intervals for Proportion | MATH 224 Workbook" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+<meta name="author" content="Dr Mostafa" />
+
+
+<meta name="date" content="2025-02-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"/>
+<link rel="next" href="inference-for-numerical-data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH224 Worksheet</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#table-of-content"><i class="fa fa-check"></i><b>1.1</b> Table of Content</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-data.html"><a href="introduction-to-data.html"><i class="fa fa-check"></i><b>2</b> Introduction to Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#quick-review"><i class="fa fa-check"></i><b>2.1</b> Quick Review:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>3</b> Summarizing data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#examining-numerical-data"><i class="fa fa-check"></i><b>3.1</b> Examining Numerical Data</a></li>
+<li class="chapter" data-level="3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#examining-categorical-data"><i class="fa fa-check"></i><b>3.2</b> Examining Categorical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="probability-basics-worksheet.html"><a href="probability-basics-worksheet.html"><i class="fa fa-check"></i><b>4</b> Probability Basics Worksheet</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="probability-basics-worksheet.html"><a href="probability-basics-worksheet.html#quick-review-1"><i class="fa fa-check"></i><b>4.1</b> Quick Review:</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html"><i class="fa fa-check"></i><b>5</b> Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#exercises"><i class="fa fa-check"></i><b>5.1</b> Exercises</a></li>
+<li class="chapter" data-level="5.2" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#solution"><i class="fa fa-check"></i><b>5.2</b> Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="normal-distribution-worksheet.html"><a href="normal-distribution-worksheet.html"><i class="fa fa-check"></i><b>6</b> Normal Distribution Worksheet</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="normal-distribution-worksheet.html"><a href="normal-distribution-worksheet.html#review-on-normal-distribution"><i class="fa fa-check"></i><b>6.1</b> Review on Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="binomial-distribution.html"><a href="binomial-distribution.html"><i class="fa fa-check"></i><b>7</b> Binomial Distribution</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="binomial-distribution.html"><a href="binomial-distribution.html#binomial-distribution-condition"><i class="fa fa-check"></i><b>7.1</b> Binomial Distribution Condition</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><i class="fa fa-check"></i><b>8</b> Inference for Proportion Worksheet (Point Estimates and Sampling Variability)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#central-limit-theorem-for-sampling-distribution-of-sample-proportions"><i class="fa fa-check"></i><b>8.1</b> Central Limit Theorem (for Sampling Distribution of Sample Proportions)</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#inference-for-proportion-worksheet-hypothesis-testing-for-p"><i class="fa fa-check"></i><b>8.1.1</b> Inference for Proportion Worksheet (Hypothesis Testing for <span class="math inline">\(p\)</span>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html"><i class="fa fa-check"></i><b>9</b> Confidence Intervals for Proportion</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#point-estimate"><i class="fa fa-check"></i><b>9.1</b> Point Estimate</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#the-central-limit-theorem-for-proportions"><i class="fa fa-check"></i><b>9.1.1</b> The Central Limit Theorem for proportions</a></li>
+<li class="chapter" data-level="9.1.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval"><i class="fa fa-check"></i><b>9.1.2</b> Confidence Interval</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="inference-for-numerical-data.html"><a href="inference-for-numerical-data.html"><i class="fa fa-check"></i><b>10</b> Inference for Numerical Data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="inference-for-numerical-data.html"><a href="inference-for-numerical-data.html#central-limit-theorem-sampling-distribution-of-sample-mean"><i class="fa fa-check"></i><b>10.1</b> Central Limit Theorem (Sampling distribution of sample mean)</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html"><i class="fa fa-check"></i><b>11</b> Introduction to Linear Regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html#linear-regression"><i class="fa fa-check"></i><b>11.1</b> Linear Regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 224 Workbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="confidence-intervals-for-proportion" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter9</span> Confidence Intervals for Proportion<a href="confidence-intervals-for-proportion.html#confidence-intervals-for-proportion" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<ul>
+<li><p><strong>Point estimate</strong></p>
+<ul>
+<li>statistics vs. parameter</li>
+<li>point estimate for population proportion is <span class="math inline">\(\hat{p}=\frac{x}{n}\)</span></li>
+<li>may also represent a probability of a binomial distribution, such as p=0.5 for a fair coin.</li>
+</ul></li>
+<li><p><strong>Confidence interval</strong> for an unknown parameter</p></li>
+<li><p><strong>Margin of error</strong></p></li>
+<li><p>Interpretation of what is meant by being “95%” confident (think simulations)</p></li>
+<li><p>Formula for confidence interval for population proportion, p.</p></li>
+<li><p>Know z - multipliers for 90%, 95%, and 99% confidence intervals.</p></li>
+<li><p>Requirements:</p>
+<ul>
+<li><p>Random sample (independent)</p></li>
+<li><p>AND large sample size (at least 10 successes <span class="math inline">\(\&amp;\)</span> 10 Failures) np&gt;10 and n(1-p) &gt; 10</p></li>
+<li><p>Calculating sample size to obtained desired margin of error E.</p>
+<ul>
+<li>Using educated guess for population proportion.</li>
+<li>Using p=0.5 for conservative (large) sample size.</li>
+</ul></li>
+<li><p>Round up to nearest integer.</p></li>
+</ul></li>
+</ul>
+<p><strong>Introduction</strong></p>
+<p>Suppose we want to estimate the proportion of adult Americans who believe that immigration is a good thing for the U.S. It is unreasonable to expect that we could survey every adult American. Instead, we use a sample of adult Americans to arrive at an estimate of the proportion. We call this estimate a point estimate.</p>
+<div id="point-estimate" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Point Estimate<a href="confidence-intervals-for-proportion.html#point-estimate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Definition:</strong></p>
+<p>A point estimate is the value of a statistic (based on a sample) that estimates the value of a population parameter.</p>
+<p><strong>The sample proportion</strong> <span class="math inline">\(\hat{p}\)</span></p>
+<p>We now study categorical data and draw inference on the proportion, or percentage, of the population with a specific characteristic.<br />
+If we call a given categorical characteristic in the population “success” then the sample proportion of successes, p, is:</p>
+<p><span class="math display">\[\hat{p}= \frac{x}{n} \]</span></p>
+<p>Where x is the number of individuals in the sample with a specified characteristic and n is the sample size.</p>
+<p><strong>Example 1:</strong> The Gallup Organization conducted a poll in which a simple random sample of 1,520 adults, living in all 50 U.S. states and the District of Columbia were asked the following question. “Thinking now about immigrants – that is, people who come from other countries to live here in the United States, in your view, do you think legal immigration is a good thing or a bad thing for this country today?” If 1135 responded “Yes”.</p>
+<p>Obtain a point estimate for the proportion of Americans 18 and older who believe that immigration is good for the US.</p>
+<p><strong>Solution:</strong></p>
+<p><span class="math display">\[\hat{p}= \frac{1135}{1520} = 0.747\]</span></p>
+<p>We estimate for the proportion of Americans 18 and older who believe that immigration is good for the US is 74.7%<br />
+<strong>Note:</strong> We agree to round proportions to three decimal places.</p>
+<p><strong>Sampling distribution of sample proportions</strong> <span class="math inline">\(\hat{p}\)</span></p>
+<div id="the-central-limit-theorem-for-proportions" class="section level3 hasAnchor" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> The Central Limit Theorem for proportions<a href="confidence-intervals-for-proportion.html#the-central-limit-theorem-for-proportions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Central Limit Theorem for proportions states that if n is large enough, then:</p>
+<p><span class="math inline">\(\hat{p}\sim N \left( p, \sqrt{\frac{p(1-p)}{n}} \right)\)</span></p>
+<p>Therefore, a different random sample of adult Americans might result in a different point estimate of the population proportion, such as <span class="math inline">\(\hat{p}= 0.71, \hat{p}= 0.78, \ldots\)</span>.</p>
+<p>If the method used to select the sample of Americans was done appropriately, both point estimates would be good guesses of the population proportion. Due to variability in the sample proportion, we need to report a range (or <em>interval</em>) of values, including a measure of the likelihood that the interval includes the unknown population proportion.</p>
+</div>
+<div id="confidence-interval" class="section level3 hasAnchor" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Confidence Interval<a href="confidence-intervals-for-proportion.html#confidence-interval" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A confidence interval for an unknown parameter consists of an interval of numbers based on a point estimate.</p>
+<p>The level of confidence represents the expected proportion of intervals that will contain the parameter if a large number of different samples is obtained.</p>
+<p>The level of confidence is denoted <span class="math inline">\((1 - \alpha) \times 100\%\)</span>. For example, a 95% level of confidence <span class="math inline">\((\alpha = 0.05)\)</span> implies that if 100 different confidence intervals are constructed, each based on a different sample from the same population, we will expect 95 of the intervals to contain the parameter and 5 not to include the parameter.</p>
+<p>Confidence interval estimates for the population proportion are of the form:</p>
+<p><strong>Point estimate</strong> <span class="math inline">\(\pm\)</span> <strong>margin of error.</strong></p>
+<p>The margin of error of a confidence interval estimate of a parameter is a measure of how accurate the point estimate is. The margin of error depends on three factors:</p>
+<ul>
+<li><strong>Level of confidence:</strong> As the level of confidence increases, the margin of error also increases.</li>
+<li><strong>Sample size:</strong> As the size of the random sample increases, the margin of error decreases.</li>
+<li><strong>Standard deviation of the population:</strong> The more spread there is in the population, the wider our interval will be for a given level of confidence.</li>
+</ul>
+<p><strong>Confidence Interval on Proportion, p</strong></p>
+<p>Suppose that a simple random sample of size <span class="math inline">\(n\)</span> is taken from a population.<br />
+A <span class="math inline">\((1 - \alpha) \times 100\%\)</span> confidence interval for p is given by the following quantities:</p>
+<p><span class="math inline">\(\hat{p}\pm z^* \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span></p>
+<p>Where p = Theoretical or “True” population proportion</p>
+<table style="width:100%;">
+<colgroup>
+<col width="23%" />
+<col width="35%" />
+<col width="12%" />
+<col width="28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Confidence Level</th>
+<th><span class="math inline">\(1 - \alpha \times 100\%\)</span></th>
+<th><span class="math inline">\(\alpha\)</span></th>
+<th><span class="math inline">\(Z^* = Z_{\alpha/2}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.90</td>
+<td>0.10</td>
+<td>1.645</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0.95</td>
+<td>0.05</td>
+<td>1.96</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>0.98</td>
+<td>0.02</td>
+<td>2.33</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0.99</td>
+<td>0.01</td>
+<td>2.58</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The Z-table is used to find the critical values, <span class="math inline">\(Z^*\)</span>, for confidence intervals on the true proportion p. This abbreviated table gives the most common z-scores for the centered values of confidence for the normal curve.</p>
+<p>Example 2:</p>
+<p>In July of 2008, a University Poll asked 1783 registered voters nationwide whether they favored or opposed the death penalty for persons convicted of murder 1123 were in favor.</p>
+<p>Obtain a 90% confidence interval for the proportion of registered voters nationwide who are in favor of the death penalty for persons convicted of murder.</p>
+<p><strong>Solution:</strong><br />
+<span class="math inline">\(\hat{p} = \frac{1123}{1783} = 0.63\)</span></p>
+<p>Where:</p>
+<p>n = 1783</p>
+<p><span class="math display">\[
+np \ \&amp; \ n(1-p) &gt; 10
+\]</span></p>
+<p>Lower bound: <span class="math inline">\(0.63 - 1.645 \times \sqrt{\frac{0.63(1-0.63)}{1783}} \approx 0.61\)</span><br />
+Upper bound: <span class="math inline">\(0.63 + 1.645 \times \sqrt{\frac{0.63(1-0.63)}{1783}} \approx 0.65\)</span></p>
+<p>We are 90% confident that the proportion of registered voters who are in favor of the death penalty for those convicted of murder is between 0.61 and 0.65.</p>
+<p><strong>Estimating the margin of error on p for a given confidence level</strong></p>
+<p>Consider the scenarios for the product of proportion and complements for the margin of error. What happens as the proportion changes?</p>
+<p><span class="math display">\[
+(1 - \alpha)\% CI \text{ on } p = \hat{p} \pm Z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\hat{p}\)</span> = Point estimate</li>
+<li><span class="math inline">\(Z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span> = Margin of Error = <span class="math inline">\(Z_{critical} \times Standard Error\)</span></li>
+</ul>
+<p>Determine the Sample Size Necessary for Estimating a Population Proportion within a Specified Margin of Error</p>
+<p>Two possible solutions:</p>
+<ol style="list-style-type: decimal">
+<li>Use an estimate of p based on a pilot study</li>
+<li>Use the value of p which gives the largest possible value of <span class="math inline">\(n\)</span> for a given confidence level <span class="math inline">\(\&amp;\)</span> margin of error.</li>
+</ol>
+<p><strong>Sample Size Needed for Estimating the Population Proportion</strong></p>
+<p>The sample size required to obtain a <span class="math inline">\((1 - \alpha)\)</span> - 100% confidence interval for <span class="math inline">\(p\)</span> with a margin of error E is given by:</p>
+<p><span class="math display">\[
+n = \frac{p(1-p) \left( \frac{Z_{\frac{\alpha}{2}}}{E} \right)^2}{rounded \text{ up to the next integer}}, \text{ where } p \text{ is a prior estimate of } p.
+\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(n\)</span></th>
+<th>Approximate Margin of Error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>500</td>
+<td>0.045 (or 4.5%)</td>
+</tr>
+<tr class="even">
+<td>800</td>
+<td>0.035 (or 3.5%)</td>
+</tr>
+<tr class="odd">
+<td>1000</td>
+<td>0.032 (or 3.2%)</td>
+</tr>
+<tr class="even">
+<td>1500</td>
+<td>0.026 (or 2.6%)</td>
+</tr>
+</tbody>
+</table>
+<p>If a prior estimate on the proportion is unavailable, using <span class="math inline">\(\hat{p} = 0.5\)</span> will give the following estimate for the sample size:</p>
+<p><span class="math display">\[
+n = 0.25 \times \left( \frac{Z_{\frac{\alpha}{2}}}{E} \right)^2
+\]</span></p>
+<p>Gallup and other polling agencies report at the 95% confidence level and assume p = 0.5 in calculating the margin of error:</p>
+<p><strong>Example 3</strong></p>
+<p>The statistic presented below appeared in the weekly magazine TIME, August 23, 1993, under the article <em>Danger in the Safety Zone</em>. Consider the tiny print “From telephone poll of 500 adult Americans taken for TIME/CNN. Margin of error is <span class="math inline">\(\pm 0.45\)</span>”.</p>
+<p>Do you favor the death penalty?</p>
+<table>
+<thead>
+<tr class="header">
+<th>YES</th>
+<th>NO</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>77%</td>
+<td>17%</td>
+</tr>
+</tbody>
+</table>
+<p>From a telephone poll of 500 adult Americans taken for TIME/CNN on Aug. 12 by Yankelovich Partners, Inc. Margin of error is <span class="math inline">\(\pm 0.45\)</span></p>
+<p>Explain how the margin of error can be calculated.</p>
+<p>Solution: Margin of Error in the article (under 95% confidence) is about:</p>
+<p><span class="math display">\[
+1.96 \sqrt{\frac{0.5 \times 0.5}{500}} \approx \frac{1}{\sqrt{500}} = 0.04472 \approx 4.5\%
+\]</span></p>
+<p><strong>Example 2 Illustrating the Meaning of Level of Confidence Using Simulation :</strong></p>
+<p>Let’s illustrate what “95% confidence” means in a 95% confidence interval in another way. We will simulate obtaining 200 different random samples of size n=50, m=50 i.e., n equals 50 from a population with p=0.7, p equals 0.7. Figure 4 shows the confidence intervals in groups of 100. A green interval is a 95% confidence interval that includes the population proportion, 0.7. A red interval is a confidence interval that does not include the population proportion. (For now, ignore the blue intervals.) Notice that the red intervals that do not capture the population proportion 0.7 have centers that are far away (more than 1.96 standard errors) from 0.7. Of the 200 confidence intervals obtained, 10 (the red intervals) do not include the population proportion. For example, the first interval to miss has a sample proportion that is too small to result in an interval that captures 0.7.</p>
+<p>(Note: The actual image illustrating the confidence intervals would be embedded here using <span class="math inline">\(\text{![ ]()}\)</span> if the image file was provided.)</p>
+<p><strong>Appeal: Simulating Confidence Intervals (rossmanchance.com)</strong></p>
+<p>A 95% level of confidence means that 95% of all possible samples result in confidence intervals that include the parameter (and 5% of all possible samples result in confidence intervals that do not include the parameter).</p>
+<p><strong>Caution!</strong></p>
+<p>A 95% confidence interval does <em>not</em> mean that there is a 95% probability that the interval contains the parameter (such as p). Remember, probability describes the likelihood of <em>undetermined</em> events. Therefore, it does not make sense to talk about the probability that the interval contains the parameter since the parameter is a <em>fixed</em> value. Thinking of this way: If a coin and obtain a head. If I ask you to determine the probability that the flip resulted in a head, it would not be 0.5, because the outcome has already been determined. Instead, the probability is 0 or 1. Confidence intervals work the same way. Because p or <span class="math inline">\(\mu\)</span> is already determined, we do not say that there is a 95% probability that the interval contains <span class="math inline">\(\mu\)</span>.</p>
+<p><strong>Exercises</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>As a potential worldwide pandemic, avian influenza H5N1 (commonly called the bird flu) poses a serious health risk. As of January 24, 2012, there have been 583 human cases of this virus in the world. Of these cases, 344 have resulted in death. Consider the outcomes of these cases as a random sample of all possible outcomes.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Find a point estimate for the proportion of people who would die if infected with the bird flu.</li>
+<li>Construct a 90% confidence interval for the proportion of cases that would be expected to result in death if a pandemic occurred.</li>
+<li>Interpret the confidence interval.</li>
+</ol></li>
+<li><p>A sociologist wanted to determine the percentage of residents of America that only speak English at home. What size sample should be obtained if she wishes her estimate to be within 3 percentage points with 90% confidence assuming she uses the estimate obtained from the Census 2000 Supplementary Survey of 82.4%?</p></li>
+<li><p>Nitrates are groundwater contaminants derived from fertilizer, septic tank seepage, and other sewage. Nitrate poisoning is particularly hazardous to infants under the age of 6 months. The Maximum Contaminant Level (MCL) is the highest level of a contaminant that government allows in drinking water. For nitrates, the MCL is 10 mg/L. The health department wants to know the proportion of wells in Madison County that have nitrate levels above the MCL. A worker has been assigned to take a simple random sample of wells in the county, measure the nitrate levels, and assess compliance. What size sample should the health department obtain if the estimate is desired to be within 2 percent with 95% confidence if:</p>
+<ol style="list-style-type: lower-alpha">
+<li>there is no prior information available?</li>
+<li>a study conducted two years ago showed that approximately 7% of the wells in Madison County had nitrate levels exceeding the MCL.</li>
+</ol></li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="inference-for-numerical-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-QA.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
