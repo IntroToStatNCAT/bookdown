@@ -4,39 +4,36 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter11 Introduction to Linear Regression | MATH 224 Workbook</title>
+  <title>5.1 Introduction to Linear Regression | My Book</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+The HTML output format for this example is bookdown::gitbook.</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter11 Introduction to Linear Regression | MATH 224 Workbook" />
+  <meta property="og:title" content="5.1 Introduction to Linear Regression | My Book" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+The HTML output format for this example is bookdown::gitbook.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter11 Introduction to Linear Regression | MATH 224 Workbook" />
+  <meta name="twitter:title" content="5.1 Introduction to Linear Regression | My Book" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-set in the _output.yml file.
-The HTML output format for this example is bookdown::gitbook,</p>" />
+The HTML output format for this example is bookdown::gitbook.</p>" />
   
 
 <meta name="author" content="Dr Mostafa" />
 
 
-<meta name="date" content="2025-02-25" />
+<meta name="date" content="2025-03-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="inference-for-numerical-data.html"/>
+<link rel="prev" href="linear-regression.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -55,6 +52,8 @@ The HTML output format for this example is bookdown::gitbook,</p>" />
 
 
 
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -146,58 +145,111 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">MATH224 Worksheet</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<li class="chapter" data-level="1" data-path="introduction-to-data.html"><a href="introduction-to-data.html"><i class="fa fa-check"></i><b>1</b> Introduction to Data</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#table-of-content"><i class="fa fa-check"></i><b>1.1</b> Table of Content</a></li>
+<li class="chapter" data-level="1.1" data-path="data-types.html"><a href="data-types.html"><i class="fa fa-check"></i><b>1.1</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="data-types.html"><a href="data-types.html#objectives"><i class="fa fa-check"></i><b>1.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="1.1.2" data-path="data-types.html"><a href="data-types.html#overview"><i class="fa fa-check"></i><b>1.1.2</b> Overview</a></li>
+<li class="chapter" data-level="1.1.3" data-path="data-types.html"><a href="data-types.html#solved-problems"><i class="fa fa-check"></i><b>1.1.3</b> Solved Problems</a></li>
+<li class="chapter" data-level="1.1.4" data-path="data-types.html"><a href="data-types.html#exercises"><i class="fa fa-check"></i><b>1.1.4</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introduction-to-data.html"><a href="introduction-to-data.html"><i class="fa fa-check"></i><b>2</b> Introduction to Data</a>
+<li class="chapter" data-level="1.2" data-path="summarizing-numerical-data.html"><a href="summarizing-numerical-data.html"><i class="fa fa-check"></i><b>1.2</b> Summarizing Numerical Data</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction-to-data.html"><a href="introduction-to-data.html#quick-review"><i class="fa fa-check"></i><b>2.1</b> Quick Review:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="summarizing-numerical-data.html"><a href="summarizing-numerical-data.html#objectives-1"><i class="fa fa-check"></i><b>1.2.1</b> Objectives</a></li>
+<li class="chapter" data-level="1.2.2" data-path="summarizing-numerical-data.html"><a href="summarizing-numerical-data.html#overview-1"><i class="fa fa-check"></i><b>1.2.2</b> Overview</a></li>
+<li class="chapter" data-level="1.2.3" data-path="summarizing-numerical-data.html"><a href="summarizing-numerical-data.html#solved-problem"><i class="fa fa-check"></i><b>1.2.3</b> Solved Problem</a></li>
+<li class="chapter" data-level="1.2.4" data-path="summarizing-numerical-data.html"><a href="summarizing-numerical-data.html#exercises-1"><i class="fa fa-check"></i><b>1.2.4</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>3</b> Summarizing data</a>
+<li class="chapter" data-level="1.3" data-path="summarizing-categorical-data.html"><a href="summarizing-categorical-data.html"><i class="fa fa-check"></i><b>1.3</b> Summarizing Categorical Data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#examining-numerical-data"><i class="fa fa-check"></i><b>3.1</b> Examining Numerical Data</a></li>
-<li class="chapter" data-level="3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#examining-categorical-data"><i class="fa fa-check"></i><b>3.2</b> Examining Categorical Data</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="probability-basics-worksheet.html"><a href="probability-basics-worksheet.html"><i class="fa fa-check"></i><b>4</b> Probability Basics Worksheet</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="probability-basics-worksheet.html"><a href="probability-basics-worksheet.html#quick-review-1"><i class="fa fa-check"></i><b>4.1</b> Quick Review:</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html"><i class="fa fa-check"></i><b>5</b> Discrete Random Variables</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#exercises"><i class="fa fa-check"></i><b>5.1</b> Exercises</a></li>
-<li class="chapter" data-level="5.2" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#solution"><i class="fa fa-check"></i><b>5.2</b> Solution</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="normal-distribution-worksheet.html"><a href="normal-distribution-worksheet.html"><i class="fa fa-check"></i><b>6</b> Normal Distribution Worksheet</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="normal-distribution-worksheet.html"><a href="normal-distribution-worksheet.html#review-on-normal-distribution"><i class="fa fa-check"></i><b>6.1</b> Review on Normal Distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="binomial-distribution.html"><a href="binomial-distribution.html"><i class="fa fa-check"></i><b>7</b> Binomial Distribution</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="binomial-distribution.html"><a href="binomial-distribution.html#binomial-distribution-condition"><i class="fa fa-check"></i><b>7.1</b> Binomial Distribution Condition</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><i class="fa fa-check"></i><b>8</b> Inference for Proportion Worksheet (Point Estimates and Sampling Variability)</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#central-limit-theorem-for-sampling-distribution-of-sample-proportions"><i class="fa fa-check"></i><b>8.1</b> Central Limit Theorem (for Sampling Distribution of Sample Proportions)</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html"><a href="inference-for-proportion-worksheet-point-estimates-and-sampling-variability.html#inference-for-proportion-worksheet-hypothesis-testing-for-p"><i class="fa fa-check"></i><b>8.1.1</b> Inference for Proportion Worksheet (Hypothesis Testing for <span class="math inline">\(p\)</span>)</a></li>
+<li class="chapter" data-level="1.3.1" data-path="summarizing-categorical-data.html"><a href="summarizing-categorical-data.html#objectives-2"><i class="fa fa-check"></i><b>1.3.1</b> Objectives</a></li>
+<li class="chapter" data-level="1.3.2" data-path="summarizing-categorical-data.html"><a href="summarizing-categorical-data.html#overview-2"><i class="fa fa-check"></i><b>1.3.2</b> Overview</a></li>
+<li class="chapter" data-level="1.3.3" data-path="summarizing-categorical-data.html"><a href="summarizing-categorical-data.html#solved-problem-1"><i class="fa fa-check"></i><b>1.3.3</b> Solved Problem</a></li>
+<li class="chapter" data-level="1.3.4" data-path="summarizing-categorical-data.html"><a href="summarizing-categorical-data.html#exercise"><i class="fa fa-check"></i><b>1.3.4</b> Exercise</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html"><i class="fa fa-check"></i><b>9</b> Confidence Intervals for Proportion</a>
+<li class="chapter" data-level="2" data-path="probability-and-probability-distribution.html"><a href="probability-and-probability-distribution.html"><i class="fa fa-check"></i><b>2</b> Probability and Probability Distribution</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#point-estimate"><i class="fa fa-check"></i><b>9.1</b> Point Estimate</a>
+<li class="chapter" data-level="2.1" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>2.1</b> Probability</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#the-central-limit-theorem-for-proportions"><i class="fa fa-check"></i><b>9.1.1</b> The Central Limit Theorem for proportions</a></li>
-<li class="chapter" data-level="9.1.2" data-path="confidence-intervals-for-proportion.html"><a href="confidence-intervals-for-proportion.html#confidence-interval"><i class="fa fa-check"></i><b>9.1.2</b> Confidence Interval</a></li>
+<li class="chapter" data-level="2.1.1" data-path="probability.html"><a href="probability.html#objectives-3"><i class="fa fa-check"></i><b>2.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="2.1.2" data-path="probability.html"><a href="probability.html#overview-3"><i class="fa fa-check"></i><b>2.1.2</b> Overview</a></li>
+<li class="chapter" data-level="2.1.3" data-path="probability.html"><a href="probability.html#solved-problems-1"><i class="fa fa-check"></i><b>2.1.3</b> Solved Problems</a></li>
+<li class="chapter" data-level="2.1.4" data-path="probability.html"><a href="probability.html#exercises-2"><i class="fa fa-check"></i><b>2.1.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html"><i class="fa fa-check"></i><b>2.2</b> Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#objectives-4"><i class="fa fa-check"></i><b>2.2.1</b> Objectives</a></li>
+<li class="chapter" data-level="2.2.2" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#overview-4"><i class="fa fa-check"></i><b>2.2.2</b> Overview</a></li>
+<li class="chapter" data-level="2.2.3" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#solved-problems-2"><i class="fa fa-check"></i><b>2.2.3</b> Solved Problems</a></li>
+<li class="chapter" data-level="2.2.4" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html#exercises-3"><i class="fa fa-check"></i><b>2.2.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="binomial-distribution.html"><a href="binomial-distribution.html"><i class="fa fa-check"></i><b>2.3</b> Binomial Distribution</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="binomial-distribution.html"><a href="binomial-distribution.html#objectives-5"><i class="fa fa-check"></i><b>2.3.1</b> Objectives</a></li>
+<li class="chapter" data-level="2.3.2" data-path="binomial-distribution.html"><a href="binomial-distribution.html#overview-5"><i class="fa fa-check"></i><b>2.3.2</b> Overview</a></li>
+<li class="chapter" data-level="2.3.3" data-path="binomial-distribution.html"><a href="binomial-distribution.html#solved-problem-2"><i class="fa fa-check"></i><b>2.3.3</b> Solved Problem</a></li>
+<li class="chapter" data-level="2.3.4" data-path="binomial-distribution.html"><a href="binomial-distribution.html#exercises-4"><i class="fa fa-check"></i><b>2.3.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="normal-distribution.html"><a href="normal-distribution.html"><i class="fa fa-check"></i><b>2.4</b> Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="normal-distribution.html"><a href="normal-distribution.html#objectives-6"><i class="fa fa-check"></i><b>2.4.1</b> Objectives</a></li>
+<li class="chapter" data-level="2.4.2" data-path="normal-distribution.html"><a href="normal-distribution.html#overview-6"><i class="fa fa-check"></i><b>2.4.2</b> Overview</a></li>
+<li class="chapter" data-level="2.4.3" data-path="normal-distribution.html"><a href="normal-distribution.html#solved-problem-3"><i class="fa fa-check"></i><b>2.4.3</b> Solved Problem</a></li>
+<li class="chapter" data-level="2.4.4" data-path="normal-distribution.html"><a href="normal-distribution.html#exercises-5"><i class="fa fa-check"></i><b>2.4.4</b> Exercises</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="inference-for-numerical-data.html"><a href="inference-for-numerical-data.html"><i class="fa fa-check"></i><b>10</b> Inference for Numerical Data</a>
+<li class="chapter" data-level="3" data-path="inference-for-proportion.html"><a href="inference-for-proportion.html"><i class="fa fa-check"></i><b>3</b> Inference for Proportion</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="inference-for-numerical-data.html"><a href="inference-for-numerical-data.html#central-limit-theorem-sampling-distribution-of-sample-mean"><i class="fa fa-check"></i><b>10.1</b> Central Limit Theorem (Sampling distribution of sample mean)</a></li>
+<li class="chapter" data-level="3.1" data-path="point-estimates-and-sampling-variability.html"><a href="point-estimates-and-sampling-variability.html"><i class="fa fa-check"></i><b>3.1</b> Point Estimates and Sampling Variability</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="point-estimates-and-sampling-variability.html"><a href="point-estimates-and-sampling-variability.html#objectives-7"><i class="fa fa-check"></i><b>3.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="3.1.2" data-path="point-estimates-and-sampling-variability.html"><a href="point-estimates-and-sampling-variability.html#overview-7"><i class="fa fa-check"></i><b>3.1.2</b> Overview</a></li>
+<li class="chapter" data-level="3.1.3" data-path="point-estimates-and-sampling-variability.html"><a href="point-estimates-and-sampling-variability.html#solved-problem-4"><i class="fa fa-check"></i><b>3.1.3</b> Solved Problem</a></li>
+<li class="chapter" data-level="3.1.4" data-path="point-estimates-and-sampling-variability.html"><a href="point-estimates-and-sampling-variability.html#exercises-6"><i class="fa fa-check"></i><b>3.1.4</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html"><i class="fa fa-check"></i><b>11</b> Introduction to Linear Regression</a>
+<li class="chapter" data-level="3.2" data-path="confidence-interval.html"><a href="confidence-interval.html"><i class="fa fa-check"></i><b>3.2</b> Confidence Interval</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html#linear-regression"><i class="fa fa-check"></i><b>11.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="3.2.1" data-path="confidence-interval.html"><a href="confidence-interval.html#objectives-8"><i class="fa fa-check"></i><b>3.2.1</b> Objectives</a></li>
+<li class="chapter" data-level="3.2.2" data-path="confidence-interval.html"><a href="confidence-interval.html#overview-8"><i class="fa fa-check"></i><b>3.2.2</b> Overview</a></li>
+<li class="chapter" data-level="3.2.3" data-path="confidence-interval.html"><a href="confidence-interval.html#solved-problem-5"><i class="fa fa-check"></i><b>3.2.3</b> Solved Problem</a></li>
+<li class="chapter" data-level="3.2.4" data-path="confidence-interval.html"><a href="confidence-interval.html#exercises-7"><i class="fa fa-check"></i><b>3.2.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="hypothesis-testing-for-p.html"><a href="hypothesis-testing-for-p.html"><i class="fa fa-check"></i><b>3.3</b> Hypothesis Testing for <span class="math inline">\(p\)</span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="hypothesis-testing-for-p.html"><a href="hypothesis-testing-for-p.html#objectives-9"><i class="fa fa-check"></i><b>3.3.1</b> Objectives</a></li>
+<li class="chapter" data-level="3.3.2" data-path="hypothesis-testing-for-p.html"><a href="hypothesis-testing-for-p.html#overview-9"><i class="fa fa-check"></i><b>3.3.2</b> Overview</a></li>
+<li class="chapter" data-level="3.3.3" data-path="hypothesis-testing-for-p.html"><a href="hypothesis-testing-for-p.html#solved-problem-6"><i class="fa fa-check"></i><b>3.3.3</b> Solved Problem</a></li>
+<li class="chapter" data-level="3.3.4" data-path="hypothesis-testing-for-p.html"><a href="hypothesis-testing-for-p.html#exercises-8"><i class="fa fa-check"></i><b>3.3.4</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inference-for-mean.html"><a href="inference-for-mean.html"><i class="fa fa-check"></i><b>4</b> Inference for Mean</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="quick-review-on-inference-for-mean.html"><a href="quick-review-on-inference-for-mean.html"><i class="fa fa-check"></i><b>4.1</b> Quick Review on Inference for Mean</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="quick-review-on-inference-for-mean.html"><a href="quick-review-on-inference-for-mean.html#objectives-10"><i class="fa fa-check"></i><b>4.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="4.1.2" data-path="quick-review-on-inference-for-mean.html"><a href="quick-review-on-inference-for-mean.html#overview-10"><i class="fa fa-check"></i><b>4.1.2</b> Overview</a></li>
+<li class="chapter" data-level="4.1.3" data-path="quick-review-on-inference-for-mean.html"><a href="quick-review-on-inference-for-mean.html#solved-problem-7"><i class="fa fa-check"></i><b>4.1.3</b> Solved Problem</a></li>
+<li class="chapter" data-level="4.1.4" data-path="quick-review-on-inference-for-mean.html"><a href="quick-review-on-inference-for-mean.html#exercises-9"><i class="fa fa-check"></i><b>4.1.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="hypothesis-testing-for-mean-mu.html"><a href="hypothesis-testing-for-mean-mu.html"><i class="fa fa-check"></i><b>4.2</b> Hypothesis Testing for mean <span class="math inline">\(\mu\)</span></a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="hypothesis-testing-for-mean-mu.html"><a href="hypothesis-testing-for-mean-mu.html#objectives-11"><i class="fa fa-check"></i><b>4.2.1</b> Objectives</a></li>
+<li class="chapter" data-level="4.2.2" data-path="hypothesis-testing-for-mean-mu.html"><a href="hypothesis-testing-for-mean-mu.html#overview-11"><i class="fa fa-check"></i><b>4.2.2</b> Overview</a></li>
+<li class="chapter" data-level="4.2.3" data-path="hypothesis-testing-for-mean-mu.html"><a href="hypothesis-testing-for-mean-mu.html#solved-problem-8"><i class="fa fa-check"></i><b>4.2.3</b> Solved Problem</a></li>
+<li class="chapter" data-level="4.2.4" data-path="hypothesis-testing-for-mean-mu.html"><a href="hypothesis-testing-for-mean-mu.html#exercises-10"><i class="fa fa-check"></i><b>4.2.4</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>5</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html"><i class="fa fa-check"></i><b>5.1</b> Introduction to Linear Regression</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html#objectives-12"><i class="fa fa-check"></i><b>5.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.1.2" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html#overview-12"><i class="fa fa-check"></i><b>5.1.2</b> Overview</a></li>
+<li class="chapter" data-level="5.1.3" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html#solved-problem-9"><i class="fa fa-check"></i><b>5.1.3</b> Solved Problem</a></li>
+<li class="chapter" data-level="5.1.4" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html#exercises-11"><i class="fa fa-check"></i><b>5.1.4</b> Exercises</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -211,7 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 224 Workbook</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">My Book</a>
           </h1>
         </div>
 
@@ -219,17 +271,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-to-linear-regression" class="section level1 hasAnchor" number="11">
-<h1><span class="header-section-number">Chapter11</span> Introduction to Linear Regression<a href="introduction-to-linear-regression.html#introduction-to-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="linear-regression" class="section level2 hasAnchor" number="11.1">
-<h2><span class="header-section-number">11.1</span> Linear Regression<a href="introduction-to-linear-regression.html#linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introduction-to-linear-regression" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introduction to Linear Regression<a href="introduction-to-linear-regression.html#introduction-to-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="objectives-12" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Objectives<a href="introduction-to-linear-regression.html#objectives-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>By the end of this unit, students will be able to:</p>
+<div class="blue-background">
 <ul>
-<li><p>Regression analysis concerns the study of relationships between quantitative variables: identifying, estimating, and validating the relationship.</p></li>
+<li>Describe linear associations between numerical variables using correlations.</li>
+<li>Use linear regression to model linear relationships between two numerical variables.</li>
+<li>Evaluate the statistical significance of linear relationships between numerical variables.</li>
+</ul>
+</div>
+</div>
+<div id="overview-12" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Overview<a href="introduction-to-linear-regression.html#overview-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Regression analysis concerns the study of relationships between quantitative variables: identifying, estimating, and validating the relationship.</p>
+<ul>
 <li><p>(Simple) linear regression is to study if the relationship between two numerical variables is linear, and the strength of the linear association.</p></li>
 <li><p>We begin with the scatter plot of two numerical variables, to observe if there is a linear association.</p></li>
 <li><p>If there seems to be a linear relationship, we use the linear model <span class="math inline">\(y = \beta_0 + \beta_1x\)</span> to best fit the data.</p></li>
 <li><p>Using a sample data set <span class="math inline">\((x_i, y_i)\)</span> for <span class="math inline">\(i = 1, \ldots, n\)</span> and least squares error, we derive an estimated model <span class="math inline">\(\hat{y} = b_0 + b_1x\)</span>.</p></li>
 </ul>
+<p>Let’s check in with a few short videos from our friends at OpenIntro.org to help develop the notion of linear regression for us.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mPvtZhdPBhQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z8DmwG2G4Qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Simple linear regression uses a single numerical feature (predictor variable) to predict a numerical response. Simple linear regression uses the form of a straight line <span class="math inline">\(y = mx + b\)</span>, where <span class="math inline">\(m\)</span> denotes slope of the relationship and <span class="math inline">\(b\)</span> denotes the intercept (the value of <span class="math inline">\(y\)</span> if <span class="math inline">\(x\)</span> is 0). With regression, we are fitting a straight line to data, where noise is present – that is, the line we fit is not expected to pass through all of the data points. The form for a simple regression model is
+<span class="math display">\[\displaystyle{y = \beta_0 + \beta_1x + \varepsilon}\]</span></p>
+<p>Notice that <span class="math inline">\(\beta_0\)</span> is the intercept, <span class="math inline">\(\beta_1\)</span> is the slope, and <span class="math inline">\(\varepsilon\)</span> denotes the unexplained error (noise). We typically do not write <span class="math inline">\(\varepsilon\)</span> as part of the model, since we assume that it is random noise with a mean of <span class="math inline">\(0\)</span> and a constant standard deviation (<span class="math inline">\(\sigma\)</span>) – in our earlier notation, we assume <span class="math inline">\(\varepsilon \sim N\left(\mu = 0, \sigma\right)\)</span>. Instead, we often write the regression model as
+<span class="math display">\[\displaystyle{\mathbb{E}\left[y\right] = \beta_0 + \beta_1x}\]</span></p>
+<p>Let’s see regression in action as we consider an application to understanding biases in course evaluations.</p>
+<p><strong>The Data</strong></p>
+<p>Many college courses conclude by giving students the opportunity to evaluate the course and the instructor anonymously. However, the use of these student evaluations as an indicator of course quality and teaching effectiveness is often criticized because these measures may reflect the influence of non-teaching related characteristics, such as the physical appearance of the instructor. The article titled, “Beauty in the classroom: instructors’ pulchritude and putative pedagogical productivity” (Hamermesh and Parker, 2005) found that instructors who are viewed to be better looking receive higher instructional ratings. (Daniel S. Hamermesh, Amy Parker, Beauty in the classroom: instructors pulchritude and putative pedagogical productivity, <em>Economics of Education Review</em>, Volume 24, Issue 4, August 2005, Pages 369-376, ISSN 0272-7757, 10.1016/j.econedurev.2004.07.013. <a href="http://www.sciencedirect.com/science/article/pii/S0272775704001165">http://www.sciencedirect.com/science/article/pii/S0272775704001165</a>.)</p>
+<p>In this workbook we will analyze the data from this study in order to learn what goes into a positive professor evaluation.</p>
+<p>The data were gathered from end of semester student evaluations for a large sample of professors from the University of Texas at Austin. In addition, six students rated the professors’ physical appearance. (This is a slightly modified version of the original data set that was released as part of the replication data for <em>Data Analysis Using Regression and Multilevel/Hierarchical Models</em> (Gelman and Hill, 2007).) The result is a data frame where each row contains a different course and columns represent variables about the courses and professors.</p>
+<table>
+<colgroup>
+<col width="29%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>variable</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>score</code></td>
+<td>average professor evaluation score: (1) very unsatisfactory - (5) excellent.</td>
+</tr>
+<tr class="even">
+<td><code>rank</code></td>
+<td>rank of professor: teaching, tenure track, tenured.</td>
+</tr>
+<tr class="odd">
+<td><code>ethnicity</code></td>
+<td>ethnicity of professor: not minority, minority.</td>
+</tr>
+<tr class="even">
+<td><code>gender</code></td>
+<td>gender of professor: female, male.</td>
+</tr>
+<tr class="odd">
+<td><code>language</code></td>
+<td>language of school where professor received education: english or non-english.</td>
+</tr>
+<tr class="even">
+<td><code>age</code></td>
+<td>age of professor.</td>
+</tr>
+<tr class="odd">
+<td><code>cls_perc_eval</code></td>
+<td>percent of students in class who completed evaluation.</td>
+</tr>
+<tr class="even">
+<td><code>cls_did_eval</code></td>
+<td>number of students in class who completed evaluation.</td>
+</tr>
+<tr class="odd">
+<td><code>cls_students</code></td>
+<td>total number of students in class.</td>
+</tr>
+<tr class="even">
+<td><code>cls_level</code></td>
+<td>class level: lower, upper.</td>
+</tr>
+<tr class="odd">
+<td><code>cls_profs</code></td>
+<td>number of professors teaching sections in course in sample: single, multiple.</td>
+</tr>
+<tr class="even">
+<td><code>cls_credits</code></td>
+<td>number of credits of class: one credit (lab, PE, etc.), multi credit.</td>
+</tr>
+<tr class="odd">
+<td><code>bty_f1lower</code></td>
+<td>beauty rating of professor from lower level female: (1) lowest - (10) highest.</td>
+</tr>
+<tr class="even">
+<td><code>bty_f1upper</code></td>
+<td>beauty rating of professor from upper level female: (1) lowest - (10) highest.</td>
+</tr>
+<tr class="odd">
+<td><code>bty_f2upper</code></td>
+<td>beauty rating of professor from second upper level female: (1) lowest - (10) highest.</td>
+</tr>
+<tr class="even">
+<td><code>bty_m1lower</code></td>
+<td>beauty rating of professor from lower level male: (1) lowest - (10) highest.</td>
+</tr>
+<tr class="odd">
+<td><code>bty_m1upper</code></td>
+<td>beauty rating of professor from upper level male: (1) lowest - (10) highest.</td>
+</tr>
+<tr class="even">
+<td><code>bty_m2upper</code></td>
+<td>beauty rating of professor from second upper level male: (1) lowest - (10) highest.</td>
+</tr>
+<tr class="odd">
+<td><code>bty_avg</code></td>
+<td>average beauty rating of professor.</td>
+</tr>
+<tr class="even">
+<td><code>pic_outfit</code></td>
+<td>outfit of professor in picture: not formal, formal.</td>
+</tr>
+<tr class="odd">
+<td><code>pic_color</code></td>
+<td>color of professor’s picture: color, black &amp; white.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Prediction (Predicted value)</strong></p>
 <p>If the least square regression model is given by <span class="math inline">\(\hat{y} = b_0 + b_1x\)</span>, then for a given <span class="math inline">\(x\)</span>, the predicted value is <span class="math inline">\(\hat{y} = b_0 + b_1x\)</span> – plug in the value of <span class="math inline">\(x\)</span>.</p>
 <p><strong>Interpreting the slope and the y-intercept of a regression line</strong></p>
@@ -269,6 +444,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><span class="math inline">\(R\)</span> and <span class="math inline">\(b_1\)</span> have the same sign.</p></li>
 <li><p>Equivalently, <span class="math inline">\(R = \frac{s_x}{s_y} b_1\)</span></p></li>
 </ol>
+</div>
+<div id="solved-problem-9" class="section level3 hasAnchor" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Solved Problem<a href="introduction-to-linear-regression.html#solved-problem-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="exercises-11" class="section level3 hasAnchor" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Exercises<a href="introduction-to-linear-regression.html#exercises-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Exercise 1</strong></p>
 <p>Describe the linear relationship from the scatter plot.</p>
 <p><img src="images/img55.png" width="200" /></p>
@@ -287,12 +468,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="inference-for-numerical-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="linear-regression.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -324,7 +506,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-QA.Rmd",
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/005-QA.Rmd",
     "text": "Edit"
   },
   "history": {
@@ -335,7 +517,7 @@ gitbook.start({
     "link": null,
     "text": null
   },
-  "download": ["_main.pdf", "_main.epub"],
+  "download": ["MATH 224 Workbook.pdf", "MATH 224 Workbook.epub"],
   "search": {
     "engine": "fuse",
     "options": null

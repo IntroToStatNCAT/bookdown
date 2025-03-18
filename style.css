@@ -22,3 +22,9 @@ h5{
 #binom{
   color: #7CB9E8;
 }
+
+.blue-background {
+    background-color: #cce5ff;  /* Light blue background */
+    padding: 10px;
+    border-radius: 5px;
+}

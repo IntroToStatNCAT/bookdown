@@ -1,111 +1,787 @@
 ---
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
-# Normal Distribution Worksheet
+# Inference for Proportion 
 
-## Review on Normal Distribution
+## Point Estimates and Sampling Variability
 
-**Normal Distribution Facts**
+### Objectives
 
--   It is a continuous random variable distribution over $(-\infty, \infty)$.
--   Its probability density curve is symmetric bell-shaped (unimodal).
--   It is completely determined by the mean $\mu$ and standard deviation $\sigma$, denoted by $N(\mu, \sigma)$.
--   $N(0, 1)$ is called the standard normal distribution.
+By the end of this unit, students will be able to:
 
-![](images/img44.png){width="323"}
+::: {.blue-background}
+- Understand the meaning of sampling distributions.
+- Apply the central limit theorem to define the sampling distribution of a sample proportion.
+- Identify the conditions needed for the central limit theorem to apply for sample proportions.
+:::
 
-Using R to compute cumulative probability for $X \sim N(\mu, \sigma)$
+### Overview
 
--   For $P(X < b) = P(X \leq b)$: `pnorm(b, \mu, \sigma)`
--   For $P(X > a) = P(X \geq a)$: `pnorm(a, \mu, \sigma, lower.tail = FALSE)` or `1 - pnorm(a, \mu, \sigma)`
--   For $P(a < X < b)$: `pnorm(b, \mu, \sigma) - pnorm(a, \mu, \sigma)` or `1 - (pnorm(a, \mu, \sigma) + pnorm(b, \mu, \sigma, lower.tail = FALSE))`
--   For $Z \sim N(0, 1)$: the mean and SD can be omitted in 1)-3):
-    -   $P(Z < b)$: `pnorm(b)`
+**Basic Terms**
 
-![](images/img45.png){width="550"}
+-   Sample proportion $\hat{p} = \frac{x}{n}$\
+-   Sample proportion $\hat{p}$ is the unbiased point estimator for the population proportion $p$
+-   A value of $\hat{p}$ is a point estimate
+-   Error = $\hat{p} - p$
 
-**To Compute Inverse Cumulative Probability (Finding x for Given Cumulative Probability)**
+**What is statistical inference?**
 
--   Find $x$ for $P(X < x) = p$: `qnorm(p, \mu, \sigma)`
--   Find $x$ for $P(X > x) = p$: `qnorm(1 - p, \mu, \sigma)` or `qnorm(p, \mu, \sigma, lower.tail = FALSE)`
+Statistical inference is _the process of making claims about a population based on information from a sample_ of data. 
 
-![](images/img46.png){width="550"}
+Typically, the data represent only a small portion of the larger group which you'd like to summarize. For example, you might be interested in how a drug treats diabetes. Your interest is in how the drug treats all people with diabetes, not just the few dozen people in your study.
 
-**Z-score**
+At first glance, the logic of statistical inference seems to be backwards, but as you become more familiar with the steps in the process, the logic will make much more sense.
 
--   If $X \sim N(\mu, \sigma)$, the z-score of x is computed by $z = \frac{x - \mu}{\sigma}$.
--   The z-score measures how many standard deviations of x from the mean.
--   $Z = \frac{X - \mu}{\sigma} \sim N(0, 1)$
--   $X = \mu + Z \cdot \sigma$
--   $x = \mu$ if $z = 0$; $x > \mu$ if $z > 0$; $x < \mu$ if $z < 0$
+![](images/lesson1_img1.png){ width=80% }
 
-**Empirical Rule (68-95-99.7 Rule)**
+In this section we'll begin investigating the true power of statistics -- using sample data to make accurate claims about a population (even when we don't have access to the entire population). We start by exploring the connection between a *Population Distribution* and the distribution of sample means, often called the *Sampling Distribution*. We'll do this through a series of simple, interactive code blocks which you will run and use to answer questions.
 
-For a nearly normally distributed data, the empirical rule predicts that:
+**Exploring the connection between population and sampling distributions**
 
--   68% of observations fall within the first standard deviation ($\mu$ ± $\sigma$).
--   95% within the first two standard deviations ($\mu$ ± 2$\sigma$).
--   99.7% within the first three standard deviations ($\mu$ ± 3$\sigma$) of the mean.
+Start by viewing the following following video from the New York Times.
 
-![](images/img47.png){width="408"}
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/jvoxEYmQHNM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
-**Exercise 1** For $Z \sim N(0, 1)$ (the standard normal distribution, the mean = 0, the standard deviation = 1), use R to find the probability and sketch the region that represents the probability.
+So the video claimed that the sampling distribution can help us answer questions about the population. This is really important because, as we mentioned in our first tutorial, Census is almost always impossible. Use the code blocks below to explore the connection between the population and the sampling distribution for various different populations. Note that you do not need to understand all of the code contained in the code blocks -- you should focus, instead, on the pictures resulting each time you run the code. In general, you are invited to change the first few lines of code in each block, and you are not expected to look at the remaining code.
 
-(a). $P(Z < -1.5)$ (b). $P(Z > 1.75)$ (c). $P(-1.5 < Z < 1.75)$ (d). $P(|Z| < 2.5)$ (e). $P(Z > 1)$
+**Sampling Distribution**
 
-**Exercise 2** For $X \sim N(-3, 2)$ (the normal distribution, the mean = -3, the standard deviation = 2), use R to find the probability and sketch the region that represents the probability.
+**Point Estimate error**
 
-1.  $P(X < -3.25)$
-2.  $P(X > 1.75)$
-3.  $P(-3.25 < X < -1.25)$
+Suppose a poll suggested the US President’s approval rating is 45%. We would consider 45% to be a **point estimate** of the approval rating we might see if we collected responses from the entire population. This entire-population response proportion is generally referred to as the **parameter** of interest. When the parameter is a proportion, it is often denoted by p, and we often refer to the sample proportion as $\hat{p}$ (pronounced p - hat). Unless we collect responses from every individual in the population, p remains unknown, and we use $\hat{p}$ as our estimate of p. The difference we observe from the poll versus the parameter is called the **error** in the estimate. Generally, the error consists of two aspects: sampling error and bias.
 
-**Exercise 3** For $X \sim N(-3, 2)$, compute the z-score of the given x:
+- **Sampling error**, sometimes called sampling uncertainty, describes how much an estimate will tend to vary from one sample to the next. For instance, the estimate from one sample might be 1% too low while in another it may be 3% too high. Much of statistics, including much of this book, is focused on understanding and quantifying sampling error, and we will find it useful to consider a sample’s size to help us quantify this error; the **sample size** is often represented by the letter n. 
 
-1.  $x = -3.25$
-2.  $x = -3$
-3.  $x = -1.25$
+
+- **Bias** describes a systematic tendency to over- or under-estimate the true population value. For example, if we were taking a student poll asking about support for a new college stadium, we’d probably get a biased estimate of the stadium’s level of student support by wording the question as, *Do you support your school by supporting funding for the new stadium?* We try to minimize bias through thoughtful data collection procedures, which were discussed in Chapter 1 and are the topic of many other books.
+
+
+**Point Estimate for Proportion**
+
+A point estimate is the value of a statistic (based on a sample) that estimates the value of a population parameter.
+
+Suppose we want to estimate the proportion of adult Americans who believe that immigration is a good thing for the U.S. It is unreasonable to expect that we could survey every adult American. Instead, we use a sample of adult Americans to arrive at an estimate of the proportion. We call this estimate a point estimate.
+
+
+**The sample proportion** $\hat{p}$
+
+We now study categorical data and draw inference on the proportion, or percentage, of the population with a specific characteristic.\
+If we call a given categorical characteristic in the population "success" then the sample proportion of successes, p, is:
+
+$$\hat{p}= \frac{x}{n} $$
+
+Where x is the number of individuals in the sample with a specified characteristic and n is the sample size.
+
+**Example 1:** The Gallup Organization conducted a poll in which a simple random sample of 1,520 adults, living in all 50 U.S. states and the District of Columbia were asked the following question. "Thinking now about immigrants -- that is, people who come from other countries to live here in the United States, in your view, do you think legal immigration is a good thing or a bad thing for this country today?" If 1135 responded “Yes”.
+
+Obtain a point estimate for the proportion of Americans 18 and older who believe that immigration is good for the US.
+
+**Solution:**
+
+$$\hat{p}= \frac{1135}{1520} = 0.747$$
+
+We estimate for the proportion of Americans 18 and older who believe that immigration is good for the US is 74.7%\
+**Note:** We agree to round proportions to three decimal places.
+
+**Sampling distribution of sample proportions** $\hat{p}$
+
+**Central Limit Theorem (for Sampling Distribution of Sample Proportions)**
+
+When observations are independent (take random samples of fixed size $n$ without replacement); the sample size $n$ is large enough, i.e. $np \geq 10$ and $n(1-p) \geq 10$; and sample size $n < 10\%$ of the population size then the sample proportion $\hat{p}$ is approximately normal with mean = $p$ and standard deviation = $\sqrt{\frac{p(1-p)}{n}}$: $\hat{p} \sim N(p, \sqrt{\frac{p(1-p)}{n}})$
+
+That is, $z = \frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}} \sim N(0, 1)$.
+
+**Notes:**
+
+-   The requirement that the sample size $n < 10\%$ of population size is to have the standard deviation $\sqrt{\frac{p(1-p)}{n}}$.
+
+-   If the sample size $n < 10\%$ of population size, then the $\sqrt{\frac{p(1-p)}{n}}$ is overly estimated SD, and the SD will typically adjust by a factor $\sqrt{\frac{N-n}{N-1}}$,i.e. $\sqrt{\frac{N-n}{N-1}} \times \sqrt{\frac{p(1-p)}{n}}$.
+
+-   When using $\hat{p}$ to estimate $p$, the Standard Error of $\hat{p}$ is the standard deviation of its sampling distribution: $S.E._{\hat{p}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+
+-   When $p$ is unknown, $\hat{p}$ is used to replace $p$ then check $n\hat{p} \geq 10$ and $n(1-\hat{p}) \geq 10$ (success and failure condition) estimated $S.E. \approx \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+
+**The Central Limit Theorem for proportions**
+
+The Central Limit Theorem for proportions states that if n is large enough, then:
+
+$\hat{p}\sim N \left( p, \sqrt{\frac{p(1-p)}{n}} \right)$
+
+Therefore, a different random sample of adult Americans might result in a different point estimate of the population proportion, such as $\hat{p}= 0.71, \hat{p}= 0.78, \ldots$.
+
+If the method used to select the sample of Americans was done appropriately, both point estimates would be good guesses of the population proportion. Due to variability in the sample proportion, we need to report a range (or *interval*) of values, including a measure of the likelihood that the interval includes the unknown population proportion.
+
+### Solved Problem
+
+Suppose the proportion of American adults who support the expansion of solar energy is p = 0.88, which is our parameter of interest. Is a randomly selected American adult more or less likely to support the expansion of solar energy?
+
+Answer: More likely.
+
+
+**Let's see an example of sampling**
+
+Suppose that you don't have access to the population of all American adults, which is a quite likely scenario. In order to estimate the proportion of American adults who support solar power expansion, you might sample from the population and use your sample proportion as the best guess for the unknown population proportion.
+
+We will simulate a data to play the role of the population. As discusses above, we will assume that 88% of the population support the expansion and the remaining 12% don't.
+
+```{r pop-simulated-data}
+pop_size <- 250000000
+possible_entries_solar <- c(rep("support", 0.88 * pop_size),
+                      rep("not", 0.12 * pop_size))
+```
+
+First we will sample, without replacement, 1000 American adults from the population, and record whether they support or not solar power expansion.
+
+```{r sampling-1000-no-replacement}
+sampled_entries <- sample(possible_entries_solar,
+                          size = 1000, replace = F)
+```
+
+
+Second we will find the sample proportion.
+
+```{r sample-prop}
+sum(sampled_entries == "support")/1000
+```
+
+Interesting thing about sampling from a population is that its always random. So the first sample might give a completely different sample proportion compared to the second sample, third sample and so on.
+
+For example, we will perform the same sampling using the same code and we will obtain a different sample proportion.
+
+```{r sample-two, exercise = TRUE}
+sampled_entries <- sample(possible_entries_solar,
+                          size = 1000, replace = F)
+sum(sampled_entries == "support")/1000
+```
+
+```{r sample-three, exercise = TRUE}
+sampled_entries <- sample(possible_entries_solar,
+                          size = 1000, replace = F)
+sum(sampled_entries == "support")/1000
+```
+
+> Run the code to see that you obtain a different result everytime you perform sampling.
+
+Third we will use the fact that the sample proportion changes with every sample and collect multiple samples and find the sample proportion for all of those samples. This will help us to create a distribution for the sample proportion to understand the spread, center and shape of the sample proportions.
+
+```{r sample-proportion-hist, exercise = TRUE, warning=FALSE, message=FALSE}
+library(tidyverse)
+set.seed(123)
+# Creating 10000 different sample proportions
+phat <- rep(NA, 10000)
+for(i in 1:10000){
+  sampled_entries <- sample(possible_entries_solar, size = 1000, replace = F)
+  phat[i] <- sum(sampled_entries == "support") / 1000
+}
+
+sampling <- tibble(phat = phat)
+
+# Plot
+
+ggplot(sampling, aes(x = phat)) +
+  geom_histogram(aes(y=..density..),bins = 40,col = "black", fill = "lightblue") +
+  geom_vline(xintercept = 0.88, col = "red")+
+  theme_minimal(base_size = 14) +
+  labs(x = "Sample proportions", y = "Frequency")+
+  stat_function(fun = dnorm, args = list(mean = mean(phat), sd = sd(phat)), size = 1.2)
+```
+
+
+This distribution of sample proportions is called a sampling distribution. We can characterize this sampling distribution as follows:
+
+**Center.** The center of the distribution is $\bar{x_{\hat{p}}}$ = 0.880, which is the same as the parameter. Notice that the simulation mimicked a simple random sample of the population, which is a straightforward sampling strategy that helps avoid sampling bias.
+
+**Spread.** The standard deviation of the distribution is $s_{\hat{p}}$ = 0.010. When we’re talking about a sampling distribution or the variability of a point estimate, we typically use the term **standard error** rather than *standard deviation*, and the notation $SE_{\hat{p}}$ is used for the standard error associated with the sample proportion.
+
+**Shape.** The distribution is symmetric and bell-shaped, and it resembles a normal distribution.
+
+These findings are encouraging! When the population proportion is p = 0.88 and the sample size is n = 1000, the sample proportion ˆp tends to give a pretty good estimate of the population proportion. We also have the interesting observation that the histogram resembles a normal distribution.
+
+
+### Exercises
+
+**Exercise 1**
+
+In a random sample with size $n=9000$, the count of “yes” is $x=250$.
+
+*(a)* Compute the sample proportion $\hat{p} = \frac{x}{n}$.
+
+*(b)* Compute the estimated standard error of the sample proportion $S.E. \approx \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$.
+
+**Exercise 2**
+
+In a random sample of 765 adults in the U.S., 322 say they could not cover \$600 unexpected expense without borrowing money or going to debt.
+
+*(a)* What population is under consideration in the data set?
+
+*(b)* What parameter is being estimated?
+
+*(c)* Compute a point estimate for the parameter using the given information above?
+
+*(d)* What is the estimated standard error?
+
+**Exercise 3**
+
+Of all freshmen at a large college, 19% made the dean’s list.
+
+*(a)* What is the value of the interested parameter? State the sampling distribution of sample proportion for sample size 90.
+
+*(b)* If a random sample of 90 freshmen selected 14 made the dean’s list. Compute the sample proportion and the Z-score.
+
+*(c)* If a random sample of 90 freshmen selected 20 made the dean’s list. Compute the sample proportion and the Z-score.
+
+*(d)* What is the probability that at most 14 of selected 90 freshmen made the dean’s list?
+
+*(e)* What is the probability that between 14 to 20 students of selected 90 freshmen made the dean’s list?
+
+
+## Confidence Interval
+
+### Objectives
+
+::: {.blue-background}
+- Understand the meaning of sampling distributions.
+- Apply the central limit theorem to define the sampling distribution of a sample proportion.
+- Identify the conditions needed for the central limit theorem to apply for sample proportions.
+- Construct and interpret confidence intervals for the population proportion.
+:::
+
+### Overview
+
+About critical value $z^*$ or $z_{\alpha/2}$: For $N(0,1)$, $z_{\alpha/2}$ is the cut-off point with upper tail of probability $\alpha/2$
+
+![](images/img48.png){width="350" height="110"}
+
+**How to find** $z_{\alpha/2}$:
+
+(1) For $100(1-\alpha)\%$ confidence level, find $\alpha$ then $\alpha/2$
+
+(2) Use R: $qnorm\left(\frac{\alpha}{2}, \text{lower.tail} = \text{FALSE}\right)$ or $qnorm\left(1 - \frac{\alpha}{2}\right)$
+
+**Common** $z_{\alpha/2}$ values:
+
+| Confidence level | $\alpha$ | $z_{\alpha/2}$                       |
+|------------------|----------|--------------------------------------|
+| 90%              | 0.10     | $z_{0.05} = 1.644854 \approx 1.645$  |
+| 95%              | 0.05     | $z_{0.025} = 1.959964 \approx 1.96$  |
+| 98%              | 0.02     | $z_{0.01} = 2.326348 \approx 2.326$  |
+| 99%              | 0.01     | $z_{0.005} = 2.575829 \approx 2.576$ |
+
+**Construct** $100(1-\alpha)\%$ confidence interval: Use $\hat{p}$, $n$, and $z_{\alpha/2}$
+
+$\hat{p} \pm z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$ (or $(\hat{p} - z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}})$)
+
+![](images/img50.png){width="427"}
+
+**Margin of Error (M.E.)**
+
+$M.E. = z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+
+So, C.I.: point estimate $\pm M.E.$
+
+Note: the point estimate is the middle point; the $M.E.$ = half of the length of C.I.)
+
+**Interpretation of C.I.:**
+
+With the confidence level of $100(1-\alpha)\%$ and a sample proportion $\hat{p}$ with sample size $n$, we are $100(1-\alpha)\%$ confident that the population proportion $p$ is in the confidence interval $(\hat{p} - z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}})$
+
+**Minimum sample size to guarantee the specified** $M.E. \leq a$
+
+For known $p$: $n = \text{ceiling} \left[ \frac{p(1-p) \times z_{\alpha/2}^2}{a^2} \right]$
+
+For unknown $p$: $n = \text{ceiling} \left[ \frac{1}{4} \times \frac{z_{\alpha/2}^2}{a^2} \right]$
+
+### Solved Problem
+
+### Exercises
+
+**Exercise 1**
+
+*(a)* Construct a 95% confidence interval using a sample proportion $\hat{p} = 0.3$ and sample size $n=1000$.
+
+*(b)* Construct a 90% confidence interval using a sample proportion $\hat{p} = 0.3$ and sample size $n=1000$.
+
+*(c)* Construct a 95% confidence interval using a sample proportion $\hat{p} = 0.3$ and sample size $n=100$.
+
+**Exercise 2**. Circle the proper choices.
+
+*(a)* The confidence interval is \_\_\_\_\_\_\_\_\_\_\_(wider/narrower) if the sample size is increasing.
+
+*(b)* The confidence interval is \_\_\_\_\_\_\_\_\_\_\_(wider/narrower) if the confidence level is increasing.
+
+**Exercise 3**
+
+*(a)* Construct a 98% confidence interval using a sample proportion 45% and standard error 1.2%. (Assume that the CLT can be applied)
+
+*(b)* Compute the margin of error using the same information of (a).
 
 **Exercise 4**
 
-(a). State the Empirical Rule.
+A website is trying to increase registration of first-time visitors using a new site design. Of 752 randomly sampled visitors over a month who saw the new design, 64 registered.
 
-(b). Use R to verify the Empirical Rule: find $P(|Z| < 1)$, $P(|Z| < 2)$, $P(|Z| < 3)$.
+*(a)* Compute the sample proportion.
 
-**Exercise 5**
+*(b)* Compute the standard error.
 
-The scores on a college entrance exam follow a normal distribution with a mean of 50 and standard deviation of 10. Find the probability that a student will score:
+*(c)* Construct and interpret a 90% confidence interval for the fraction of first-time visitors of the site who would register under the new design.
 
-(a). Over 65
+**Exercise 5**. For a confidence interval of proportion $(0.291, 0.309)$ find the following:
 
-(b). Less than 25
+*(a)* The sample proportion that was used to create this C.I.
 
-(c). Between 33 and 68
+*(b)* The M.E. (Margin of Error)
 
 **Exercise 6**
 
-The scores on a college entrance exam follow a normal distribution with a mean of 50 and standard deviation of 10.
+A public health survey is going to estimate the proportion of a population $p$ having defective vision. How many persons should be examined if the public health commissioner wishes to be 95% certain that the margin of error is below 0.04 when:
 
-(a). What is the cut off score of the lowest 20%? (Round to 1 decimal)
+*(a)* $p$ is known to be about 0.45.
 
-(b). What is the cut off score of the highest 10%? (Round to 1 decimal)
+*(b)* There is no knowledge about the value of $p$?
+
+**Note**. Similar result for mean:
+
+-   CLT: In random sampling from a population with mean $\mu$ and standard deviation $\sigma$, when the sample size $n$ is large ($n \geq 30$), the distribution of sample mean $\bar{X}$ is approximately normal: $\bar{X} \sim N(\mu, \frac{\sigma}{\sqrt{n}})$.
+
+-   Use $\bar{x}$ as point estimate for $\mu$.
+
+-   $S.E. = \frac{\sigma}{\sqrt{n}} \approx \frac{s}{\sqrt{n}}$
+
+-   $100(1-\alpha)\%$ confidence interval for mean: $\bar{x} \pm z_{\alpha/2} \times \sqrt{\frac{s}{n}}$ or $(\bar{x} - z_{\alpha/2} \times \sqrt{\frac{s}{n}}, \bar{x} + z_{\alpha/2} \times \sqrt{\frac{s}{n}})$
+
+-   $M.E. = z_{\alpha/2} \times S.E. = z_{\alpha/2} \times \sqrt{\frac{s}{n}}$
 
 **Exercise 7**
 
-The hours of sleep of college students fits a normal distribution with mean of 7.2 hours and standard deviation of 1.3 hours. Find the (standardized) z-score corresponding to 6.5 hours.
+The GSS (General Social Survey) asked the question: “For how many days during the past 30 days was your mental health not good (stress, depression, with emotions)?” Based on responses from 1151 US residents, a 95% confidence interval (3.40, 4.24) (days) was reported in 2014.
 
-**Exercise 8**
+*(a)* Determine the sample mean (days).
 
-John scored a 92 on a test with a mean of 88 and a standard deviation of 2.7. Jessica scored an 86 on a test with a mean of 82 and a standard deviation of 1.8. Find the Z-scores for John's and Jessica's test scores and use them to determine who did better on their test relativ\*e to their class.
+*(b)* Determine the margin of error (M.E.).
 
-**Exercise 9**
+*(c)* What is the value of $z_{\alpha/2}$ for 95% confidence level?
 
-The score data of the verbal portion of the Graduate Record Examination (GRE) is approximately normally distributed with a mean of 462 points and a standard deviation of 119 points. Fill in the following blanks: approximately
+*(d)* Write a sentence to interpret this confidence interval.
 
-*(a)* 68% of students who took the verbal portion of the GRE scored between \_\_\_\_\_\_\_ and \_\_\_\_\_\_\_\_
+**Confidence Intervals for Proportion**
 
-*(b)* 95% of students who took the verbal portion of the GRE scored between \_\_\_\_\_\_ and \_\_\_\_\_\_\_\_
+A confidence interval for an unknown parameter consists of an interval of numbers based on a point estimate.
 
-*(c)* 99.7% of students who took the verbal portion of the GRE scored between \_\_\_\_\_\_ and \_\_\_\_\_\_\_\_
+The level of confidence represents the expected proportion of intervals that will contain the parameter if a large number of different samples is obtained.
+
+The level of confidence is denoted $(1 - \alpha) \times 100\%$. For example, a 95% level of confidence $(\alpha = 0.05)$ implies that if 100 different confidence intervals are constructed, each based on a different sample from the same population, we will expect 95 of the intervals to contain the parameter and 5 not to include the parameter.
+
+Confidence interval estimates for the population proportion are of the form:
+
+**Point estimate** $\pm$ **margin of error.**
+
+The margin of error of a confidence interval estimate of a parameter is a measure of how accurate the point estimate is. The margin of error depends on three factors:
+
+-   **Level of confidence:** As the level of confidence increases, the margin of error also increases.
+-   **Sample size:** As the size of the random sample increases, the margin of error decreases.
+-   **Standard deviation of the population:** The more spread there is in the population, the wider our interval will be for a given level of confidence.
+
+
+-   **Point estimate**
+
+    -   statistics vs. parameter
+    -   point estimate for population proportion is $\hat{p}=\frac{x}{n}$
+    -   may also represent a probability of a binomial distribution, such as p=0.5 for a fair coin.
+
+-   **Confidence interval** for an unknown parameter
+
+-   **Margin of error**
+
+-   Interpretation of what is meant by being "95%" confident (think simulations)
+
+-   Formula for confidence interval for population proportion, p.
+
+-   Know z - multipliers for 90%, 95%, and 99% confidence intervals.
+
+-   Requirements:
+
+    -   Random sample (independent)
+
+    -   AND large sample size (at least 10 successes $\&$ 10 Failures) np\>10 and n(1-p) \> 10
+
+    -   Calculating sample size to obtained desired margin of error E.
+
+        -   Using educated guess for population proportion.
+        -   Using p=0.5 for conservative (large) sample size.
+
+    -   Round up to nearest integer.
+
+
+Suppose that a simple random sample of size $n$ is taken from a population.\
+A $(1 - \alpha) \times 100\%$ confidence interval for p is given by the following quantities:
+
+$\hat{p}\pm z^* \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+
+Where p = Theoretical or "True" population proportion
+
+| Confidence Level | $1 - \alpha \times 100\%$ | $\alpha$ | $Z^* = Z_{\alpha/2}$ |
+|------------------|---------------------------|----------|----------------------|
+| 0.90             | 0.10                      | 1.645    |                      |
+| 0.95             | 0.05                      | 1.96     |                      |
+| 0.98             | 0.02                      | 2.33     |                      |
+| 0.99             | 0.01                      | 2.58     |                      |
+
+The Z-table is used to find the critical values, $Z^*$, for confidence intervals on the true proportion p. This abbreviated table gives the most common z-scores for the centered values of confidence for the normal curve.
+
+**Example 2:**
+
+In July of 2008, a University Poll asked 1783 registered voters nationwide whether they favored or opposed the death penalty for persons convicted of murder 1123 were in favor.
+
+Obtain a 90% confidence interval for the proportion of registered voters nationwide who are in favor of the death penalty for persons convicted of murder.
+
+**Solution:**\
+$\hat{p} = \frac{1123}{1783} = 0.63$
+
+Where:
+
+n = 1783
+
+$$
+np \ \& \ n(1-p) > 10
+$$
+
+Lower bound: $0.63 - 1.645 \times \sqrt{\frac{0.63(1-0.63)}{1783}} \approx 0.61$\
+Upper bound: $0.63 + 1.645 \times \sqrt{\frac{0.63(1-0.63)}{1783}} \approx 0.65$
+
+We are 90% confident that the proportion of registered voters who are in favor of the death penalty for those convicted of murder is between 0.61 and 0.65.
+
+**Estimating the margin of error on p for a given confidence level**
+
+Consider the scenarios for the product of proportion and complements for the margin of error. What happens as the proportion changes?
+
+$$
+(1 - \alpha)\% CI \text{ on } p = \hat{p} \pm Z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+$$
+
+Where:
+
+-   $\hat{p}$ = Point estimate
+-   $Z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$ = Margin of Error = $Z_{critical} \times Standard Error$
+
+Determine the Sample Size Necessary for Estimating a Population Proportion within a Specified Margin of Error
+
+Two possible solutions:
+
+1.  Use an estimate of p based on a pilot study
+2.  Use the value of p which gives the largest possible value of $n$ for a given confidence level $\&$ margin of error.
+
+**Sample Size Needed for Estimating the Population Proportion**
+
+The sample size required to obtain a $(1 - \alpha)$ - 100% confidence interval for $p$ with a margin of error E is given by:
+
+$$
+n = \frac{p(1-p) \left( \frac{Z_{\frac{\alpha}{2}}}{E} \right)^2}{rounded \text{ up to the next integer}}, \text{ where } p \text{ is a prior estimate of } p.
+$$
+
+| $n$  | Approximate Margin of Error |
+|------|-----------------------------|
+| 500  | 0.045 (or 4.5%)             |
+| 800  | 0.035 (or 3.5%)             |
+| 1000 | 0.032 (or 3.2%)             |
+| 1500 | 0.026 (or 2.6%)             |
+
+If a prior estimate on the proportion is unavailable, using $\hat{p} = 0.5$ will give the following estimate for the sample size:
+
+$$
+n = 0.25 \times \left( \frac{Z_{\frac{\alpha}{2}}}{E} \right)^2
+$$
+
+Gallup and other polling agencies report at the 95% confidence level and assume p = 0.5 in calculating the margin of error:
+
+**Example 3**
+
+The statistic presented below appeared in the weekly magazine TIME, August 23, 1993, under the article *Danger in the Safety Zone*. Consider the tiny print “From telephone poll of 500 adult Americans taken for TIME/CNN. Margin of error is $\pm 0.45$”.
+
+Do you favor the death penalty?
+
+| YES | NO  |
+|-----|-----|
+| 77% | 17% |
+
+From a telephone poll of 500 adult Americans taken for TIME/CNN on Aug. 12 by Yankelovich Partners, Inc. Margin of error is $\pm 0.45$
+
+Explain how the margin of error can be calculated.
+
+Solution: Margin of Error in the article (under 95% confidence) is about:
+
+$$
+1.96 \sqrt{\frac{0.5 \times 0.5}{500}} \approx \frac{1}{\sqrt{500}} = 0.04472 \approx 4.5\%
+$$
+
+**Example 2 Illustrating the Meaning of Level of Confidence Using Simulation :**
+
+Let's illustrate what "95% confidence" means in a 95% confidence interval in another way. We will simulate obtaining 200 different random samples of size n=50, m=50 i.e., n equals 50 from a population with p=0.7, p equals 0.7. Figure 4 shows the confidence intervals in groups of 100. A green interval is a 95% confidence interval that includes the population proportion, 0.7. A red interval is a confidence interval that does not include the population proportion. (For now, ignore the blue intervals.) Notice that the red intervals that do not capture the population proportion 0.7 have centers that are far away (more than 1.96 standard errors) from 0.7. Of the 200 confidence intervals obtained, 10 (the red intervals) do not include the population proportion. For example, the first interval to miss has a sample proportion that is too small to result in an interval that captures 0.7.
+
+(Note: The actual image illustrating the confidence intervals would be embedded here using $\text{![ ]()}$ if the image file was provided.)
+
+**Appeal: Simulating Confidence Intervals (rossmanchance.com)**
+
+A 95% level of confidence means that 95% of all possible samples result in confidence intervals that include the parameter (and 5% of all possible samples result in confidence intervals that do not include the parameter).
+
+**Caution!**
+
+A 95% confidence interval does *not* mean that there is a 95% probability that the interval contains the parameter (such as p). Remember, probability describes the likelihood of *undetermined* events. Therefore, it does not make sense to talk about the probability that the interval contains the parameter since the parameter is a *fixed* value. Thinking of this way: If a coin and obtain a head. If I ask you to determine the probability that the flip resulted in a head, it would not be 0.5, because the outcome has already been determined. Instead, the probability is 0 or 1. Confidence intervals work the same way. Because p or $\mu$ is already determined, we do not say that there is a 95% probability that the interval contains $\mu$.
+
+**Exercises**
+
+1.  As a potential worldwide pandemic, avian influenza H5N1 (commonly called the bird flu) poses a serious health risk. As of January 24, 2012, there have been 583 human cases of this virus in the world. Of these cases, 344 have resulted in death. Consider the outcomes of these cases as a random sample of all possible outcomes.
+
+    a.  Find a point estimate for the proportion of people who would die if infected with the bird flu.
+    b.  Construct a 90% confidence interval for the proportion of cases that would be expected to result in death if a pandemic occurred.
+    c.  Interpret the confidence interval.
+
+2.  A sociologist wanted to determine the percentage of residents of America that only speak English at home. What size sample should be obtained if she wishes her estimate to be within 3 percentage points with 90% confidence assuming she uses the estimate obtained from the Census 2000 Supplementary Survey of 82.4%?
+
+3.  Nitrates are groundwater contaminants derived from fertilizer, septic tank seepage, and other sewage. Nitrate poisoning is particularly hazardous to infants under the age of 6 months. The Maximum Contaminant Level (MCL) is the highest level of a contaminant that government allows in drinking water. For nitrates, the MCL is 10 mg/L. The health department wants to know the proportion of wells in Madison County that have nitrate levels above the MCL. A worker has been assigned to take a simple random sample of wells in the county, measure the nitrate levels, and assess compliance. What size sample should the health department obtain if the estimate is desired to be within 2 percent with 95% confidence if:
+
+    a.  there is no prior information available?
+    b.  a study conducted two years ago showed that approximately 7% of the wells in Madison County had nitrate levels exceeding the MCL.
+
+
+**Confidence interval for two-sided test**
+
+For $H_0: p = p_0$, $H_a: p \neq p_0$ (two-sided) and significance level $\alpha$, construct a $100(1-\alpha)\%$ confidence interval: $\hat{p} \pm z_{\alpha/2} \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+
+Make decision:
+
+-   If $p_0$ is not in the C.I. then we reject $H_0$ in favor of $H_a$;
+-   If $p_0$ is in the C.I. then we fail to reject $H_0$.
+
+**Type I and Type II errors**
+
+| Truth      | Test conclusion | do not reject $H_0$ | reject $H_0$ in favor of $H_A$ |
+|------------|-----------------|---------------------|--------------------------------|
+| $H_0$ true |                 | okay                | Type 1 Error                   |
+| $H_A$ true |                 | Type 2 Error        | okay                           |
+
+
+
+**Example**
+
+Claim: $p<0.32$, $n=120$, $p=0.233$, $\alpha=0.05$
+
+**Solution**
+
+*(a)* Formulate the hypotheses: $H_0: p=0.32$, $H_a: p<0.32$
+
+*(b)* Compute the $z$-test statistic: $z = \frac{0.233-0.32}{\sqrt{\frac{0.32 \times 0.68}{120}}} = -2.043057$ (R-code: `(0.233-0.32)/sqrt(0.32*0.68/120)`)
+
+*(c)* Compute the p-value: p-value $= P(Z < -2.043057) = 0.020534$ (R-code: `pnorm(-2.043057)`)
+
+*(d)* Draw conclusion: since the p-value is less than $\alpha$, $0.0205 < 0.05$, we reject the null hypothesis and support the alternative hypothesis: We have strong evidence to support the claim that the proportion is less than 0.32 ($p<0.32$).
+
+Do the following hypotheses testing for given claims, sample size, sample proportion, and significance level:
+
+1.  Claim: $p<0.56$, $n=86$, $\hat{p}=0.387$, $\alpha=0.10$
+
+2.  Claim: $p>0.75$, $n=228$, $\hat{p}=0.818$, $\alpha=0.02$
+
+3.  Claim: $p \neq 0.60$, $n=77$, $\hat{p}=0.709$, $\alpha=0.02$
+
+4.  Claim: $p \neq 0.60$, $n=77$, $\hat{p}=0.565$, $\alpha=0.02$
+
+
+## Hypothesis Testing for $p$
+
+### Objectives
+
+By the end of this unit, students will be able to:
+
+::: {.blue-background}
+- Formulate claims about a population proportion in the form of a null hypothesis and alternative hypothesis.
+- Identify the types of errors associated with statistical hypothesis testing.
+- Conduct a large-sample z-test about population proportions.
+:::
+
+### Overview
+
+**Hypothesis Testing Steps**
+
+1.  Formulate the null hypothesis and the alternative hypothesis
+2.  Use sample to compute p-value (or compute the test statistic and use the rejection region based on given significance level)
+3.  Make decision for specified significance level
+
+**Formulation of Hypothesis**
+
+**The null hypothesis:** $H_0: p = p_0$
+
+**The alternative hypothesis is one of the three:**
+
+-   $H_a: p > p_0$ (right-sided) (or right-tailed)
+-   $H_a: p < p_0$ (left-sided) (or left-tailed)
+-   $H_a: p \neq p_0$ (two-sided) (or two-tailed)
+
+**What is p-value**
+
+A p-value is the calculated probability of observing data at least as favorable to the alternative hypothesis, assuming that the null hypothesis is true (in this section, we use the observed $\hat{p}$, and under assumption the sample proportion $\sim N(p_0, \sqrt{\frac{p_0(1-p_0)}{n}})$)
+
+**How to compute p-value**
+
+Use a sample of sample size $n$ with sample proportion $\hat{p}=p_1$, under the assumption that:
+
+$\hat{p}$ $\sim N(p_0, \sqrt{\frac{p_0(1-p_0)}{n}})$).
+
+Let $z_1 = \frac{p_1 - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$ (this is called the $z$-test statistic)
+
+-   For left-sided test, p-value is $P(\hat{p} < p_1)$, or $P(Z < z_1)$,
+
+use pnorm $({p_1, p_0,}{\sqrt{\frac{p_0(1-p_0)}{n}}})$ or pnorm $(z_1)$
+
+-   For right-sided test, p-value is $P(\hat{p} > p_1)$, or $P(Z > z_1)$, use pnorm$({p_1,p_0,}{\sqrt{\frac{p_0(1-p_0)}{n}}}, lower.tail = FALSE)$ or
+
+pnorm $(z_1, lower.tail = FALSE)$
+
+-   For two-sided test, p-value is $P(|Z| > |z_1|)$, use 2\*pnorm $(-|z_1|)$ or
+
+2\*pnorm $(|z_1|, lower.tail = FALSE)$
+
+**Make decision by comparing p-value with significance level** $\alpha$
+
+-   If p-value $\leq \alpha$, then we have enough evidence to reject $H_0$ and substantiate $H_a$;
+
+-   If p-value $> \alpha$, then we do not have enough evidence to reject $H_0$
+
+-   The default value of significance level is $\alpha = 0.05$
+
+**Decision errors**
+
+Hypothesis tests are not flawless: we can make an incorrect decision in a statistical hypothesis test based on the data. For example, in the court system innocent people are sometimes wrongly convicted and the guilty sometimes walk free. One key distinction with statistical hypothesis tests is that we have the tools necessary to probabilistically quantify how often we make errors in our conclusions.
+
+Recall that there are two competing hypotheses: the null and the alternative. In a hypothesis test, we make a statement about which one might be true, but we might choose incorrectly. There are four possible scenarios, which are summarized in the picture below.
+
+![](images/lesson3_img1.png){ width=80% }
+
+
+- **Type 1 Error** is rejecting the null hypothesis when $H_0$ is actually true.
+
+- **Type 2 Error** is failing to reject the null hypothesis when the alternative is actually true.
+
+
+In a US court, the defendant is either innocent ($H_0$) or guilty ($H_A$). What does a Type 1 Error represent in this context? What does a Type 2 Error represent?
+
+
+![](images/lesson3_img2.png){ width=80% }
+
+
+The logic of hypothesis testing shares many key elements with the US judicial system. The jury does not know whether the defendant committed the crime, but they must decide whether or not to convict the individual. The jury is presented with evidence, akin to data, and asked whether the evidence is consistent with innocence. If the evidence is outside of what would be expected, the defendant is charged with a crime.
+
+**One-sided hypothesis tests**
+
+So far we have only considered what are called **two-sided hypothesis tests**, where we care about detecting whether $p$ is either above or below some null value $p_0$ i.e. $H_A: p \ne p_0$. There is a second type of hypothesis test called a **one-sided hypothesis test**. For a one sided hypothesis test, the hypotheses take one of the following forms:
+
+- There's only value in detecting if the population parameter is *less than* some value $p_0$. In this case, the alternative hypothesis is written as $p < p_0$ i.e. $H_A: p < p_0$ for some null value $p_0$.
+
+- There's only value in detecting if the population parameter is *more than* some value $p_0$. In this case, the alternative hypothesis is written as $p > p_0$ i.e. $H_A: p > p_0$ for some null value $p_0$.
+
+While we adjust the form of the alternative hypothesis, we continue to write the null hypothesis using an equals-sign i.e. $H_0: p = p_0$ in the one-sided hypothesis test case.
+
+
+In the entire hypothesis testing procedure, there is only one difference in evaluating a one-sided hypothesis test vs a two-sided hypothesis test: how to compute the p-value. In a one-sided hypothesis test, we compute the p-value as the tail area in the *direction of the alternative hypothesis only*, meaning it is represented by a single tail area. 
+
+Herein lies the reason why one-sided tests are sometimes interesting: if we don't have to double the tail area to get the p-value, then the p-value is smaller and the level of evidence required to identify an interesting finding in the direction of the alternative hypothesis goes down.
+
+However, one-sided tests aren't all sunshine and rainbows: the heavy price paid is that any interesting findings in the opposite direction much be **disregarded**.
+
+
+Why can't we simply run a one-sided test that goes in the direction of the data?
+
+
+Answer:
+
+We have been building a careful framework that controls for the Type 1 Error, which is the significance level $\alpha$ in a hypothesis test. We will use the $\alpha = 0.05$ below to keep things simple.
+
+Imagine we could pick the one-sided test after we saw the data. **What will go wrong?**
+
+- If $\hat p$ is *smaller* than the null value, then a one-sided test where $p < p_0$ would mean that any observation in the *lower* 5% tail of the null distribution would lead to us **rejecting** $H_0$.
+
+- If $\hat p$ is *larger* than the null value, then a one-sided test where $p > p_0$ would mean that any observation in the *upper* 5% tail of the null distribution would lead to us **rejecting** $H_0$.
+
+Now, if $H_0$ were **true**, there is a 10% chance of being in one of the two tails, so our testing error is actually $\alpha = 0.10$, not 0.05. That is, not being careful about when to use one-sided tests effectively undermines the methods we are working so hard to develop and utilize.
+
+### Solved Problem
+
+Before we start, the following question comes from a book written by Hans Rosling, Anna Rosling Ronnlund, and Ola Rosling called **Factfulness**:
+
+*How many of the world's 1 year old children today have been vaccinated against some disease:*
+  
+  A) 20%
+  B) 50%
+  C) 80%
+
+
+In this tutorial, we will be exploring how people with a 4-year college degree perform on this and other world health questions as we learn about hypothesis tests, which are a framework used to rigorously evaluate competing ideas and claims
+
+**Hypothesis testing framework**
+
+We're interested in understanding how much people know about world health and development. If we take a multiple choice world health question, then we might like to understand if $\mathbf{H_0:}$ People never learn these particular topics and their responses are simply equivalent to random guesses.
+
+$\mathbf{H_A:}$ People have knowledge that helps them do better than random guessing, or perhaps, they have false knowledge that leads them to actually do worse than random guessing.
+
+These competing ideas are called **hypotheses**. We call $H_0$ the null hupothesis and $H_A$ the alternative hypothesis. When there is a subscript 0 like in $H_0$, data scientists pronounce it as "nought" (e.g. $H_0$ is pronounced "H-nought").
+
+**Null and Alternative Hypothesis**
+
+The **null hypothesis** ($H_0$) often represents a skeptical perspective or a claim to be tested.
+
+The **alternative hypothesis** ($H_A$) represents an alternative claim under consideration and is often represented by a range of possible parameter values.
+
+The null hypothesis often represents a skeptical position or a perspective of "no difference". In our first example, we'll consider whether the typical person does any different than random guessing on Rosling's question about infant vaccinations.
+
+The alternative hypothesis generally represents a new or stronger perspective. In the case of the question about infant vaccinations, it would certainly be interesting to learn whether people do better than random guessing, since that would mean that the typical person knows something about world health statistics. It would also be very interesting if we learned that people do worse than random guessing, which would suggest people believe incorrect information about world health.
+
+The hypothesis testing framework is a very general tool, and we often use it without a second thought. If a person makes a somewhat unbelievable claim, we are initially skeptical. However, if there is sufficient evidence that supports the claim, we set aside our skepticism and reject the null hypothesis in favor of the alternative. The hallmarks of hypothesis testing are also found in the US court system.
+
+Jurors examine the evidence to see whether it convincingly shows a defendant is guilty. Even if the jurors leave unconvinced of guilt beyond a reasonable doubt, this does not mean they believe the defendant is innocent. This is also the case with hypothesis testing: *even if we fail to reject the null hypothesis, we typically do not accept the null hypothesis as true*. Failing to find strong evidence for the alternative hypothesis is not equivalent to accepting the null hypothesis.
+
+When considering Roslings' question about infant vaccination, the null hypothesis represents the notion that the people we will be considering - college-educated adults - are as accurate as random guessing. That is, the proportion $p$ of respondent who pick the correct answer, that 80% of 1 year olds have been vaccinated against some disease, is about 33.3% (or 1-in-3 if wanting to be perfectly precise). The alternative hypothesis is that this proportion is something other than 33.3%.
+
+While its helpful to write these hypotheses in words, it can be useful to wrtie them using mathematical notation:
+
+$H_0: p = 0.333$
+
+$H_A: p \ne 0.333$
+
+In this hypothesis setup, we want to make a conclusion about the population parameter $p$. The value we are comparing the parameter to is called the **null value**, which in this case is 0.333. It's common to label the null value with the same symbol as the parameter but with a subscript "0". That is, in this case, the null value is $p_0 = 0.333$ (pronounces "p-nought equals 0.333")
+
+
+### Exercises
+
+**Exercise 1**
+
+Formulate the null and alternative hypotheses in the following situations:
+
+*(a)* A company claims that the proportion of its customers that have complaints against the company is now less than 0.13.
+
+*(b)* An inspector wants to establish that 2×4 lumber at a mill does not meet a specification that requires at most 5% break under a standard load.
+
+*(c)* A university official believes that the proportion of students who currently hold part-time jobs has changed from the value 0.26 that prevailed four years ago.
+
+**Exercise 2**
+
+A census recorded five years ago that 20% of the families in a large community lived below the poverty level. To determine if this percentage has changed, a random sample of 400 families is studied and 70 are found to be living below the poverty level. Does this finding indicate that the current percentage of families earning income below the poverty level has changed from what it was five years ago? (Use significance level $\alpha=0.05$)
+
+Follow the steps to conduct the hypotheses testing:
+
+*(a)* Formulate the hypotheses
+
+*(b)* Compute the sample proportion
+
+*(c)* Compute the test statistic
+
+*(d)* Compute the p-value
+
+*(e)* Draw conclusion using the significance level $\alpha=0.05$.
+
+**Exercise 3**
+
+Conduct hypotheses testing.
+
+Follow the example (Please redo the example by yourself)

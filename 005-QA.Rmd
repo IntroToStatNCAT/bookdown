@@ -1,195 +1,165 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  word_document: default
+  pdf_document: default
 ---
 
-# Inference for Numerical Data
+# Linear Regression
+## Introduction to Linear Regression
 
-**Basic Terms**
+### Objectives
 
--   Sample mean $\bar{x}$ is the unbiased **point estimator** for the population mean $\mu$
--   A value of $\bar{x}$ is a point estimate
--   Error = $\mu - \bar{x}$
+By the end of this unit, students will be able to:
 
-## Central Limit Theorem (Sampling distribution of sample mean)
+::: {.blue-background}
+- Describe linear associations between numerical variables using correlations.
+- Use linear regression to model linear relationships between two numerical variables.
+- Evaluate the statistical significance of linear relationships between numerical variables.
+:::
 
-When taking samples of fixed size $n$ from a population with mean $\mu$ and standard deviation $\sigma$, when the observations are independent (take random samples of fixed size $n$, without replacement); the sample size $n \geq 30$, then the sample proportion $\bar{x}$ is approximately normal: $\bar{x} \sim N(\mu, \frac{\sigma}{\sqrt{n}})$.
+### Overview
 
-When we know the population is normal, no matter what sample size, $\bar{x} \sim N(\mu, \frac{\sigma}{\sqrt{n}})$
+Regression analysis concerns the study of relationships between quantitative variables: identifying, estimating, and validating the relationship.
 
-**Notes:**
+-   (Simple) linear regression is to study if the relationship between two numerical variables is linear, and the strength of the linear association.
 
--   When using $\bar{x}$ to estimate $\mu$ the Standard Error of $\bar{x}$ is the standard deviation of its sampling distribution: $S.E. = \frac{\sigma}{\sqrt{n}}$
--   Usually $\sigma$ is unknown use $s$ to replace $\sigma$: $S.E. \approx \frac{s}{\sqrt{n}}$
+-   We begin with the scatter plot of two numerical variables, to observe if there is a linear association.
 
-**When can the CLT be applied**
+-   If there seems to be a linear relationship, we use the linear model $y = \beta_0 + \beta_1x$ to best fit the data.
 
--   If $n \geq 30$ and $\sigma$ is known
--   If the population is normal and $\sigma$ is known
--   Otherwise we use t-distribution: $T = \frac{\bar{x} - \mu}{s/\sqrt{n}} \sim t_{df}$, where $df=n-1$ is the degree of freedom.
+-   Using a sample data set $(x_i, y_i)$ for $i = 1, \ldots, n$ and least squares error, we derive an estimated model $\hat{y} = b_0 + b_1x$.
 
-**t-distribution**
+Let's check in with a few short videos from our friends at OpenIntro.org to help develop the notion of linear regression for us.
 
-Similar to the standard normal distribution: the probability density curve of a t-distribution is centered at 0, and it is bell-shaped. But tails of a t-distribution are thicker than that of the standard normal distribution; moreover, the lower $df$, the thicker the tails.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mPvtZhdPBhQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-![](images/img52.png){width="500"}
 
-**Using R to find probability under t-distribution with** $df=n-1$:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z8DmwG2G4Qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
--   For $P(T < b)$: `pt(b, df)`
--   For $P(T > a)$: `pt(a, df, lower.tail = FALSE)` or `1 - pt(a, df)`
--   For $P(a < T < b)$: `pt(b, df) - pt(a, df)`
+Simple linear regression uses a single numerical feature (predictor variable) to predict a numerical response. Simple linear regression uses the form of a straight line $y = mx + b$, where $m$ denotes slope of the relationship and $b$ denotes the intercept (the value of $y$ if $x$ is 0). With regression, we are fitting a straight line to data, where noise is present -- that is, the line we fit is not expected to pass through all of the data points. The form for a simple regression model is
+$$\displaystyle{y = \beta_0 + \beta_1x + \varepsilon}$$
 
-![](images/img53.png){width="550"}
+Notice that $\beta_0$ is the intercept, $\beta_1$ is the slope, and $\varepsilon$ denotes the unexplained error (noise). We typically do not write $\varepsilon$ as part of the model, since we assume that it is random noise with a mean of $0$ and a constant standard deviation ($\sigma$) -- in our earlier notation, we assume $\varepsilon \sim N\left(\mu = 0, \sigma\right)$. Instead, we often write the regression model as
+$$\displaystyle{\mathbb{E}\left[y\right] = \beta_0 + \beta_1x}$$
 
-**To find the cut-off point** $t$ (critical value $t^*$ or $t_{\alpha/2}$) for a given cumulative probability with $df=n-1$:
+Let's see regression in action as we consider an application to understanding biases in course evaluations.
 
--   Find $t$ for $P(T < t) = p$: `qt(p, df)`
--   Find $t$ for $P(T > t) = p$: `qt(1 - p, df)` or `qt(p, df, lower.tail = FALSE)`
--   $t_{\alpha/2}$: $P(T > t_{\alpha/2})$ = $\alpha/2$: $qt(\alpha/2, df, lower.tail = FALSE)$
+**The Data**
 
-![](images/img54.png){width="500"}
+Many college courses conclude by giving students the opportunity to evaluate the course and the instructor anonymously. However, the use of these student evaluations as an indicator of course quality and teaching effectiveness is often criticized because these measures may reflect the influence of non-teaching related characteristics, such as the physical appearance of the instructor. The article titled, "Beauty in the classroom: instructors' pulchritude and putative pedagogical productivity" (Hamermesh and Parker, 2005) found that instructors who are viewed to be better looking receive higher instructional ratings. (Daniel S. Hamermesh, Amy Parker, Beauty in the classroom: instructors pulchritude and  putative pedagogical productivity, *Economics of Education Review*, Volume 24, Issue 4, August 2005, Pages 369-376, ISSN 0272-7757, 10.1016/j.econedurev.2004.07.013. [http://www.sciencedirect.com/science/article/pii/S0272775704001165](http://www.sciencedirect.com/science/article/pii/S0272775704001165).)
 
-**100**$(1-\alpha)\%$ Confidence interval for mean $\mu$
+In this workbook we will analyze the data from this study in order to learn what goes into a positive professor evaluation.
 
-Using sample with size $n$, sample mean $\bar{x}$, sample standard deviation $s$, the critical value $t_{\alpha/2}$: $\bar{x} \pm t_{\alpha/2} \times \frac{s}{\sqrt{n}}$
+The data were gathered from end of semester student evaluations for a large sample of professors from the University of Texas at Austin. In addition, six students rated the professors' physical appearance. (This is a slightly modified version of the original data set that was released as part of the replication data for *Data Analysis Using Regression and Multilevel/Hierarchical Models* (Gelman and Hill, 2007).) The result is a data frame where each row contains a different course and columns represent variables about the courses and professors.
 
-**Margin of Error (M.E.)**
+variable         | description
+---------------- | --------------------------------------
+`score`          | average professor evaluation score: (1) very unsatisfactory - (5) excellent.
+`rank`           | rank of professor: teaching, tenure track, tenured.
+`ethnicity`      | ethnicity of professor: not minority, minority.
+`gender`         | gender of professor: female, male.
+`language`       | language of school where professor received education: english or non-english.
+`age`            | age of professor.
+`cls_perc_eval`  | percent of students in class who completed evaluation.
+`cls_did_eval`   | number of students in class who completed evaluation.
+`cls_students`   | total number of students in class.
+`cls_level`      | class level: lower, upper.
+`cls_profs`      | number of professors teaching sections in course in sample: single, multiple.
+`cls_credits`    | number of credits of class: one credit (lab, PE, etc.), multi credit.
+`bty_f1lower`    | beauty rating of professor from lower level female: (1) lowest - (10) highest.
+`bty_f1upper`    | beauty rating of professor from upper level female: (1) lowest - (10) highest.
+`bty_f2upper`    | beauty rating of professor from second upper level female: (1) lowest - (10) highest.
+`bty_m1lower`    | beauty rating of professor from lower level male: (1) lowest - (10) highest.
+`bty_m1upper`    | beauty rating of professor from upper level male: (1) lowest - (10) highest.
+`bty_m2upper`    | beauty rating of professor from second upper level male: (1) lowest - (10) highest.
+`bty_avg`        | average beauty rating of professor.
+`pic_outfit`     | outfit of professor in picture: not formal, formal.
+`pic_color`      | color of professor's picture: color, black & white.
 
-$M.E. = t_{\alpha/2} \times S.E. = t_{\alpha/2} \times \frac{s}{\sqrt{n}}$
 
-**Hypothesis Testing for mean** $\mu$ -- one sample t test (Same framework as the Hypothesis Testing for proportion)
 
-**Steps:**
+**Prediction (Predicted value)**
 
-1.  Set up the hypotheses
+If the least square regression model is given by $\hat{y} = b_0 + b_1x$, then for a given $x$, the predicted value is $\hat{y} = b_0 + b_1x$ -- plug in the value of $x$.
 
-2.  Compute the t test statistic
+**Interpreting the slope and the y-intercept of a regression line**
 
-    Using sample with size $n$, sample mean $\bar{x}$, sample standard deviation $s$, null value $\mu_0$,
+-   The slope $b_1$ is the amount by which the predicted value $y$ changes when $x$ is increased by one unit.
 
-    $T = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}$
+-   The y-intercept $b_0$ is the predicted value of $y$ when $x = 0$.
 
-3.  Compute the p-value
+**Residual**
 
-    Let t-test statistic $t_1 = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}$ (from step 2)
+For a data set $(x_i, y_i)$ for $i = 1, \ldots, n$, the error of using the model is: $e_i = y_i - \hat{y}_i = y_i - (b_0 + b_1x_i)$
 
-    -   For left-sided test, p-value is $P(T < t_1)$ use `pt(t, df)`
+**The Correlation Coefficient**
 
-    -   For right-sided test, p-value is $P(T > t_1)$ use `pt(t, df, lower.tail = FALSE)`
+-   The mathematical formula is:
 
-    -   For two-sided test, p-value is $P(|T| > |t_1|)$ use $2*pt(-|t_1|, df)$ or $2*pt(|t_1|, df, lower.tail = FALSE)$
+$R = \frac{1}{n-1}\sum_{i=1}^n \frac{(x_i - \bar{x})(y_i - \bar{y})}{s_x s_y}$
 
-4.  Compare the p-value with the significance level $\alpha$ and make decision
+-   The value of $R$: $-1 \leq R \leq 1$
 
-    -   If p-value $\leq \alpha$, then we have enough evidence to reject $H_0$ and substantiate $H_a$;
+-   The closer $|R|$ is to 1, the stronger the linear association.
 
-    -   If p-value \> $\alpha$, then we do not have enough evidence to reject $H_0$
+**The Coefficient of Determination:** $R^2$
 
-    -   The default value of significance level is $\alpha = 0.05$
+-   The coefficient of determination $R^2$ is a measure used in statistical analysis to assess how well a model explains and predicts future outcomes.
+
+-   $R^2$ is the proportion (fraction) of the variation in the response variable that is predictable (can be explained) from the explanatory variable.
+
+**Conditions to have the least squares regression**
+
+Visually inspect the scatter plot:
+
+-   The relationship between the explanatory and the response variable should be linear.
+-   The histogram of residuals distribution should be normal (symmetric, bell-shaped).
+-   The variability of points should be roughly constant.
+-   No extreme outliers.
+
+**Computing the coefficients in** $\hat{y} = b_0 + b_1x$
+
+$b_1 = \frac{s_y}{s_x} R$
+
+$b_0 = \bar{y} - b_1 \bar{x}$
+
+**Notes**
+
+1.  $R$ and $b_1$ have the same sign.
+
+2.  Equivalently, $R = \frac{s_x}{s_y} b_1$
+
+### Solved Problem
+
+### Exercises
 
 **Exercise 1**
 
-Without finding the values, arrange the numbers from small to large:
+Describe the linear relationship from the scatter plot.
 
-a)  $P(Z < -1.25)$\
-b)  $P(T < -1.25)$ with $df=10$\
-c)  $P(T < -1.25)$ with $df=15$\
-d)  $P(Z > 1.35)$\
-e)  $P(T > 1.35)$ with $df=10$\
-f)  $P(T > 1.25)$ with $df=15$
+![](images/img55.png){width="200"}
 
-$$ \_\_\_\_\_\_ < \_\_\_\_\_\_ < \_\_\_\_\_\_ < \_\_\_\_\_\_ < \_\_\_\_\_\_ < \_\_\_\_\_\_ $$
+Select the correct choice.
+
+*(a)* Strong positive relationship
+
+*(b)* Strong negative relationship
+
+*(c)* Weak positive relationship
+
+*(d)* Weak negative relationship
 
 **Exercise 2**
 
-Use R calculator to find the values of the probability of t-distribution. Sketch the t-curve and shaded region.
+The mean travel time from one stop to the next on the Coast Starlight is 129 minutes, with a standard deviation of 113 minutes. The mean distance from one stop to the next is 108 miles with a standard deviation of 99 miles. The correlation between travel time and distance is 0.636.
 
--   $P(T < -1.25)$ with $df=10$
--   $P(T < -1.25)$ with $df=15$
--   $P(T > 1.35)$ with $df=10$
--   $P(T > 1.25)$ with $df=15$
+*(a)* Write the equation of the regression line for predicting travel time (based on the distance).
 
-**Exercise 3**
+*(b)* Interpret the slope and the intercept in this context.
 
-Use R calculator to find the critical t-value $(t_{\alpha/2})$, rounded the result to 4 decimal places.
+*(c)* Calculate and interpret $R^2$.
 
--   CL = 90%, $n = 7$
--   CL = 98%, $n = 20$
--   CL = 99%, $n = 28$
--   CL = 95%, $n = 9$
+*(d)* The distance between Santa Barbara and LA is 103 miles. Use this model to estimate the time it takes to travel between these two cities.
 
-**Exercise 4**
-
-Find confidence interval with the sample information:
-
-*(a)* $n=5, \bar{x}=4.1, s=1.2$, 90% confidence level
-
-*(b)* $n=15, \bar{x}=4.1, s=1.2$, 90% confidence level
-
-*(c)* $n=5, \bar{x}=4.1, s=1.2$, 98% confidence level
-
-*(d)* $n=15, \bar{x}=4.1, s=1.2$, 98% confidence level
-
-**Exercise 5**
-
-What affects the width of the confidence interval? (You may use your observations from Exercise 4 for reference)
-
-**Exercise 6**
-
-(Working backwards) A 95% confidence interval for a population mean $\mu$ is given as (18.98, 20.02). This confidence interval is based on a simple random sample of 36 observations. Calculate the following:
-
-*(a)* The sample mean
-
-*(b)* The margin of error
-
-*(c)* The critical t-value (use t-distribution)
-
-*(d)* The standard error (use the result of c)
-
-*(e)* The sample standard deviation (use the result of d)
-
-**Exercise 7**
-
-Find the P-value for the given sample sizes and test statistic:
-
-*(a)* $n=26$, $T=2.485$, for right-sided test
-
-*(b)* $n=18$, $T=-1.45$, for left-sided test
-
-*(c)* $n=26$, $T=2.485$, for two-sided test
-
-*(d)* $n=18$, $T=-1.45$, for two-sided test
-
-**Exercise 8**
-
-A random sample of 25 New Yorkers were asked how much sleep they get per night. The result shows:
-
-$n=25, \bar{x}=7.73, s=0.77$
-
-The point estimate suggests that New Yorkers sleep less than 8 hours per night on average. Is the result statistically significant?
-
-Follow the steps to conduct the hypothesis test.
-
-*(a)* Write the hypotheses in symbols: $H_0$: \_\_\_\_\_\_\_\_\_\_\_\_ $H_a$: \_\_\_\_\_\_\_\_\_\_\_\_
-
-*(b)* Calculate the test statistic
-
-*(c)* Compute the P-value and draw a picture
-
-*(d)* What is the conclusion of the hypothesis test, using the significance level $\alpha=0.05$
-
-*(e)* If you were to construct a 90% confidence interval that corresponds to this hypothesis test, would you expect 8 hours a night on average to be in the interval?
-
-**Exercise 9**
-
-Georgianna claims that in a small city, the average child takes less than 5 years of piano lessons. We have a random sample of 20 children from the city, with a mean of 4.6 years of piano lessons and a standard deviation of 2.2 years. Evaluate Georgianna’s claim using a hypothesis test.
-
-*(a)* Write the hypotheses in symbols: $H_0$: \_\_\_\_\_\_\_\_\_\_\_\_ $H_a$: \_\_\_\_\_\_\_\_\_\_\_\_
-
-*(b)* Calculate the test statistic
-
-*(c)* Compute the P-value and draw a picture
-
-*(d)* What is the conclusion of the hypothesis test, using the significance level $\alpha=0.05$
+*(e)* It actually takes the Coast Starlight about 168 minutes to travel between Santa Barbara and LA. Calculate the residual. Is the model over or underestimating the time?

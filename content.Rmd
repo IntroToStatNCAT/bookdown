@@ -1,0 +1,60 @@
+---
+title: "My Book"
+output: html_document
+date: "2025-03-05"
+output:
+  bookdown::pdf_document2:
+   keep_tex: true
+   number_sections: true
+   toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Table of Contents {.unlisted .unnumbered}
+
+<div id="toc" style="border: 1px solid #ddd; padding: 15px; border-radius: 10px; background-color: #f9f9f9;">
+
+  <div style="background-color: #f0c040; color: black; font-weight: bold; padding: 5px 10px; font-size: 1.3em; border-radius: 5px; display: inline-block;">Module 1:</div>
+  <div style="background-color: #4da6ff; color: white; font-weight: bold; padding: 5px 30px; font-size: 1.3em; border-radius: 5px; display: inline-block;">Introduction to Data</div>
+  
+  <div style="padding-left: 10px;font-weight: bold;color: #4da6ff;">1.1 Summarizing Numerical Data</div>
+  <div style="padding-left: 10px;font-weight: bold;font-weight: bold;color: #4da6ff;">1.2 Summarizing Categorical Data</div>
+
+  
+
+  <div style="background-color: #f0c040; color: black; font-weight: bold; padding: 5px 10px; font-size: 1.3em; border-radius: 5px; display: inline-block;">Module 2:</div>
+  <div style="background-color: #4da6ff; color: white; font-weight: bold; padding: 5px 30px; font-size: 1.3em; border-radius: 5px; display: inline-block;">Probability Rules</div>
+  
+  <div style="padding-left: 10px;font-weight: bold;color: #4da6ff;">2.1 Review on Probability</div>
+  <div style="padding-left: 10px;font-weight: bold;color: #4da6ff;">2.2 Random Variables</div>
+  <div style="padding-left: 10px;font-weight: bold;color: #4da6ff;">2.3 Binomial Distribution</div>
+  <div style="padding-left: 10px;font-weight: bold;color: #4da6ff;">2.4 Normal Distribution</div>
+  
+
+  <div style="background-color: #f0c040; color: black; font-weight: bold; padding: 5px 10px; font-size: 1.3em; border-radius: 5px; display: inline-block;">Module 3:</div>
+  <div style="background-color: #4da6ff; color: white; font-weight: bold; padding: 5px 30px; font-size: 1.3em; border-radius: 5px; display: inline-block;">Inference For Proportion</div>
+  
+  <div style="padding-left: 10px;font-weight: bold;color: #4da6ff;">3.1 Point Estimate</div>
+  <div style="padding-left: 10px;font-weight: bold;color: #4da6ff;">3.2 Hypothesis Testing</div>
+
+  
+
+  <div style="background-color: #f0c040; color: black; font-weight: bold; padding: 5px 10px; font-size: 1.3em; border-radius: 5px; display: inline-block;">Module 4:</div>
+  <div style="background-color: #4da6ff; color: white; font-weight: bold; padding: 5px 30px; font-size: 1.3em; border-radius: 5px; display: inline-block;">Inference For Mean</div>
+  
+  <div style="padding-left: 10px;font-weight: bold;color: #4da6ff;">4.1 Review on Inference for Mean</div>
+  <div style="padding-left: 10px;font-weight: bold;color: #4da6ff;">4.2 Central Limit Theorem</div>
+
+  
+
+  <div style="background-color: #f0c040; color: black; font-weight: bold; padding: 5px 10px; font-size: 1.3em; border-radius: 5px; display: inline-block;">Module 5:</div>
+  <div style="background-color: #4da6ff; color: white; font-weight: bold; padding: 5px 30px; font-size: 1.3em; border-radius: 5px; display: inline-block;">Linear Regression</div>
+  
+  <div style="padding-left: 10px;font-weight: bold;color: #4da6ff;">5.1 Introduction to Linear Regression</div>
+  
+
+</div>

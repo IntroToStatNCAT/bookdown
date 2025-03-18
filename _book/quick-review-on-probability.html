@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.1 Quick Review on Probability | My Book</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook.</p>" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.1 Quick Review on Probability | My Book" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.1 Quick Review on Probability | My Book" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook.</p>" />
+  
+
+<meta name="author" content="Dr Mostafa" />
+
+
+<meta name="date" content="2025-03-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="probability-and-probability-distribution.html"/>
+<link rel="next" href="discrete-random-variables.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH224 Worksheet</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="introduction-to-data.html"><a href="introduction-to-data.html"><i class="fa fa-check"></i><b>1</b> Introduction to Data</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="data-types.html"><a href="data-types.html"><i class="fa fa-check"></i><b>1.1</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="data-types.html"><a href="data-types.html#objectives"><i class="fa fa-check"></i><b>1.1.1</b> Objectives</a></li>
+<li class="chapter" data-level="1.1.2" data-path="data-types.html"><a href="data-types.html#overview"><i class="fa fa-check"></i><b>1.1.2</b> Overview</a></li>
+<li class="chapter" data-level="1.1.3" data-path="data-types.html"><a href="data-types.html#solved-problems"><i class="fa fa-check"></i><b>1.1.3</b> Solved Problems</a></li>
+<li class="chapter" data-level="1.1.4" data-path="data-types.html"><a href="data-types.html#exercises"><i class="fa fa-check"></i><b>1.1.4</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="summarizing-numerical-data.html"><a href="summarizing-numerical-data.html"><i class="fa fa-check"></i><b>1.2</b> Summarizing Numerical Data</a></li>
+<li class="chapter" data-level="1.3" data-path="summarizing-categorical-data.html"><a href="summarizing-categorical-data.html"><i class="fa fa-check"></i><b>1.3</b> Summarizing Categorical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="probability-and-probability-distribution.html"><a href="probability-and-probability-distribution.html"><i class="fa fa-check"></i><b>2</b> Probability and Probability Distribution</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="quick-review-on-probability.html"><a href="quick-review-on-probability.html"><i class="fa fa-check"></i><b>2.1</b> Quick Review on Probability</a></li>
+<li class="chapter" data-level="2.2" data-path="discrete-random-variables.html"><a href="discrete-random-variables.html"><i class="fa fa-check"></i><b>2.2</b> Discrete Random Variables</a></li>
+<li class="chapter" data-level="2.3" data-path="binomial-distribution.html"><a href="binomial-distribution.html"><i class="fa fa-check"></i><b>2.3</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="2.4" data-path="normal-distribution.html"><a href="normal-distribution.html"><i class="fa fa-check"></i><b>2.4</b> Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="inference-for-proportion.html"><a href="inference-for-proportion.html"><i class="fa fa-check"></i><b>3</b> Inference for Proportion</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="point-estimates-and-sampling-variability.html"><a href="point-estimates-and-sampling-variability.html"><i class="fa fa-check"></i><b>3.1</b> Point Estimates and Sampling Variability</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="point-estimates-and-sampling-variability.html"><a href="point-estimates-and-sampling-variability.html#point-estimate-for-proportion"><i class="fa fa-check"></i><b>3.1.1</b> Point Estimate for Proportion</a></li>
+<li class="chapter" data-level="3.1.2" data-path="point-estimates-and-sampling-variability.html"><a href="point-estimates-and-sampling-variability.html#the-central-limit-theorem-for-proportions"><i class="fa fa-check"></i><b>3.1.2</b> The Central Limit Theorem for proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="confidence-interval.html"><a href="confidence-interval.html"><i class="fa fa-check"></i><b>3.2</b> Confidence Interval</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="confidence-interval.html"><a href="confidence-interval.html#confidence-intervals-for-proportion"><i class="fa fa-check"></i><b>3.2.1</b> Confidence Intervals for Proportion</a></li>
+<li class="chapter" data-level="3.2.2" data-path="confidence-interval.html"><a href="confidence-interval.html#confidence-interval-for-two-sided-test"><i class="fa fa-check"></i><b>3.2.2</b> Confidence interval for two-sided test</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="hypothesis-testing-for-p.html"><a href="hypothesis-testing-for-p.html"><i class="fa fa-check"></i><b>3.3</b> Hypothesis Testing for <span class="math inline">\(p\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inference-for-mean.html"><a href="inference-for-mean.html"><i class="fa fa-check"></i><b>4</b> Inference for Mean</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="quick-review-on-inference-for-mean.html"><a href="quick-review-on-inference-for-mean.html"><i class="fa fa-check"></i><b>4.1</b> Quick Review on Inference for Mean</a></li>
+<li class="chapter" data-level="4.2" data-path="central-limit-theorem-sampling-distribution-of-sample-mean.html"><a href="central-limit-theorem-sampling-distribution-of-sample-mean.html"><i class="fa fa-check"></i><b>4.2</b> Central Limit Theorem (Sampling distribution of sample mean)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>5</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-linear-regression.html"><a href="introduction-to-linear-regression.html"><i class="fa fa-check"></i><b>5.1</b> Introduction to Linear Regression</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">My Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="quick-review-on-probability" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Quick Review on Probability<a href="quick-review-on-probability.html#quick-review-on-probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The starting point in studying probabilities is the concept of an <span class="math inline">\(\underline{\textbf{experiment or random process}}\)</span>, by which we mean some act or observation whose outcome is not known in advance. Simple examples would be</p>
+<p><span class="math inline">\(\bullet\ \  \text{Rolling a die} \\ \\\)</span></p>
+<p><span class="math inline">\(\bullet \ \ \text{Tossing a coin twice} \\ \\\)</span></p>
+<p><span class="math inline">\(\bullet \ \ \text{Observing the temperature at GSO at 3:00 pm this afternoon (Fo)} \\\)</span></p>
+<p>Although we cannot predict what we will observe, we can in some cases compile a list of all the outcomes we might observe. This is known as the <span class="math inline">\(\underline{\textbf{sample space}}\)</span> for the experiment, and is a set in mathematical terms, that is to say a collection of distinct items. Generally for a sample space of n possible outcomes we write <span class="math inline">\(S = {E1, E2, ... , E_n}\)</span> . For example in the die rolling experiment we have <span class="math inline">\(\textit{S={1, 2, 3, 4, 5, 6}}\)</span> and in the coin tossing experiment we could list the outcomes as <span class="math inline">\(\textit{S={TT, TH, HT, HH}}\)</span> It is a little harder to list the sample space for the third experiment, given the current temperature a list of the numbers between 40 and 80 would probably suffice.</p>
+<p>We use the outcomes in the sample space for computing probabilities for any event according to the following basic rule:</p>
+<p><span class="math display">\[
+\textbf{P(A) = the sum of the probabilities of all the outcomes in the event A}
+\]</span></p>
+<p><strong>Events</strong> in probability are just the same as sets in mathematics, so you should know the principle operations on sets:</p>
+<p><span class="math inline">\(\bullet\)</span> UNION: A <span class="math inline">\(\cup\)</span> B (“A or B”) is the set of all outcomes in A or in B or in both</p>
+<p><span class="math inline">\(\bullet\)</span> INTERSECTION: A <span class="math inline">\(\cap\)</span> B (“A and B”) is the set of outcomes that are in both A and B</p>
+<p><span class="math inline">\(\bullet\ \ \text{COMPLEMENT: Ac (“not A”) everything outside of A (but in S)}\)</span></p>
+<p><img src="images/img13.png" width="726" /></p>
+<p>It is important to realize that A <span class="math inline">\(\cup\)</span> B, A <span class="math inline">\(\cap\)</span> B, and <span class="math inline">\(A^c\)</span> are all sets, that is to say, they are <strong>collections of</strong> <span class="math inline">\(\textit{distinct}\)</span> <strong>items, and no element may be listed twice.</strong></p>
+<p>For example, with reference to the die rolling experiment, define the event B as “a number at least as great as 5 comes up”, so B={5,6}. For A={2,4,6} (an even number comes up), we have</p>
+<p><span class="math inline">\(\bullet\ \  \ A \cup B \text{={2,4,5,6},}\\ \\\)</span></p>
+<p><span class="math inline">\(\bullet \ \ \ A\cap B \text{={6},}\\ \\\)</span></p>
+<p><span class="math inline">\(\bullet \ \ A^c \text{={1,3,5}}, \\\)</span></p>
+<p><span class="math inline">\(\bullet \ \ B^c \text{={1,2,3,4}}\)</span></p>
+<p>Suppose the die is assumed to be fair. This, by definition, means that each side is equally likely to come up when the die is rolled. If we assign a total probability of 1 to the entire sample space, then we should assign a probability of 1/6 to each of the 6 outcomes in the sample space, so</p>
+<p><span class="math display">\[
+\text{P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = 1/6.}
+\]</span></p>
+<p>Thus, we should obtain:</p>
+<p><span class="math inline">\(P(A) = \frac{1}{6}+\frac{1}{6}+\frac{1}{6}=\frac{3}{6}=\frac{1}{2}\)</span></p>
+<p><span class="math inline">\(P(B) = \frac{1}{6}+\frac{1}{6}=\frac{2}{6}=\frac{1}{3}\)</span></p>
+<p><span class="math inline">\(P(A \cup B) = \frac{1}{6}+\frac{1}{6}+\frac{1}{6}+\frac{1}{6}=\frac{4}{6}=\frac{2}{3}\)</span></p>
+<p><span class="math inline">\(P(A \cap B) = \frac{1}{6}\)</span></p>
+<p><span class="math inline">\(P(A^c) = \frac{1}{6}+\frac{1}{6}+\frac{1}{6}=\frac{1}{2}\)</span></p>
+<p><span class="math inline">\(P(A^c) = \frac{1}{6}+\frac{1}{6}+\frac{1}{6}+\frac{1}{6}=\frac{2}{3}\)</span></p>
+<p>Some points worth noting:</p>
+<p><span class="math inline">\(\bullet\)</span> P(A U B) = 4/6 does NOT equal P(A) + P(B) = 5/6 (this is because the two sets have an element, 6, in common).</p>
+<p><span class="math inline">\(\bullet\)</span> P(Ac) = 1 - P(A) and P(Bc) = 1 – P(B).</p>
+<p><span class="math inline">\(\bullet\)</span> Also note that in cases where all the outcomes in the sample space are equally likely, the rule about adding the probabilities for all of the outcomes in the event simplifies to counting the number of outcomes in the event and dividing by the number out outcomes in the sample space. So, for the events A and B above, P(A) = 3/6 = 1⁄2, and P(B) = 2/6 = 1/3.</p>
+<p><span class="math inline">\(\bullet\)</span> Generally, if A contains m outcomes, and the sample space has n equally likely outcomes (so the probability for each outcome is 1/n), then P(A) = m/n.</p>
+<p>At this stage, let us write down some <strong>general rules or AXIOMS for probability.</strong> The events A, B below are now general events in a sample space, not the specific ones described above.</p>
+<ol style="list-style-type: decimal">
+<li>For any sample space, P(S) = 1</li>
+<li>For any event A, 0 <span class="math inline">\(\le\)</span> P(A) <span class="math inline">\(le\)</span> 1</li>
+<li>General addition rule: If A and B are any two events, disjoint or not, then the probability that at least one of them will occur is</li>
+</ol>
+<p><span class="math display">\[
+\text{P (A or B) = P (A) + P (B) - P (A and B) }
+\]</span></p>
+<p>where P(A and B) is the probability that both events occur. Here, A or B occurs means A, B, or both A and B occur.</p>
+<p>4)Addition rule for disjoint events: For any events A, B which have no common outcomes,</p>
+<p><span class="math display">\[
+\text{P(A U B) = P(A) + P(B)}
+\]</span></p>
+<p>Events which have no outcomes in common are often referred to as <strong>mutually exclusive</strong> (or <span class="math inline">\(\textit{disjoint}\)</span>). If two events A, B are mutually exclusive, we write P(A <span class="math inline">\(\cap\)</span> B) = <span class="math inline">\(\emptyset\)</span> , where <span class="math inline">\(\emptyset\)</span> is referred to as the <span class="math inline">\(\textit{empty set}\)</span>. It is sort of equivalent to the number zero in arithmetic.</p>
+<p>Note that using the first and third rules, we have <span class="math inline">\(1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)\)</span> ) , so we have a general rule that for any set <span class="math inline">\(A, \ P(A^c) = 1 – P(A)\)</span>. This is often called the <strong>law of complements</strong>.</p>
+<p><strong>Exercise 1.</strong> A set of 11 cards is numbered 1 through 11. A card is picked at random and the following events defined: A - the number on card is odd: B - the number on the card is 5 or higher. Find</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>P(A) =</p></li>
+<li><p>P(B) =</p></li>
+<li><p>P(A and B) =</p></li>
+<li><p>P(A or B) =</p></li>
+</ol>
+<p><strong>Exercise 2.</strong> (Sample space where the outcomes are NOT equally likely): Professor Donald Fraser of the University of Toronto constructed a (purposely) uneven die. On inspection it was clear that the sides would not have equal probability. He rolled it 12,800 times, and came up with the following empirical probabilities (based on relative frequency):</p>
+<table>
+<thead>
+<tr class="header">
+<th>Side</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Probability</td>
+<td>0.186</td>
+<td>0.179</td>
+<td>0.207</td>
+<td>0.137</td>
+<td>0.149</td>
+<td>0.142</td>
+</tr>
+</tbody>
+</table>
+<p>For the events A (even number) and B (at least 5) compute:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\text{P(A) =}\)</span></p></li>
+<li><p><span class="math inline">\(\text{P(B) =}\)</span></p></li>
+<li><p><span class="math inline">\(P(A \cup B)=\)</span></p></li>
+<li><p><span class="math inline">\(P(A\cap B) =\)</span></p></li>
+<li><p><span class="math inline">\(P(A^c) =\)</span></p></li>
+<li><p><span class="math inline">\(P(B^c) =\)</span></p></li>
+</ol>
+<p><strong>Exercise 3.</strong> A group of 1000 students is classified by gender <span class="math inline">\(G_1\)</span> (male) or <span class="math inline">\(G_2\)</span> (female), and by year, <span class="math inline">\(\textbf{Y}_1\)</span> (freshman), <span class="math inline">\(\textbf{Y}_2\)</span> (sophomore), <span class="math inline">\(\textbf{Y}_3\)</span> (junior), or <span class="math inline">\(\textbf{Y}_4\)</span> (senior). This results in the following table:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Freshman (<span class="math inline">\(Y_1\)</span>)</th>
+<th>Sophomore (<span class="math inline">\(Y_2\)</span>)</th>
+<th>Junior (<span class="math inline">\(Y_3\)</span>)</th>
+<th>Senior (<span class="math inline">\(Y_4\)</span>)</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Male (<span class="math inline">\(G_1\)</span>)</td>
+<td>140</td>
+<td>120</td>
+<td>110</td>
+<td>70</td>
+<td>440</td>
+</tr>
+<tr class="even">
+<td>Female (<span class="math inline">\(G_2\)</span>)</td>
+<td>160</td>
+<td>130</td>
+<td>140</td>
+<td>130</td>
+<td>560</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>300</td>
+<td>250</td>
+<td>250</td>
+<td>200</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<p>If a student is randomly selected, find the probability that the student:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Is a junior, P(<span class="math inline">\(Y_3\)</span>) =</p></li>
+<li><p>Is a female freshman, P(<span class="math inline">\(G_2\)</span> and <span class="math inline">\(Y_1\)</span>) =</p></li>
+<li><p>Is a male or a junior, P(<span class="math inline">\(G_1\)</span> or <span class="math inline">\(Y_3\)</span>) =</p></li>
+</ol>
+<p>d)Is not a freshman, P(not <span class="math inline">\(Y_1\)</span>) =</p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Is not a male and is not a junior, P(not <span class="math inline">\(G_1\)</span> and not <span class="math inline">\(Y_3\)</span>) =</li>
+</ol>
+<p><strong>Exercise 4.</strong> Here is the “Craps Game” sample space, where a red and a green die are rolled. Each outcome (i,j) represents the red die coming up i and the green die coming up j.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>j=1</th>
+<th>j=2</th>
+<th>j=3</th>
+<th>j=4</th>
+<th>j=5</th>
+<th>j=6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>i=1</strong></td>
+<td>(1,1)</td>
+<td>(1,2)</td>
+<td>(1,3)</td>
+<td>(1,4)</td>
+<td>(1,5)</td>
+<td>(1,6)</td>
+</tr>
+<tr class="even">
+<td><strong>i=2</strong></td>
+<td>(2,1)</td>
+<td>(2,2)</td>
+<td>(2,3)</td>
+<td>(2,4)</td>
+<td>(2,5)</td>
+<td>(2,6)</td>
+</tr>
+<tr class="odd">
+<td><strong>i=3</strong></td>
+<td>(3,1)</td>
+<td>(3,2)</td>
+<td>(3,3)</td>
+<td>(3,4)</td>
+<td>(3,5)</td>
+<td>(3,6)</td>
+</tr>
+<tr class="even">
+<td><strong>i=4</strong></td>
+<td>(4,1)</td>
+<td>(4,2)</td>
+<td>(4,3)</td>
+<td>(4,4)</td>
+<td>(4,5)</td>
+<td>(4,6)</td>
+</tr>
+<tr class="odd">
+<td><strong>i=5</strong></td>
+<td>(5,1)</td>
+<td>(5,2)</td>
+<td>(5,3)</td>
+<td>(5,4)</td>
+<td>(5,5)</td>
+<td>(5,6)</td>
+</tr>
+<tr class="even">
+<td><strong>i=6</strong></td>
+<td>(6,1)</td>
+<td>(6,2)</td>
+<td>(6,3)</td>
+<td>(6,4)</td>
+<td>(6,5)</td>
+<td>(6,6)</td>
+</tr>
+</tbody>
+</table>
+<p>There are n=36 outcomes, and for fair dice it is reasonable to assume they are equally likely.<strong>Find the probability of each of the following events. Identify which pairs of events are disjoint.</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>A “sum is 7”:</p>
+<p>P(A) =</p></li>
+<li><p>B “sum is 11”:</p>
+<p>P(B) =</p></li>
+<li><p>C “sum is 6”:</p>
+<p>P(C) =</p></li>
+<li><p>D “both dice show same number”:</p>
+<p>P(D) =</p></li>
+<li><p>E “both dice odd”:</p>
+<p>P(E) =</p></li>
+<li><p>F “both dice even”:</p>
+<p>P(F) =</p></li>
+</ol>
+<p><strong>Exercise 5. True or False</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If A and B are mutually exclusive (disjoint) events, then P(A and B) = 0.</p></li>
+<li><p>For any event A, P(A) + P(<span class="math inline">\(A^c\)</span>) = 1.</p></li>
+</ol>
+<p><strong>Solution</strong></p>
+<p>Question 1:</p>
+<p>Since, A = {1,3,5,7,9,11}, B= {5,6,7,8,9,10,11}, (A and B) = {5,7,9,11} and (A or B)={1,3,5,6,7,8,9,10,11}</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\text{P(A)}=\frac{6}{11}\)</span></p></li>
+<li><p><span class="math inline">\(\text{P(B)}=\frac{7}{11}\)</span></p></li>
+<li><p><span class="math inline">\(\text{P(A and B)}=\frac{4}{11}\)</span></p></li>
+<li><p><span class="math inline">\(\text{P(A or B)=P(A)+P(B)-P(A and B)}\\=\frac{6}{11}+\frac{7}{11}-\frac{4}{11}=\frac{9}{11}\)</span></p></li>
+</ol>
+<p>Question 2:</p>
+<p>A = {2,4,6}, B= {5,6}, (A<span class="math inline">\(\cup\)</span>B) = {2,4,5,6} and (A <span class="math inline">\(\cap\)</span> B)={6}</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\text{P(A)=P(2)+P(4)+P(6)=}0.179+0.137+0.142=0.458\)</span></p></li>
+<li><p><span class="math inline">\(\text{P(B)=P(5)+P(6)}=0.149+0.142=0.291\)</span></p></li>
+<li><p><span class="math inline">\(\text{P(A U B)}=\text{P(2)+P(4)+P(5)+P(6)}=0.179+0.137+0.149+0.142 \\=0.607\)</span></p></li>
+<li><p>P(A<span class="math inline">\(\cap\)</span>B)=P(6)=0.142</p></li>
+<li><p>P(<span class="math inline">\(A^c\)</span>)= 1 - P(A) = 1 - 0.458 = 0.542</p></li>
+<li><p>P(<span class="math inline">\(B^c\)</span>)= 1 - P(B) = 1 - 0.291 = 0.709</p></li>
+</ol>
+<p>Question 3:</p>
+<p>The probability that the student :</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Is a junior, P(<span class="math inline">\(Y_3\)</span>) = <span class="math inline">\(\frac{250}{1000}=0.25\)</span></p></li>
+<li><p>Is a female freshman, P(<span class="math inline">\(G_2\)</span> and <span class="math inline">\(Y_1\)</span>)= <span class="math inline">\(\frac{160}{1000}=0.16\)</span></p></li>
+<li><p>Is a male or a junior, P(<span class="math inline">\(G_1\)</span> or <span class="math inline">\(Y_3\)</span>)= <span class="math inline">\(\frac{440+140}{1000}=\frac{580}{1000}=0.580\)</span></p>
+<p>or P(<span class="math inline">\(G_1\)</span>)+ P(<span class="math inline">\(Y_3\)</span>) - P(<span class="math inline">\(G_1\)</span> and <span class="math inline">\(Y_3\)</span>) = <span class="math inline">\(\frac{440}{1000}+\frac{250}{1000}-\frac{110}{1000}\)</span></p></li>
+<li><p>Is not a freshman, P(not <span class="math inline">\(Y_1\)</span>)= 1 - P(<span class="math inline">\(Y_1\)</span>) = 1 - (<span class="math inline">\(\frac{300}{1000}\)</span>) =1 - 0.3 = 0.70</p></li>
+<li><p>Is not a male and is not a junior, P (not <span class="math inline">\(G_1\)</span> and not <span class="math inline">\(Y_3\)</span>) = <span class="math inline">\(\frac{150+130+130}{1000}\)</span> = <span class="math inline">\(\frac{420}{1000}=0.420\)</span></p></li>
+</ol>
+<p>Question 4:</p>
+<h5>
+Note: For this question, also ask them to identify which pair of event are disjoint.
+</h5>
+<ol style="list-style-type: lower-alpha">
+<li>A “sum is 7” : {(1,6),(6,1), (2,5), (5,2), (3,4), (4,3)}</li>
+</ol>
+<p>P(A) = <span class="math inline">\(\frac{6}{36}=\frac{1}{6}\)</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>B “sum is 11”: {(5,6),(6,5)}</li>
+</ol>
+<p>P(A) = <span class="math inline">\(\frac{2}{36}=\frac{1}{18}\)</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>C “sum is 6”: {(1,5), (5,1), (2,4), (4,2), (3,3)}</li>
+</ol>
+<p>P(C) = <span class="math inline">\(\frac{5}{36}\)</span></p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>D “both dice show small number”: {(1,1), (2,2), (3,3), (4,4), (5,5),(6,6)}</li>
+</ol>
+<p>P(D) = <span class="math inline">\(\frac{6}{36}=\frac{1}{6}\)</span></p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>E “both dice odd”: {(1,1), (1,3), (1,5), (3,1), (3,3),(3,5),(5,1),(5,3),(5,5)}</li>
+</ol>
+<p>P(E) = <span class="math inline">\(\frac{9}{36}=\frac{1}{4}\)</span></p>
+<ol start="6" style="list-style-type: lower-alpha">
+<li>F “both dice even”: {(2,2), (2,4), (2,6), (4,2), (4,4),(4,6),(6,2),(6,4),(6,6)}</li>
+</ol>
+<p>P(F) = <span class="math inline">\(\frac{9}{36}=\frac{1}{4}\)</span></p>
+<p>Question 5:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If A and B are mutually exclusive (disjoint) events, then P(A and B) = 0.</p>
+<p>Ans : TRUE</p>
+<p><img src="images/img17.png" width="228" /></p></li>
+<li><p>For any event A, P(A) + P(<span class="math inline">\(A^c\)</span>) = 1.</p>
+<p>Ans : TRUE</p>
+<p><img src="images/img18.png" width="294" /></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="probability-and-probability-distribution.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="discrete-random-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/002-QA.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["MATH 224 Workbook.pdf", "MATH 224 Workbook.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
