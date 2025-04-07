@@ -5,6 +5,7 @@ output:
   documentclass: book
   learnr::tutorial:
     progressive: TRUE
+  exams2forms: webquiz
 ---
 
 # Introduction to Data
@@ -232,7 +233,7 @@ Female | 557      | 1278
 
 ### Solved Problems
 
-### Exercises
+**Exercises:**
 
 **Exercise 1.** (page 11 #1.2) Researchers studying the effect of antibiotic treatment for acute sinusitis compared to symptomatic treatments randomly assigned 166 adults diagnosed with acute sinusitis to one of two groups: treatment or control. Study participants received either a 10-day course of amoxicillin (an antibiotic) or a placebo similar in appearance and taste. The placebo consisted of symptomatic treatments such as acetaminophen nasal decongestants, etc. At the end of the 10-day period, patients were asked if they experienced improvement in symptoms. The distribution of responses is summarized below (with some cells missing numbers):
 
@@ -374,7 +375,7 @@ b.  The starting salaries of recent graduates from Ivy League private and public
 
 (e). A newspaper article reporting on the study states, “The results of this study provide proof that giving young adults fresh fruits and vegetables to eat can have psychological benefits even over a brief period of time.” How would you suggest revising this statement so that it can be supported by the study?
 
-(Reference answer:
+Reference answer:
 
 (a). Experiment
 
@@ -385,6 +386,12 @@ b.  The starting salaries of recent graduates from Ivy League private and public
 (d). Yes, because it was an experiment.
 
 (e). The statement should say “evidence” instead of “proof”.)
+
+### Exercises
+
+Answer the following using your knowledge of the dataset and variable types.
+
+<center><iframe width="800" height="500" src="https://introtostatncat.shinyapps.io/quiz1/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 
 \newpage
@@ -479,8 +486,6 @@ $$IQR = Q_3-Q_1$$
 
 ### Solved Problem
 
-### Exercises
-
 **Exercise 1.** Use the following dot plot of an interest rate of some loan data to answer questions.
 
 ![](images/img23.png){width="352"}
@@ -562,6 +567,10 @@ Help: Using R,
 (b). What percent of data is below 17?
 
 
+### Exercises
+
+<center><iframe width="800" height="500" src="https://introtostatncat.shinyapps.io/quiz1_1/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
 
 \newpage
 
@@ -631,8 +640,6 @@ Categorical data is best summarized using a frequency table. That is, we use a t
 
 ### Solved Problem
 
-### Exercise
-
 **Exercise 1.** A survey polled a sample of 350 students for a proposed change of some regulations. The following table summarized the survey response result.
 
 | Responses | Frequency | Relative Frequency (Round to 3 decimals) |
@@ -694,5 +701,10 @@ O O O A A B O B A A
 | Freshman or Sophomore | 132/400=    | 28/400=               | 20/400=                 | 180/400= |
 | Junior or Senior      | 120/400=    | 48/400=               | 52/400=                 | 220/400= |
 | Total                 | 252/400=    | 76/400=               | 72/400=                 | 400/400= |
+
+
+### Exercise
+
+<center><iframe width="800" height="500" src="https://introtostatncat.shinyapps.io/quiz1_3/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 

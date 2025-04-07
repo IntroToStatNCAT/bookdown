@@ -297,6 +297,7 @@ b)  For any event A, P(A) + P($A^c$) = 1.
 
 ### Exercises
 
+
 ## Discrete Random Variables
 
 ### Objectives

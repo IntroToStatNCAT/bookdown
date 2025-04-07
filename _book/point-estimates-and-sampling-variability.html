@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3.1 Point Estimates and Sampling Variability | My Book</title>
+  <title>3.1 Point Estimates and Sampling Variability | INTRO STATS WORKBOOK</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook.</p>" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3.1 Point Estimates and Sampling Variability | My Book" />
+  <meta property="og:title" content="3.1 Point Estimates and Sampling Variability | INTRO STATS WORKBOOK" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -17,7 +17,7 @@ The HTML output format for this example is bookdown::gitbook.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3.1 Point Estimates and Sampling Variability | My Book" />
+  <meta name="twitter:title" content="3.1 Point Estimates and Sampling Variability | INTRO STATS WORKBOOK" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook.</p>" />
@@ -57,6 +57,11 @@ The HTML output format for this example is bookdown::gitbook.</p>" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="checkArrange.js"></script>
+<script src="checkOptions.js"></script>
+<script src="checkShort.js"></script>
+<script src="checkBucket.js"></script>
+<script src="dragDrop.js"></script>
 
 
 <style type="text/css">
@@ -142,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">MATH224 Worksheet</a></li>
+<li><a href="./">INTRO STAT WORKBOOK</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="introduction-to-data.html"><a href="introduction-to-data.html"><i class="fa fa-check"></i><b>1</b> Introduction to Data</a>
@@ -263,7 +268,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">My Book</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">INTRO STATS WORKBOOK</a>
           </h1>
         </div>
 
@@ -360,17 +365,17 @@ If we call a given categorical characteristic in the population “success” th
 <span id="cb34-2"><a href="point-estimates-and-sampling-variability.html#cb34-2" tabindex="-1"></a>                          <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> F)</span></code></pre></div>
 <p>Second we will find the sample proportion.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="point-estimates-and-sampling-variability.html#cb35-1" tabindex="-1"></a><span class="fu">sum</span>(sampled_entries <span class="sc">==</span> <span class="st">&quot;support&quot;</span>)<span class="sc">/</span><span class="dv">1000</span></span></code></pre></div>
-<pre><code>## [1] 0.872</code></pre>
+<pre><code>## [1] 0.89</code></pre>
 <p>Interesting thing about sampling from a population is that its always random. So the first sample might give a completely different sample proportion compared to the second sample, third sample and so on.</p>
 <p>For example, we will perform the same sampling using the same code and we will obtain a different sample proportion.</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="point-estimates-and-sampling-variability.html#cb37-1" tabindex="-1"></a>sampled_entries <span class="ot">&lt;-</span> <span class="fu">sample</span>(possible_entries_solar,</span>
 <span id="cb37-2"><a href="point-estimates-and-sampling-variability.html#cb37-2" tabindex="-1"></a>                          <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> F)</span>
 <span id="cb37-3"><a href="point-estimates-and-sampling-variability.html#cb37-3" tabindex="-1"></a><span class="fu">sum</span>(sampled_entries <span class="sc">==</span> <span class="st">&quot;support&quot;</span>)<span class="sc">/</span><span class="dv">1000</span></span></code></pre></div>
-<pre><code>## [1] 0.872</code></pre>
+<pre><code>## [1] 0.877</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="point-estimates-and-sampling-variability.html#cb39-1" tabindex="-1"></a>sampled_entries <span class="ot">&lt;-</span> <span class="fu">sample</span>(possible_entries_solar,</span>
 <span id="cb39-2"><a href="point-estimates-and-sampling-variability.html#cb39-2" tabindex="-1"></a>                          <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> F)</span>
 <span id="cb39-3"><a href="point-estimates-and-sampling-variability.html#cb39-3" tabindex="-1"></a><span class="fu">sum</span>(sampled_entries <span class="sc">==</span> <span class="st">&quot;support&quot;</span>)<span class="sc">/</span><span class="dv">1000</span></span></code></pre></div>
-<pre><code>## [1] 0.879</code></pre>
+<pre><code>## [1] 0.887</code></pre>
 <blockquote>
 <p>Run the code to see that you obtain a different result everytime you perform sampling.</p>
 </blockquote>

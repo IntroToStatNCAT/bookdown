@@ -1,5 +1,5 @@
 ---
-title: "My Book"
+title: "INTRO STATS WORKBOOK"
 output: html_document
 date: "2025-03-05"
 output:

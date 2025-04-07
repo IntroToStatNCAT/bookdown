@@ -4,12 +4,15 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">MATH224 Worksheet</a></li>
+        <li><a href="./">INTRO STAT WORKBOOK</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
-    download: ["pdf", "epub"]
-
+    download:
+    - pdf
+    - epub
+  includes:
+    in_header: javascript.html
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
@@ -18,5 +21,4 @@ bookdown::pdf_book:
   keep_tex: yes
   toc_depth: 3
   toc_appendix: yes
-
 bookdown::epub_book: default
