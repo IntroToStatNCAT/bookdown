@@ -297,6 +297,7 @@ b)  For any event A, P(A) + P($A^c$) = 1.
 
 ### Exercises
 
+<center><iframe width="800" height="4400" src="https://introtostatncat.shinyapps.io/quiz2/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 ## Discrete Random Variables
 
@@ -499,6 +500,10 @@ and
 $$
 n! = n(n-1)(n-2) \cdots (3)(2)(1)
 $$
+
+
+<center><iframe width="800" height="4600" src="https://introtostatncat.shinyapps.io/quiz2_1/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
 
 ## Binomial Distribution
 
@@ -1050,4 +1055,5 @@ The score data of the verbal portion of the Graduate Record Examination (GRE) is
 *(c)* 99.7% of students who took the verbal portion of the GRE scored between \_\_\_\_\_\_ and \_\_\_\_\_\_\_\_
 
 
+<center><iframe width="800" height="4600" src="https://introtostatncat.shinyapps.io/quiz2_2/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 

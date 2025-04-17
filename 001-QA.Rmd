@@ -105,21 +105,14 @@ Sampling data is a bit different than sampling soup though.
     -   Experiment: Researchers randomly assign subjects to various treatments in order to establish causal connections between the explanatory and response variables
 
 Four commonly used random sampling techniques:
-    -   
 
-        1.  Simple random sampling
+    -   Simple random sampling
 
-    -   
+    -   Stratified sample
 
-        2.  Stratified sample
+    -   Cluster sampling
 
-    -   
-
-        3.  Cluster sampling
-
-    -   
-
-        4.  Multistage sampling
+    -   Multistage sampling
 
 So next, we'll introduce a few commonly used sampling methods: simple random sampling, stratified sampling, cluster sampling, and multistage sampling.
 
@@ -391,7 +384,7 @@ Reference answer:
 
 Answer the following using your knowledge of the dataset and variable types.
 
-<center><iframe width="800" height="500" src="https://introtostatncat.shinyapps.io/quiz1/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<center><iframe width="800" height="6000" src="https://introtostatncat.shinyapps.io/quiz1/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 
 \newpage
@@ -569,7 +562,7 @@ Help: Using R,
 
 ### Exercises
 
-<center><iframe width="800" height="500" src="https://introtostatncat.shinyapps.io/quiz1_1/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<center><iframe width="800" height="2400" src="https://introtostatncat.shinyapps.io/quiz1_1/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 
 \newpage
@@ -705,6 +698,6 @@ O O O A A B O B A A
 
 ### Exercise
 
-<center><iframe width="800" height="500" src="https://introtostatncat.shinyapps.io/quiz1_3/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<center><iframe width="800" height="4500" src="https://introtostatncat.shinyapps.io/quiz1_3/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 
