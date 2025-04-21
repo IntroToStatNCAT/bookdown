@@ -124,7 +124,7 @@ Just like the normal distribution, we can use R to find the area to the below a 
 
 We can find the area to the left of 1.75 standard deviations with 12 degrees of freedom by using the following:
 
-```{r pt1_example}
+```{r}
 pt(1.75, df = 12)
 ```
 
@@ -133,19 +133,19 @@ What proportion of the $t$-distribution with 18 degrees of freedom falls below -
 
 To find the two tailed proportion with 2 degrees of freedom more than 3 units from the mean, we will do the following
 
-```{r pt2_1_example}
+```{r}
 2*pt(-3, df = 2, lower.tail = TRUE)
 ```
 
 OR
 
-```{r pt2_2_example}
+```{r}
 pt(-3, df = 2, lower.tail = TRUE) + pt(3, df = 2, lower.tail = FALSE)
 ```
 
 OR
 
-```{r pt2_3_example}
+```{r}
 pt(-3, df = 2, lower.tail = TRUE) + 1 -  pt(3, df = 2, lower.tail = TRUE)
 ```
 
@@ -324,7 +324,7 @@ To visualize the p-value, the sampling distribution of $\bar{x}_{diff}$ is drawn
 
 The degrees of freedom is $df = 68 -1 = 67$. Using R, we find the one-tail area of 0.0156. Doubling this area gives the p-value: 0.0312.
 
-```{r t_example7_18}
+```{r}
 2*pt(2.20, df = 67, lower.tail = FALSE)
 ```
 

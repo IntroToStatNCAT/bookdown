@@ -123,7 +123,7 @@ Suppose that you don't have access to the population of all American adults, whi
 
 We will simulate a data to play the role of the population. As discusses above, we will assume that 88% of the population support the expansion and the remaining 12% don't.
 
-```{r pop-simulated-data}
+```{r}
 pop_size <- 250000000
 possible_entries_solar <- c(rep("support", 0.88 * pop_size),
                       rep("not", 0.12 * pop_size))
@@ -131,7 +131,7 @@ possible_entries_solar <- c(rep("support", 0.88 * pop_size),
 
 First we will sample, without replacement, 1000 American adults from the population, and record whether they support or not solar power expansion.
 
-```{r sampling-1000-no-replacement}
+```{r}
 sampled_entries <- sample(possible_entries_solar,
                           size = 1000, replace = F)
 ```
@@ -139,7 +139,7 @@ sampled_entries <- sample(possible_entries_solar,
 
 Second we will find the sample proportion.
 
-```{r sample-prop}
+```{r}
 sum(sampled_entries == "support")/1000
 ```
 
@@ -147,13 +147,13 @@ Interesting thing about sampling from a population is that its always random. So
 
 For example, we will perform the same sampling using the same code and we will obtain a different sample proportion.
 
-```{r sample-two, exercise = TRUE}
+```{r}
 sampled_entries <- sample(possible_entries_solar,
                           size = 1000, replace = F)
 sum(sampled_entries == "support")/1000
 ```
 
-```{r sample-three, exercise = TRUE}
+```{r}
 sampled_entries <- sample(possible_entries_solar,
                           size = 1000, replace = F)
 sum(sampled_entries == "support")/1000
@@ -163,7 +163,7 @@ sum(sampled_entries == "support")/1000
 
 Third we will use the fact that the sample proportion changes with every sample and collect multiple samples and find the sample proportion for all of those samples. This will help us to create a distribution for the sample proportion to understand the spread, center and shape of the sample proportions.
 
-```{r sample-proportion-hist, exercise = TRUE, warning=FALSE, message=FALSE}
+```{r}
 library(tidyverse)
 set.seed(123)
 # Creating 10000 different sample proportions
