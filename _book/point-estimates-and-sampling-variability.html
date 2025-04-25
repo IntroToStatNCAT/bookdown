@@ -360,17 +360,17 @@ If we call a given categorical characteristic in the population “success” th
 <span id="cb34-2"><a href="point-estimates-and-sampling-variability.html#cb34-2" tabindex="-1"></a>                          <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> F)</span></code></pre></div>
 <p>Second we will find the sample proportion.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="point-estimates-and-sampling-variability.html#cb35-1" tabindex="-1"></a><span class="fu">sum</span>(sampled_entries <span class="sc">==</span> <span class="st">&quot;support&quot;</span>)<span class="sc">/</span><span class="dv">1000</span></span></code></pre></div>
-<pre><code>## [1] 0.884</code></pre>
+<pre><code>## [1] 0.89</code></pre>
 <p>Interesting thing about sampling from a population is that its always random. So the first sample might give a completely different sample proportion compared to the second sample, third sample and so on.</p>
 <p>For example, we will perform the same sampling using the same code and we will obtain a different sample proportion.</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="point-estimates-and-sampling-variability.html#cb37-1" tabindex="-1"></a>sampled_entries <span class="ot">&lt;-</span> <span class="fu">sample</span>(possible_entries_solar,</span>
 <span id="cb37-2"><a href="point-estimates-and-sampling-variability.html#cb37-2" tabindex="-1"></a>                          <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> F)</span>
 <span id="cb37-3"><a href="point-estimates-and-sampling-variability.html#cb37-3" tabindex="-1"></a><span class="fu">sum</span>(sampled_entries <span class="sc">==</span> <span class="st">&quot;support&quot;</span>)<span class="sc">/</span><span class="dv">1000</span></span></code></pre></div>
-<pre><code>## [1] 0.866</code></pre>
+<pre><code>## [1] 0.895</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="point-estimates-and-sampling-variability.html#cb39-1" tabindex="-1"></a>sampled_entries <span class="ot">&lt;-</span> <span class="fu">sample</span>(possible_entries_solar,</span>
 <span id="cb39-2"><a href="point-estimates-and-sampling-variability.html#cb39-2" tabindex="-1"></a>                          <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> F)</span>
 <span id="cb39-3"><a href="point-estimates-and-sampling-variability.html#cb39-3" tabindex="-1"></a><span class="fu">sum</span>(sampled_entries <span class="sc">==</span> <span class="st">&quot;support&quot;</span>)<span class="sc">/</span><span class="dv">1000</span></span></code></pre></div>
-<pre><code>## [1] 0.897</code></pre>
+<pre><code>## [1] 0.884</code></pre>
 <blockquote>
 <p>Run the code to see that you obtain a different result everytime you perform sampling.</p>
 </blockquote>

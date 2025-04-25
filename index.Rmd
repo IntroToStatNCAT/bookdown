@@ -1,6 +1,6 @@
 ---
 title: "MATH 224 Workbook"
-author: "Dr Mostafa"
+author: "Work in Progress!"
 date: "`r Sys.Date()`"
 output:
   bookdown::gitbook:
@@ -22,8 +22,7 @@ site: bookdown::bookdown_site
 
 # About The Workbook {.unlisted .unnumbered}
 
-This is a _workbook_  written in **Markdown**. For an introductory statistics course.
-
+This is a _workbook_ written in **Markdown** for the Introductory Statistics course at North Carolina A&T State University.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
