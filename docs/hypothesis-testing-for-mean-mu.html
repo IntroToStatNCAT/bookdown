@@ -23,7 +23,7 @@ The HTML output format for this example is bookdown::gitbook.</p>" />
 The HTML output format for this example is bookdown::gitbook.</p>" />
   
 
-<meta name="author" content="Dr Mostafa" />
+<meta name="author" content="Work in Progress!" />
 
 
 <meta name="date" content="2025-03-05" />
@@ -409,7 +409,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>To visualize the p-value, the sampling distribution of <span class="math inline">\(\bar{x}_{diff}\)</span> is drawn as though <span class="math inline">\(H_0\)</span> is true, and the p-value is represented by the two shaded tails:</p>
 <p><img src="images/Figure7.10.png" style="width:80.0%" /></p>
 <p>The degrees of freedom is <span class="math inline">\(df = 68 -1 = 67\)</span>. Using R, we find the one-tail area of 0.0156. Doubling this area gives the p-value: 0.0312.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="hypothesis-testing-for-mean-mu.html#cb50-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">pt</span>(<span class="fl">2.20</span>, <span class="at">df =</span> <span class="dv">67</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="hypothesis-testing-for-mean-mu.html#cb54-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="fu">pt</span>(<span class="fl">2.20</span>, <span class="at">df =</span> <span class="dv">67</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.03125996</code></pre>
 <p>Because the p-value is less than 0.05, we reject the null hypothesis. Amazon prices are, on average, lower than the UCLA Bookstore prices for UCLA courses.</p>
 </div>

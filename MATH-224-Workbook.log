@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.19)  21 APR 2025 12:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.19)  28 APR 2025 07:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1085,287 +1085,319 @@ Package pdftex.def Info: images/lesson1_img1.png  used on input line 2697.
 [72]
 
 [73]
-<MATH-224-Workbook_files/figure-latex/sample-proportion-hist-1.pdf, id=588, 469.755pt x 325.215pt>
-File: MATH-224-Workbook_files/figure-latex/sample-proportion-hist-1.pdf Graphic file (type pdf)
-<use MATH-224-Workbook_files/figure-latex/sample-proportion-hist-1.pdf>
-Package pdftex.def Info: MATH-224-Workbook_files/figure-latex/sample-proportion-hist-1.pdf  used on input line 2874.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 2867--2867
+[]\T1/lmtt/m/n/10 ## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 2867--2867
+[]\T1/lmtt/m/n/10 ## -- Conflicts ------------------------------------------ tidyverse_conflicts() --[] 
+ []
+
+
+Overfull \hbox (200.99841pt too wide) in paragraph at lines 2867--2867
+[]\T1/lmtt/m/n/10 ## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors[] 
+ []
+
 
 
 [74]
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2898--2898
+[]\T1/lmtt/m/n/10 ## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.[] 
+ []
 
-[75 <./MATH-224-Workbook_files/figure-latex/sample-proportion-hist-1.pdf>]
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2898--2898
+[]\T1/lmtt/m/n/10 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was[] 
+ []
+
+
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 2906--2906
+[]\T1/lmtt/m/n/10 ## Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2906--2906
+[]\T1/lmtt/m/n/10 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was[] 
+ []
+
+<MATH-224-Workbook_files/figure-latex/unnamed-chunk-20-1.pdf, id=593, 469.755pt x 325.215pt>
+File: MATH-224-Workbook_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
+<use MATH-224-Workbook_files/figure-latex/unnamed-chunk-20-1.pdf>
+Package pdftex.def Info: MATH-224-Workbook_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 2908.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+
+[75 <./MATH-224-Workbook_files/figure-latex/unnamed-chunk-20-1.pdf>]
 
 [76]
-<images/img48.png, id=609, 504.88625pt x 133.49875pt>
+<images/img48.png, id=608, 504.88625pt x 133.49875pt>
 File: images/img48.png Graphic file (type png)
 <use images/img48.png>
-Package pdftex.def Info: images/img48.png  used on input line 2942.
+Package pdftex.def Info: images/img48.png  used on input line 2976.
 (pdftex.def)             Requested size: 263.48222pt x 69.66824pt.
-<images/img50.png, id=610, 588.1975pt x 206.7725pt>
+
+
+[77 <./images/img48.png (PNG copy)>]
+<images/img50.png, id=617, 588.1975pt x 206.7725pt>
 File: images/img50.png Graphic file (type png)
 <use images/img50.png>
-Package pdftex.def Info: images/img50.png  used on input line 2973.
+Package pdftex.def Info: images/img50.png  used on input line 3007.
 (pdftex.def)             Requested size: 321.45432pt x 113.0027pt.
 
 
-[77 <./images/img48.png (PNG copy)> <./images/img50.png (PNG copy)>]
-
-[78]
+[78 <./images/img50.png (PNG copy)>]
 
 [79]
 
-[80]
-
-[81]
+[80] [81]
 
 [82]
 
 [83]
 
-[84]
+[84] [85]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 3389.
+(Font)              <14.4> on input line 3423.
 
-
-[85]
 
 [86]
-Underfull \hbox (badness 1132) in paragraph at lines 3459--3460
+Underfull \hbox (badness 1132) in paragraph at lines 3493--3494
 []\T1/lmr/m/n/10 For right-sided test, p-value is $\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ([] \OML/lmm/m/it/10 > p[]\OT1/lmr/m/n/10 )$\T1/lmr/m/n/10 , or $\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 Z > z[]\OT1/lmr/m/n/10 )$\T1/lmr/m/n/10 , use
  []
-
-<images/lesson3_img1.png, id=683, 985.6825pt x 624.3325pt>
-File: images/lesson3_img1.png Graphic file (type png)
-<use images/lesson3_img1.png>
-Package pdftex.def Info: images/lesson3_img1.png  used on input line 3489.
-(pdftex.def)             Requested size: 276.00426pt x 174.82143pt.
-
-Underfull \vbox (badness 1365) has occurred while \output is active []
 
 
 
 [87]
+<images/lesson3_img1.png, id=687, 985.6825pt x 624.3325pt>
+File: images/lesson3_img1.png Graphic file (type png)
+<use images/lesson3_img1.png>
+Package pdftex.def Info: images/lesson3_img1.png  used on input line 3523.
+(pdftex.def)             Requested size: 276.00426pt x 174.82143pt.
 <images/lesson3_img2.png, id=688, 979.66pt x 627.34375pt>
 File: images/lesson3_img2.png Graphic file (type png)
 <use images/lesson3_img2.png>
-Package pdftex.def Info: images/lesson3_img2.png  used on input line 3500.
+Package pdftex.def Info: images/lesson3_img2.png  used on input line 3534.
 (pdftex.def)             Requested size: 275.9921pt x 176.73674pt.
 
 
-[88 <./images/lesson3_img1.png> <./images/lesson3_img2.png>]
+[88 <./images/lesson3_img1.png>]
 
-[89]
+[89 <./images/lesson3_img2.png>]
 
 [90]
 
 [91]
 
 [92]
+
+[93]
+
+[94
+
+]
 Chapter 4.
 
 
-[93
+[95]
 
-]
-
-[94]
-<images/Figure7.1.png, id=731, 1403.2425pt x 595.47469pt>
+[96]
+<images/Figure7.1.png, id=739, 1403.2425pt x 595.47469pt>
 File: images/Figure7.1.png Graphic file (type png)
 <use images/Figure7.1.png>
-Package pdftex.def Info: images/Figure7.1.png  used on input line 3699.
+Package pdftex.def Info: images/Figure7.1.png  used on input line 3733.
 (pdftex.def)             Requested size: 275.99718pt x 117.12111pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[95]
-<images/Figure7.2.png, id=736, 1527.45656pt x 612.78937pt>
+[97]
+<images/Figure7.2.png, id=745, 1527.45656pt x 612.78937pt>
 File: images/Figure7.2.png Graphic file (type png)
 <use images/Figure7.2.png>
-Package pdftex.def Info: images/Figure7.2.png  used on input line 3705.
+Package pdftex.def Info: images/Figure7.2.png  used on input line 3739.
 (pdftex.def)             Requested size: 276.00244pt x 110.72743pt.
-<images/Figure7.3.png, id=737, 823.57687pt x 391.4625pt>
+<images/Figure7.3.png, id=746, 823.57687pt x 391.4625pt>
 File: images/Figure7.3.png Graphic file (type png)
 <use images/Figure7.3.png>
-Package pdftex.def Info: images/Figure7.3.png  used on input line 3717.
+Package pdftex.def Info: images/Figure7.3.png  used on input line 3751.
 (pdftex.def)             Requested size: 276.00363pt x 131.19002pt.
-<images/Figure7.4.png, id=738, 1474.75969pt x 422.32782pt>
+<images/Figure7.4.png, id=747, 1474.75969pt x 422.32782pt>
 File: images/Figure7.4.png Graphic file (type png)
 <use images/Figure7.4.png>
-Package pdftex.def Info: images/Figure7.4.png  used on input line 3723.
+Package pdftex.def Info: images/Figure7.4.png  used on input line 3757.
 (pdftex.def)             Requested size: 275.99919pt x 79.03804pt.
 
 
-[96 <./images/Figure7.1.png> <./images/Figure7.2.png>]
+[98 <./images/Figure7.1.png> <./images/Figure7.2.png>]
 
-[97 <./images/Figure7.3.png> <./images/Figure7.4.png>]
-<images/Figure7.7.png, id=754, 1331.72531pt x 735.49782pt>
+[99 <./images/Figure7.3.png> <./images/Figure7.4.png>]
+<images/Figure7.7.png, id=762, 1331.72531pt x 735.49782pt>
 File: images/Figure7.7.png Graphic file (type png)
 <use images/Figure7.7.png>
-Package pdftex.def Info: images/Figure7.7.png  used on input line 3753.
+Package pdftex.def Info: images/Figure7.7.png  used on input line 3787.
 (pdftex.def)             Requested size: 275.99257pt x 152.42778pt.
 
 
-[98]
+[100]
 
-[99 <./images/Figure7.7.png>]
-<images/img52.png, id=766, 931.48pt x 249.93375pt>
+[101 <./images/Figure7.7.png>]
+<images/img52.png, id=774, 931.48pt x 249.93375pt>
 File: images/img52.png Graphic file (type png)
 <use images/img52.png>
-Package pdftex.def Info: images/img52.png  used on input line 3859.
+Package pdftex.def Info: images/img52.png  used on input line 3893.
 (pdftex.def)             Requested size: 376.40875pt x 100.9976pt.
 
-Overfull \hbox (31.40875pt too wide) in paragraph at lines 3859--3860
+Overfull \hbox (31.40875pt too wide) in paragraph at lines 3893--3894
 [][] 
  []
 
 
 
-[100 <./images/img52.png (PNG copy)>]
-<images/img53.png, id=772, 1040.88875pt x 214.8025pt>
+[102 <./images/img52.png (PNG copy)>]
+<images/img53.png, id=780, 1040.88875pt x 214.8025pt>
 File: images/img53.png Graphic file (type png)
 <use images/img53.png>
-Package pdftex.def Info: images/img53.png  used on input line 3873.
+Package pdftex.def Info: images/img53.png  used on input line 3907.
 (pdftex.def)             Requested size: 414.04514pt x 85.44421pt.
 
-Overfull \hbox (69.04514pt too wide) in paragraph at lines 3873--3874
+Overfull \hbox (69.04514pt too wide) in paragraph at lines 3907--3908
 [][] 
  []
 
-<images/img54.png, id=773, 688.5725pt x 200.75pt>
+<images/img54.png, id=781, 688.5725pt x 200.75pt>
 File: images/img54.png Graphic file (type png)
 <use images/img54.png>
-Package pdftex.def Info: images/img54.png  used on input line 3887.
+Package pdftex.def Info: images/img54.png  used on input line 3921.
 (pdftex.def)             Requested size: 376.40454pt x 109.73892pt.
 
-Overfull \hbox (31.40454pt too wide) in paragraph at lines 3887--3888
+Overfull \hbox (31.40454pt too wide) in paragraph at lines 3921--3922
 [][] 
  []
 
 
 
-[101 <./images/img53.png (PNG copy)> <./images/img54.png (PNG copy)>]
+[103 <./images/img53.png (PNG copy)> <./images/img54.png (PNG copy)>]
 
-[102]
-Overfull \hbox (19.86523pt too wide) in paragraph at lines 3983--3984
+[104]
+Overfull \hbox (19.86523pt too wide) in paragraph at lines 4017--4018
 []\T1/lmr/m/n/10 course_number  
  []
 
 
-Overfull \hbox (7.35881pt too wide) in paragraph at lines 3985--3986
+Overfull \hbox (7.35881pt too wide) in paragraph at lines 4019--4020
 []\T1/lmr/m/n/10 bookstore  
  []
 
 
-Overfull \hbox (1.30006pt too wide) in paragraph at lines 3987--3988
+Overfull \hbox (1.30006pt too wide) in paragraph at lines 4021--4022
 []\T1/lmr/m/n/10 amazon  
  []
 
 
-Overfull \hbox (12.43001pt too wide) in paragraph at lines 3989--3990
+Overfull \hbox (12.43001pt too wide) in paragraph at lines 4023--4024
 []\T1/lmr/m/n/10 price_difference  
  []
 
 
 
-[103]
-<images/Figure7.9.png, id=794, 1331.72531pt x 642.14906pt>
+[105]
+<images/Figure7.9.png, id=802, 1331.72531pt x 642.14906pt>
 File: images/Figure7.9.png Graphic file (type png)
 <use images/Figure7.9.png>
-Package pdftex.def Info: images/Figure7.9.png  used on input line 4018.
+Package pdftex.def Info: images/Figure7.9.png  used on input line 4052.
 (pdftex.def)             Requested size: 275.99257pt x 133.08177pt.
 
 
-[104 <./images/Figure7.9.png>]
-<images/Figure7.10.png, id=801, 1155.56718pt x 354.57469pt>
+[106 <./images/Figure7.9.png>]
+<images/Figure7.10.png, id=809, 1155.56718pt x 354.57469pt>
 File: images/Figure7.10.png Graphic file (type png)
 <use images/Figure7.10.png>
-Package pdftex.def Info: images/Figure7.10.png  used on input line 4050.
+Package pdftex.def Info: images/Figure7.10.png  used on input line 4084.
 (pdftex.def)             Requested size: 275.98409pt x 84.68306pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4078--4080
+Underfull \hbox (badness 10000) in paragraph at lines 4112--4114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4080--4082
+Underfull \hbox (badness 10000) in paragraph at lines 4114--4116
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4082--4084
-
- []
-
-
-
-[105 <./images/Figure7.10.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 4084--4086
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4086--4088
+Underfull \hbox (badness 10000) in paragraph at lines 4116--4118
 
  []
 
 
 
-[106]
-Underfull \hbox (badness 2600) in paragraph at lines 4177--4178
-[]\T1/lmr/m/it/10 (a) \T1/lmr/m/n/10 Write the hy-pothe-ses in sym-bols: $\OML/lmm/m/it/10 H[]$\T1/lmr/m/n/10 : ____________ $\OML/lmm/m/it/10 H[]$\T1/lmr/m/n/10 :
+[107 <./images/Figure7.10.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 4118--4120
+
  []
 
 
-Underfull \hbox (badness 2600) in paragraph at lines 4191--4192
-[]\T1/lmr/m/it/10 (a) \T1/lmr/m/n/10 Write the hy-pothe-ses in sym-bols: $\OML/lmm/m/it/10 H[]$\T1/lmr/m/n/10 : ____________ $\OML/lmm/m/it/10 H[]$\T1/lmr/m/n/10 :
+Underfull \hbox (badness 10000) in paragraph at lines 4120--4122
+
  []
 
 
-
-[107]
 
 [108]
+Underfull \hbox (badness 2600) in paragraph at lines 4211--4212
+[]\T1/lmr/m/it/10 (a) \T1/lmr/m/n/10 Write the hy-pothe-ses in sym-bols: $\OML/lmm/m/it/10 H[]$\T1/lmr/m/n/10 : ____________ $\OML/lmm/m/it/10 H[]$\T1/lmr/m/n/10 :
+ []
+
+
+Underfull \hbox (badness 2600) in paragraph at lines 4225--4226
+[]\T1/lmr/m/it/10 (a) \T1/lmr/m/n/10 Write the hy-pothe-ses in sym-bols: $\OML/lmm/m/it/10 H[]$\T1/lmr/m/n/10 : ____________ $\OML/lmm/m/it/10 H[]$\T1/lmr/m/n/10 :
+ []
+
+
+
+[109]
+
+[110]
 Chapter 5.
 
 
-[109
+[111
 
 ]
 
-[110]
-
-[111]
-
 [112]
-<images/img55.png, id=852, 205.76875pt x 126.4725pt>
+
+[113]
+
+[114]
+<images/img55.png, id=860, 205.76875pt x 126.4725pt>
 File: images/img55.png Graphic file (type png)
 <use images/img55.png>
-Package pdftex.def Info: images/img55.png  used on input line 4369.
+Package pdftex.def Info: images/img55.png  used on input line 4403.
 (pdftex.def)             Requested size: 150.56158pt x 92.54028pt.
 
 
-[113 <./images/img55.png (PNG copy)>] (./MATH-224-Workbook.aux)
+[115 <./images/img55.png (PNG copy)>] (./MATH-224-Workbook.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 12397 strings out of 471607
- 192239 string characters out of 5520537
- 576750 words of memory out of 5000000
+ 12399 strings out of 471607
+ 192213 string characters out of 5520537
+ 576803 words of memory out of 5000000
  38390 multiletter control sequences out of 15000+600000
  735618 words of font info for 110 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 89i,10n,93p,1001b,631s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,10n,93p,1001b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></Users/tobzzy/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MATH-224-Workbook.pdf (113 pages, 2998957 bytes).
+Output written on MATH-224-Workbook.pdf (115 pages, 3001686 bytes).
 PDF statistics:
- 1110 PDF objects out of 1200 (max. 8388607)
- 853 compressed objects within 9 object streams
- 355 named destinations out of 1000 (max. 500000)
+ 1119 PDF objects out of 1200 (max. 8388607)
+ 860 compressed objects within 9 object streams
+ 357 named destinations out of 1000 (max. 500000)
  380 words of extra memory for PDF output out of 10000 (max. 10000000)
 
